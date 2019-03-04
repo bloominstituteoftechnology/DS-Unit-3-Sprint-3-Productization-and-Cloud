@@ -1,3 +1,5 @@
+### Project repo link
+https://github.com/samirgadkari/TwitOff
 ### Web Application Development with Flask
   - What went well (in the context of working on the assignment) today?
     - Was able to keep up with Aaron while building the project
