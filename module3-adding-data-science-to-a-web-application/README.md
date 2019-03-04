@@ -41,6 +41,8 @@ as we can in the application.
 ## Resources and Stretch Goals
 
 - Make the templates fancier! Add more variables to report, and report them.
+- Make your forms nicer and more powerful with
+  [WTForms](https://wtforms.readthedocs.io/en/stable/crash_course.html)
 - Try to add some visualizations or descriptive language to portray the
   strength/confidence of the prediction
 - As with hitting APIs, fitting models can take some time - check out
