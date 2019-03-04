@@ -60,6 +60,9 @@ application using Flask and SQLite. A summary of the overall picture:
   (object-relational mapping), and will let us both (a) not have to write SQL,
   and (b) use OOP to interact with data with multiple backends (SQLite locally,
   and PostgreSQL in the cloud)
+- [SQLAlchemy Data
+  Types](https://docs.sqlalchemy.org/en/latest/core/type_basics.html) are needed
+  to build usable models that will translate to SQL
 - Making the front-end look nice is very much a stretch goal throughout this
   sprint - but if you are interested in it, [Picnic CSS](https://picnicss.com/)
   and [Umbrella JS](https://umbrellajs.com/) are nice lightweight and modern
