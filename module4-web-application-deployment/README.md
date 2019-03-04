@@ -44,15 +44,15 @@ We'll deploy the app! We'll step through all of the following:
     PostgreSQL database and assigns the `DATABASE_URL` environment variable
     appropriately ([more
     info](https://devcenter.heroku.com/articles/heroku-postgresql))
-- If you really run into issues with Heroku, you can check out
-  [ngrok](https://ngrok.com/) as a way to set up a tunnel that lets you run the
-  server locally but serve it to the world - but it isn't really a replacement
-  for cloud deployment, as it's only up when you're running it on your computer
 - Help your classmates! Deploying is always rough at first, and you'll see and
   learn new things by helping each other as well
 
 ## Resources and Stretch Goals
 
+- If you really run into issues with Heroku, you can check out
+  [ngrok](https://ngrok.com/) as a way to set up a tunnel that lets you run the
+  server locally but serve it to the world - but it isn't really a replacement
+  for cloud deployment, as it's only up when you're running it on your computer
 - `heroku run` is super powerful - you can use it to run code on your hosted
   application, including `heroku run /bin/bash` to start a shell
 - Push the app! See if you can break it, and if you do, if you can fix it
