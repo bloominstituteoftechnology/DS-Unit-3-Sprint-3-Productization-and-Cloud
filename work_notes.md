@@ -1,5 +1,5 @@
 See README from AGallant/LSDS for more info.  
-https://github.com/johnpharmd/DS-Unit-3-Sprint-4-Productization-and-Cloud
+My repo for the 'TwitOff' project: https://github.com/johnpharmd/TwitOff
 
 Notes for Monday, 2019-03-04
 
@@ -10,5 +10,5 @@ Notes for Monday, 2019-03-04
     **A**:  
     
     What was the most challenging part of the work today, and why?
-    **A**:  
-    
+    **A**: Making all the 'machine connections'--by this, I mean writing all the correct programs with
+    correct syntax and which make correct programmatic connects [via import, etc] with each other.
