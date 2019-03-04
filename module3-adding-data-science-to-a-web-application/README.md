@@ -49,5 +49,7 @@ as we can in the application.
   [Redis Labs](https://redislabs.com), and use
   [birdisle](https://birdisle.readthedocs.io/en/latest/) for local development
   and testing)
+- Make the webapp more usable - if you're caching models you can list recently
+  run models, and possible link to them
 - Try different (better?) models - logistic regression is a great tool, but as
   you know there are many approaches out there
