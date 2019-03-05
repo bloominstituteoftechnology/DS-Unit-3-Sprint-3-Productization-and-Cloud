@@ -55,3 +55,6 @@ as we can in the application.
   run models, and possible link to them
 - Try different (better?) models - logistic regression is a great tool, but as
   you know there are many approaches out there
+- Fit a multinomial classification model (predict between >2 users) - note this
+  may be more of a UX challenge (how should the client specify the users) than a
+  data science challenge
