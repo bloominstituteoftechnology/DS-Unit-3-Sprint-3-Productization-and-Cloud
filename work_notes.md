@@ -16,7 +16,7 @@ Notes for Monday, 2019-03-04
 Note for Tuesday, 2019-03-05
 
     What went well (in the context of working on the assignment) today?
-    **A**: To be determined.
+    **A**: I enjoyed seeing the web app slowly "coming together" with continued individual effort to deploy.
         
     What was particularly interesting or surprising about the topic(s) today?
     **A**: I found the python-decouple bits noteworthy because I had previously deployed Twitter-focused
