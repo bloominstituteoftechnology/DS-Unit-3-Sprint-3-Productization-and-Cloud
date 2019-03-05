@@ -126,8 +126,20 @@ then run `DB` - this should output the following:
   we should import the models to manipulate the DB:
   ```
   from twitoff.models import *
+  
   ``` 
-   
+  
+  if a DB was created previously, drop it:
+  
+  ```
+  DB.drop_all()
+  ```
+  create DB:
+  
+  ```
+  DB.create_all()
+  ```
+  
   add a user with username elonmusk:
   ```
   u1 = User(name='elonmusk')
