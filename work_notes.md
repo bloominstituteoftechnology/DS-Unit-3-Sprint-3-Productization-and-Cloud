@@ -16,10 +16,13 @@ Notes for Monday, 2019-03-04
 Note for Tuesday, 2019-03-5
 
     What went well (in the context of working on the assignment) today?
-    
-    
+    **A**: To be determined.
+        
     What was particularly interesting or surprising about the topic(s) today?
-    
+    **A**: I found the python-decouple bits noteworthy because I had previously deployed Twitter-focused
+    modules to github with sensitive keys--successfully, I believe--using only github's .gitignore
+    functionality.
     
     What was the most challenging part of the work today, and why?
-    
+    **A**: Today's work was most challenging in its shear number of methods and objects that had to
+    be created and/or used. So many "moving parts" today, so to speak.
