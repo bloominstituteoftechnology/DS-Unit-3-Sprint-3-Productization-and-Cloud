@@ -115,11 +115,6 @@ to create SQLAlchemy models for TwitOff.
 ```
 FLASK_APP=twitoff:APP flask shell
 ```
-then run `DB` - this should output the following:
-
-```
-<SQLAlchemy engine=sqlite:////Users/[YOUR_USER_NAME]/Desktop/TwitOff/twitoff/db.sqlite3>
-```
 
 18. There are 2 tables - Users and Tweets. These are the commands to add users and tweets:
 
@@ -139,6 +134,12 @@ then run `DB` - this should output the following:
   ```
   DB.create_all()
   ```
+  
+  then run `DB` - this should output the following:
+
+```
+<SQLAlchemy engine=sqlite:////Users/[YOUR_USER_NAME]/Desktop/TwitOff/twitoff/db.sqlite3>
+```
   
   add a user with username elonmusk:
   ```
