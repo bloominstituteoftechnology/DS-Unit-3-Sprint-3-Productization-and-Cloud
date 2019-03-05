@@ -12,3 +12,14 @@ Notes for Monday, 2019-03-04
     What was the most challenging part of the work today, and why?
     **A**: Making all the 'machine connections'--by this, I mean writing all the correct programs with
     correct syntax and which make correct programmatic connects [via import, etc] with each other.
+
+Note for Tuesday, 2019-03-5
+
+    What went well (in the context of working on the assignment) today?
+    
+    
+    What was particularly interesting or surprising about the topic(s) today?
+    
+    
+    What was the most challenging part of the work today, and why?
+    
