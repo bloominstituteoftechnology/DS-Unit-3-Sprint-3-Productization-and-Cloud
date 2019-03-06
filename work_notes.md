@@ -15,3 +15,9 @@
 1. Figured out Flask quickly, and figured out how the class name corresponds to table name.
 2. How modular Flask is compared to Django.
 3. Figuring out tweepy and Twitter API, still have to figure out how to access it properly.
+
+## Day 2
+
+1. Really liked working with the APIs after a little bit of fiddling.
+2. Basilica's API is surprisingly simple.
+3. Importing pickled information from queries.
