@@ -4,3 +4,5 @@ My REPO for the week:https://github.com/Dpgofast/Twitteroff
 -Fight Windows production flow shortcomings. Fight through errors with vague error messages. 
 ### Day 2 
 -fight windows some more. add functionality as described during lecture. 
+### Day 3 
+-Finally wining the figh twith windows I believe. Deployed the app with the daily code and thenstarted adjusting style and colors 
