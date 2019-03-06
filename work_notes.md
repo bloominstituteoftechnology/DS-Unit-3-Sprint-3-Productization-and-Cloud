@@ -26,3 +26,15 @@ Note for Tuesday, 2019-03-05
     What was the most challenging part of the work today, and why?
     **A**: Today's work was most challenging in its shear number of methods and objects that had to
     be created and/or used. So many "moving parts" today, so to speak.
+
+Note for Wednesday, 2019-03-06
+
+    What went well (in the context of working on the assignment) today?
+    **A**:  
+        
+    What was particularly interesting or surprising about the topic(s) today?
+    **A**:   
+    
+    What was the most challenging part of the work today, and why?
+    **A**:  
+    
