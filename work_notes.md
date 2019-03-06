@@ -1,6 +1,6 @@
 Wed 5:30
 
-What went well (in the context of working on the assignment) today? Getting everything working with Windows environment was a bit different than the lecturer But it went okay.  
+What went well (in the context of working on the assignment) today? Getting everything working with Windows environment was a bit different than the lecture, but it went okay and had no problems with the assignment.  
 
 What was particularly interesting or surprising about the topic(s) today? I really like the accesabillity of SQLAlchemy. I can see how you would automate DB creation, editing, etc with clearly defined classes. 
 Much easier than writing a bunch of query modules. More effecient too.  
