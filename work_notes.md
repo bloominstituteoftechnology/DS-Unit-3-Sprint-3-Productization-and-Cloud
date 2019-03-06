@@ -1,6 +1,6 @@
-#**Daily project review:**
+# **Daily project review:**
 
-##Monday 03/04
+## Monday 03/04
 
 **What went well (in the context of working on the assignment) today?**
 - I was able to follow along for most of the lecture before things started blowing up. I was able to get
@@ -15,7 +15,7 @@ most of the assignment completed.
 I want to read about this stuff but there is just no time, since the assignments take a lot of time for me.
 
 
-##Tuesday 03/05
+## Tuesday 03/05
 
 **What went well (in the context of working on the assignment) today?**
 -
@@ -28,7 +28,7 @@ I want to read about this stuff but there is just no time, since the assignments
 Also, not fully understanding why we did what we did in class and have to watch the lesson several times.
 
 
-##Wednesday 03/06
+## Wednesday 03/06
 
 **What went well (in the context of working on the assignment) today?**
 
@@ -36,7 +36,7 @@ Also, not fully understanding why we did what we did in class and have to watch 
 
 **What was the most challenging part of the work today, and why?**
 
-##Thursday 03/07
+## Thursday 03/07
 
 **What went well (in the context of working on the assignment) today?**
 
