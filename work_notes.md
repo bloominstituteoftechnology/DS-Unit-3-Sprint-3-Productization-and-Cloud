@@ -1,10 +1,10 @@
 
 Deployed Full Stack application backed by data science
 
-DATE : MON Mar 4
+**DATE : MON Mar 4**
 What went well (in the context of working on the assignment) today?
-   
-   No real problems today.  Very introductory work.
+
+    No real problems today.  Very introductory work.
 
 What was particularly interesting or surprising about the topic(s) today?
     
@@ -15,7 +15,7 @@ What was the most challenging part of the work today, and why?
     Remembering my HTML and CSS chops, LOL!
 
 
-DATE : TUE  Mar 5
+**DATE : TUE  Mar 5
 
 What went well (in the context of working on the assignment) today?
 
@@ -36,12 +36,12 @@ What was the most challenging part of the work today, and why?
     Has lot's of detail that has to be just right
 
 
-DATE : WED Mar 6
+**DATE : WED Mar 6**
 What went well (in the context of working on the assignment) today?
 What was particularly interesting or surprising about the topic(s) today?
 What was the most challenging part of the work today, and why?
 
-DATE : MON Mar 6
+**DATE : MON Mar 6**
 What went well (in the context of working on the assignment) today?
 What was particularly interesting or surprising about the topic(s) today?
 What was the most challenging part of the work today, and why?
