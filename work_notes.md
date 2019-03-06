@@ -30,11 +30,11 @@ Notes for Tuesday, 2019-03-05
 Notes for Wednesday, 2019-03-06
 
     What went well (in the context of working on the assignment) today?
-    **A**:  
+    **A**: During OpenClassroom, I received assistance from TK and SL.  
         
     What was particularly interesting or surprising about the topic(s) today?
-    **A**:   
+    **A**: I was very interested in the UI for the logistic regression happening on the backend.  
     
     What was the most challenging part of the work today, and why?
-    **A**:  
+    **A**: [Much] Assembly required!  
     
