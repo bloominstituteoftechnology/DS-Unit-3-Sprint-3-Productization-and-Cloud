@@ -1,4 +1,4 @@
-Wed 5:30
+Wed 5:30 Finished monday's assignment
 
 What went well (in the context of working on the assignment) today? Getting everything working with Windows environment was a bit different than the lecture, but it went okay and had no problems with the assignment.  
 
