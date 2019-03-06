@@ -24,3 +24,16 @@ Using flask with sqllite DB was simple and great.
 
 - What was the most challenging part of the work today, and why?
 Passing variables with spaces to Flask application.
+
+Day 2:
+submission url: https://github.com/ShreyasJothish/tweetpredictor
+
+- What went well (in the context of working on the assignment) today?
+Understanding of route was clear to me as compared to yesterday.
+Added a route to fetch and display user tweets and also add a new user and corresponding tweets into DB. 
+
+- What was particularly interesting or surprising about the topic(s) today?
+Using of .env file for managing credentials.
+
+- What was the most challenging part of the work today, and why?
+Modularization of code into different python files.
