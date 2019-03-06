@@ -13,7 +13,7 @@ Notes for Monday, 2019-03-04
     **A**: Making all the 'machine connections'--by this, I mean writing all the correct programs with
     correct syntax and which make correct programmatic connects [via import, etc] with each other.
 
-Note for Tuesday, 2019-03-05
+Notes for Tuesday, 2019-03-05
 
     What went well (in the context of working on the assignment) today?
     **A**: I enjoyed seeing the web app slowly "coming together" with continued individual effort to deploy.
@@ -27,7 +27,7 @@ Note for Tuesday, 2019-03-05
     **A**: Today's work was most challenging in its shear number of methods and objects that had to
     be created and/or used. So many "moving parts" today, so to speak.
 
-Note for Wednesday, 2019-03-06
+Notes for Wednesday, 2019-03-06
 
     What went well (in the context of working on the assignment) today?
     **A**:  
