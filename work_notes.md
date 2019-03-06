@@ -16,6 +16,7 @@ I want to read about this stuff but there is just no time, since the assignments
 
 
 ##Tuesday 03/05
+
 **What went well (in the context of working on the assignment) today?**
 -
 
@@ -28,12 +29,18 @@ Also, not fully understanding why we did what we did in class and have to watch 
 
 
 ##Wednesday 03/06
+
 **What went well (in the context of working on the assignment) today?**
+
 **What was particularly interesting or surprising about the topic(s) today?**
+
 **What was the most challenging part of the work today, and why?**
 
 ##Thursday 03/07
+
 **What went well (in the context of working on the assignment) today?**
+
 **What was particularly interesting or surprising about the topic(s) today?**
+
 **What was the most challenging part of the work today, and why?**
 
