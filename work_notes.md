@@ -6,15 +6,14 @@
 3. The most challenging part was having to poke really precise commands at an API i know virtually nothing about. 
 
 ## Tuesday
-1. *What went well (in the context of working on the assignment) today?
-2. What was particularly interesting or surprising about the topic(s) today?
-3. What was the most challenging part of the work today, and why?*
+1. I got everything moving during lecture
+2. i really liked this other API i found called botometer
+3. html when i don't really have an IDE set up for it.
 
 ## Wednesday
-1. *What went well (in the context of working on the assignment) today?
-2. What was particularly interesting or surprising about the topic(s) today?
-3. What was the most challenging part of the work today, and why?*
-
+1. Got the app moving
+2. Debugger 
+3. Keeping on top of project while it grows 
 
 ## Thursday
 1. *What went well (in the context of working on the assignment) today?
