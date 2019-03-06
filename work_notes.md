@@ -2,7 +2,7 @@
 
 ## Location
 
-[TwitOff Repository](https://github.com/brit228/DS-Tweet-Off)
+[TwitOff Repository](https://github.com/brit228/TwitOff)
 
 ## Questions
 
