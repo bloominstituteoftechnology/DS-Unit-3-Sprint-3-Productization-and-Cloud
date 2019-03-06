@@ -12,6 +12,7 @@ update `work_notes.md` each day with the following:
 - What was particularly interesting or surprising about the topic(s) today?
 - What was the most challenging part of the work today, and why?
 
+Project link: https://github.com/DanielMartinAlarcon/TwitOff
 
 ## Monday Mar 4
 - What went well (in the context of working on the assignment) today?
@@ -31,5 +32,9 @@ update `work_notes.md` each day with the following:
 
 ## Wednesday Mar 6
 - What went well (in the context of working on the assignment) today?
+    - The tweets load, the models predict, and all the parts work together.
+
 - What was particularly interesting or surprising about the topic(s) today?
+    - Seeing more complex functions running on a web application. Also, learning to use the python debugger.
 - What was the most challenging part of the work today, and why?
+    - Keeping track of which applications are in control of which parts of our own app, so that I can look up the proper documentation.
