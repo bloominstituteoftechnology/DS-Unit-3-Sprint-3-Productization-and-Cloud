@@ -21,3 +21,15 @@
 1. Really liked working with the APIs after a little bit of fiddling.
 2. Basilica's API is surprisingly simple.
 3. Importing pickled information from queries.
+
+## Day 3
+
+1. Managed to get everything working locally, with CSS and jQuery AJAX.
+2. How basilica makes it really easy to create a predictive model from a text input.
+3. CSS was a pain, like usual.
+
+## Day 4
+
+1. Managed to push it online, and everything is working.
+2. How easy heroku is to use.
+3. Figuring out I didn't have the database online set up yet when pushing to heroku and the page wasn't working.
