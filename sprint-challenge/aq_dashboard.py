@@ -33,8 +33,8 @@ def add_record(record):
         DB.session.commit()
 
 
-@app.route('/record', methods=['POST'])
-@app.route('/record', methods=['GET'])
+@APP.route('/record', methods=['POST'])
+@APP.route('/record', methods=['GET'])
 def record(name=None):
     message = ''
     try:
