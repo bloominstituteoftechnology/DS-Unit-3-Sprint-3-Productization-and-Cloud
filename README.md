@@ -38,3 +38,14 @@ Project link: https://github.com/DanielMartinAlarcon/TwitOff
     - Seeing more complex functions running on a web application. Also, learning to use the python debugger.
 - What was the most challenging part of the work today, and why?
     - Keeping track of which applications are in control of which parts of our own app, so that I can look up the proper documentation.
+
+
+## Thursday Mar 7
+- What went well (in the context of working on the assignment) today?
+    - IT DEPLOYED.  Also, everything about Heroku is starting to fit together.  It's really neat to see an app out in the real world.
+
+- What was particularly interesting or surprising about the topic(s) today?
+    - How many people were saved by the simple instruction of resetting their databases.
+
+- What was the most challenging part of the work today, and why?
+    - Error messages in Heroku are only useful some of the time. I still don't quite know how I managed to find my bug in the end.
