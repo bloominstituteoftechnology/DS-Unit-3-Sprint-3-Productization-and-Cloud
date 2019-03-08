@@ -13,6 +13,7 @@ api = openaq.OpenAQ()
 
 
 class Record(DB.Model):
+    """Model for records from API."""
     id = DB.Column(DB.Integer, primary_key=True)
     city = DB.Column(DB.String(), nullable=False)
     country = DB.Column(DB.String(), nullable=False)
@@ -21,6 +22,7 @@ class Record(DB.Model):
 
 
 class Call(DB.Model):
+    """Model for calls to API."""
     id = DB.Column(DB.Integer, primary_key=True)
     city = DB.Column(DB.String(), nullable=True)
     country = DB.Column(DB.String(), nullable=True)
@@ -28,10 +30,6 @@ class Call(DB.Model):
     date_to = DB.Column(DB.DateTime(), nullable=True)
     min_val = DB.Column(DB.Float(), nullable=True)
     max_val = DB.Column(DB.Float(), nullable=True)
-
-
-def get_datetime(record):
-    return record.datetime
 
 
 @APP.route('/')
@@ -42,7 +40,7 @@ def root():
 
 @APP.route('/refresh')
 def refresh():
-    """Pull fresh data from Open AQ and replace existing data."""
+    """Remove all data from database."""
     DB.drop_all()
     DB.create_all()
     return 'Data refreshed!'
@@ -50,6 +48,8 @@ def refresh():
 
 @APP.route('/get', methods=["POST"])
 def get():
+    """Push table of locations, datetimes and pm25 values based on user
+    input."""
     params = {'parameter': 'pm25'}
     city = request.form.get('city')
     if city is not '':
