@@ -12,13 +12,6 @@ APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DB = SQLAlchemy(APP)
 
 
-@APP.route('/')
-def root():
-    """Base view."""
-
-    return 'TODO - part 2 and beyond!'
-
-
 def la_pm(city='Los Angeles', parameter='pm25'):
     status, body = api.measurements(city='Los Angeles', parameter='pm25')
     utc_datetime_value = []
@@ -28,3 +21,34 @@ def la_pm(city='Los Angeles', parameter='pm25'):
         utc_datetime_value.append((date, value))
 
     return utc_datetime_value
+
+
+@APP.route('/')
+def root():
+    """Base view."""
+    # utc_datetime_value = la_pm(city, parameter)
+
+    return "TODO Part 3"
+
+
+class Record(DB.Model):
+    id = DB.Column(DB.Integer, primary_key=True)
+    datetime = DB.Column(DB.String(25))
+    value = DB.Column(DB.Float, nullable=False)
+
+    def __repr__(self):
+        return '<Time {} --- Value {}>'.format(self.datetime, self.value)
+
+
+@APP.route('/refresh')
+def refresh():
+    """Pull fresh data from Open AQ and replace existing data."""
+    DB.drop_all()
+    DB.create_all()
+    # TODO Get data from OpenAQ, make Record objects with it, and add to db
+    utc_datetime_value = la_pm('Los Angeles', 'pm25')
+    for x in utc_datetime_value:
+        record = Record(datetime=x[0], value=x[1])
+        DB.session.add(record)
+    DB.session.commit()
+    return 'Data refreshed!'
