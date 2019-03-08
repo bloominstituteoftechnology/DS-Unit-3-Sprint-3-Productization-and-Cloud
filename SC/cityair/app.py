@@ -2,7 +2,7 @@
 from decouple import config
 from flask import Flask, render_template, request
 from .models import DB, Measurement
-from .aq_dashboard import load_measurement
+from .aq_dashboard import load_measurement, filter_ge_pm25
 
 
 def create_app():
@@ -19,10 +19,22 @@ def create_app():
       status = load_measurement()
       message = ""
       m = Measurement.query.all()
-      if status == 200:
+      if status != 200:
         message = "Error loading City air quality"
 
       return render_template('base.html', title='Cities Air Quality',measurements=m, message=message)
+
+    @app.route('/compare', methods=['POST'])
+    def compare():
+      ge_pm25 = request.values['pm25']
+      #import pdb; pdb.set_trace()
+      if ge_pm25 != "" :
+        filtered_measurement = filter_ge_pm25(ge_pm25)
+        message = "PM 2.5 greater or equal to " + ge_pm25
+      else:
+        filtered_measurement = Measurement.query.all()
+        message="All PM 2.5"
+      return render_template('base.html', title='Cities Air Quality',measurements=filtered_measurement, message=message)
 
     @app.route('/reset')
     def reset():

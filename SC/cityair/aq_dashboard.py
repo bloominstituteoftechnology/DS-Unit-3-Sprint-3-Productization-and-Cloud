@@ -19,8 +19,7 @@ def load_measurement():
         latitude = body['results'][i]['coordinates']['latitude']
         longitude = body['results'][i]['coordinates']['longitude']
 
-        if pm25 >= 10 :
-          db_measurement = Measurement(city=city,
+        db_measurement = Measurement(city=city,
                                        country=country, 
                                        location=location, 
                                        parameter=parameter, 
@@ -30,7 +29,7 @@ def load_measurement():
                                        unit=unit, 
                                        latitude=latitude, 
                                        longitude=longitude )
-          DB.session.add(db_measurement)
+        DB.session.add(db_measurement)
     except Exception as e:
        print('Error processing {}: {}'.format('loading measurement', e))
        raise e
@@ -39,3 +38,6 @@ def load_measurement():
        return status
 
 
+def filter_ge_pm25(ge_pm25):
+  measurement=Measurement.query.filter(Measurement.pm25 >= ge_pm25)
+  return measurement
