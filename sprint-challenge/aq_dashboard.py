@@ -7,6 +7,10 @@ from flask_sqlalchemy import SQLAlchemy
 from decouple import config
 APP = Flask(__name__)
 
+
+def create_app():
+    return APP
+    
 def setup():
     api = OpenAQ()
     status, body = api.measurements(city='Los Angeles', parameter='pm25')
