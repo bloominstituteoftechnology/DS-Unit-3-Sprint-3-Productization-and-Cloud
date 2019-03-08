@@ -7,7 +7,7 @@ import openaq
 """Create and configure an instance of the flask app"""
 APP = Flask(__name__)
 api = openaq.OpenAQ()
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'slqite:///db.sqlite3'
+APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DB = SQLAlchemy(APP)
 
@@ -27,8 +27,8 @@ def la_pm(city='Los Angeles', parameter='pm25'):
 def root():
     """Base view."""
     # utc_datetime_value = la_pm(city, parameter)
-
-    return "TODO Part 3"
+    value_10 = Record.query.filter(Record.value >= 10).all()
+    return value_10
 
 
 class Record(DB.Model):
