@@ -25,7 +25,6 @@ def add_record(record):
         db_record = (Record.query.get(record.id) or 
                      Record(id=record.id, datetime=datetime, value=value))
         DB.session.add(db_record)
-
     except Exception as e:
         print('Error processing {}: {}'.format(username, e))
         raise e
@@ -42,9 +41,9 @@ def record(name=None):
         if request.method == 'POST':
             add_record(record)
             message = 'Record {} successfully added!'.format(record)
-        except Exception as e:
-            message = 'Error adding {}: {}'.format(name, e)
-            records = []
+    except Exception as e:
+        message = 'Error adding {}: {}'.format(name, e)
+        records = []
 
 @APP.route('/')
 def root():
