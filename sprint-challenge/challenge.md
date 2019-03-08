@@ -41,7 +41,7 @@ APP = Flask(__name__)
 @APP.route('/')
 def root():
     """Base view."""
-    return 'TODO - part 2 and beyond!'
+    return 'It works!'
 ```
 
 Ensure you are in a Python environment that at least has `flask`,
