@@ -38,3 +38,17 @@ Notes for Wednesday, 2019-03-06
     What was the most challenging part of the work today, and why?
     **A**: [Much] Assembly required!  
     
+Notes for Thursday, 2019-03-07
+
+    What went well (in the context of working on the assignment) today?
+    **A**: During lecture, I got Windows 10-specific support in troubleshooting issues in my app. 
+        
+    What was particularly interesting or surprising about the topic(s) today?
+    **A**: I was, and remain, impressed with the robust functioning of Heroku.  
+    
+    What was the most challenging part of the work today, and why?
+    **A**: As with the previous 3 days this week, there were somewhat significant time barriers to
+    implementing this project. Some suggestions: I concur with AG's statement regarding standardization
+    of workflow by having all students build a VM in advance so that all syntax is the same for everyone
+    regardless of local machine OS.
+    Also, it may be beneficial to add some portion of this week's Sprint into the Intro Course material.
