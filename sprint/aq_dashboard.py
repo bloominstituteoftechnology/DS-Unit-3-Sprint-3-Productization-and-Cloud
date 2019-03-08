@@ -2,40 +2,37 @@
 from decouple import config 
 from flask import Flask, Response, render_template
 from flask_sqlalchemy import SQLAlchemy
+from models import Record
 import requests
 import openaq
 import pandas
 
 
-def create_app():
-    """Create and configure an instance of the Flask application."""
-    app = Flask(__name__)
-    api = openaq.OpenAQ()
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-    DB = SQLAlchemy(app)
-    DB.init_app(app)
+app = Flask(__name__)
+api = openaq.OpenAQ()
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+DB = SQLAlchemy(app)
+DB.init_app(app)
 
-    @app.route('/')
-    def root():
-        status, body = api.measurements(city='Los Angeles', parameter='pm25')  
-        value = api.measurements(value='value')
-        date = api.measurements(data='date')
-        return render_template('home.html', body=body, value=value, date=date)
-    
-        class Record(DB.Model):
+@app.route('/')
+def root():
+    data1 = api.measurements(city='Los Angeles', parameter='pm25')
+    return render_template('home.html', data1=data1)
 
-            id = DB.Column(DB.Integer, primary_key=True)
-            datetime = DB.Column(DB.String(25))
-            value = DB.Column(DB.Float, nullable=False)
-
-        def __repr__(self):
-            return 'TODO - write a nice representation of Records'
-    
-    @app.route('/refresh')
-    def refresh():
-        DB.drop_all()
-        DB.create_all()
+@app.route('/load')
+def get_data():
+    data = api.measurements(city='Los Angeles', parameter='pm25', df=True)
+    for index, row in data.iterrows():
+        records = Record(datetime=row['date.utc'], value=row['value'])
+        DB.session.add(records)
         DB.session.commit()
-        return 'Data refreshed!'
 
-    return app
+@app.route('/refresh')
+def refresh():
+    DB.drop_all()
+    DB.create_all()
+    DB.session.commit()
+    return 'Data refreshed!'
+
+if __name__ == '__main__':
+    app.run(port=5000,debug=True)
