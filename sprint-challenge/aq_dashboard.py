@@ -37,21 +37,14 @@ def add_record(record):
 @APP.route('/record', methods=['GET'])
 def record(name=None):
     message = ''
+    record = record or request.values['record']
     try:
-        pass
-    except Exception as e:
-        pass
-    # name = name or request.values['user_name']
-    # try:
-    #     if request.method == 'POST':
-    #         add_or_update_user(name)
-    #         message = 'User {} successfully added!'.format(name)
-    #     tweets = User.query.filter(User.name == name).one().tweets
-    # except Exception as e:
-    #     message = 'Error adding {}: {}'.format(name, e)
-    #     tweets = []
-    # return render_template('user.html', title=name, tweets=tweets,
-    #                        message=message)
+        if request.method == 'POST':
+            add_record(record)
+            message = 'Record {} successfully added!'.format(record)
+        except Exception as e:
+            message = 'Error adding {}: {}'.format(name, e)
+            records = []
 
 @APP.route('/')
 def root():
