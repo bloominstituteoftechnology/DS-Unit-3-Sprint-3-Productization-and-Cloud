@@ -5,7 +5,6 @@ import requests
 import openaq
 import pandas
 from decouple import config
-from .airdata import *
 
 api = openaq.OpenAQ() 
 
@@ -18,10 +17,10 @@ DB = SQLAlchemy(APP)
 
 @APP.route('/')
 def root():
-    def db_load_city():
-        df_la = api.measurements(city='Los Angeles', parameter='pm25', df=True)
-        load_la(df_la)
-        return render_template('base.html', title='Cities Loaded')
+    #df_la = api.measurements(city='Los Angeles', parameter='pm25', df=True)
+    #date_values = df_la[['date.utc', 'value']]
+    value10 = Record.query.filter(Record.value >= 10).all()
+    return render_template('base.html', values=value10)
 
 
 class Record(DB.Model):
@@ -29,13 +28,19 @@ class Record(DB.Model):
     datetime = DB.Column(DB.String(25))
     value = DB.Column(DB.Float, nullable=False)
 
+    def __repr__(self):
+        return '<Time {}, Value: {}>'.format(self.datetime, self.value)
+
+
 @APP.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    for index, row in df_la.iterrows():
-        measures = Record(datetime=row['date.utc'], value=row['value'])
+    df_la = api.measurements(city='Los Angeles', parameter='pm25', df=True)
+    date_values = df_la[['date.utc', 'value']]
+    for index, row in date_values.iterrows():
+        measures = Record(datetime=row['date.utc'].strftime("%Y-%m-%d %H:%M"), value=row['value'])
         DB.session.add(measures)
     DB.session.commit()
     return 'Data refreshed!'
