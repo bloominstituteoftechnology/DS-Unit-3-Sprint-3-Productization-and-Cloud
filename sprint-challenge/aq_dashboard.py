@@ -19,6 +19,15 @@ class Record(DB.Model):
         return '<Time {} --- Value {}>'.format(self.datetime, self.value)
 
 
+def add_record(record):
+    try:
+        pass
+    except Exception as e:
+        pass
+    else:
+        pass
+
+
 @APP.route('/')
 def root():
     """Base view."""
@@ -35,6 +44,26 @@ def get_los_angeles_data():
                            dic in body['results']]
 
     return dt_values_tups_list
+
+@app.route('/record', methods=['POST'])
+@app.route('/record', methods=['GET'])
+def record(name=None):
+    message = ''
+    try:
+        pass
+    except Exception as e:
+        pass
+    # name = name or request.values['user_name']
+    # try:
+    #     if request.method == 'POST':
+    #         add_or_update_user(name)
+    #         message = 'User {} successfully added!'.format(name)
+    #     tweets = User.query.filter(User.name == name).one().tweets
+    # except Exception as e:
+    #     message = 'Error adding {}: {}'.format(name, e)
+    #     tweets = []
+    # return render_template('user.html', title=name, tweets=tweets,
+    #                        message=message)
 
 @APP.route('/refresh')
 def refresh():
