@@ -26,7 +26,7 @@ def add_record(record):
                      Record(id=record.id, datetime=datetime, value=value))
         DB.session.add(db_record)
     except Exception as e:
-        print('Error processing {}: {}'.format(username, e))
+        print('Error processing {}: {}'.format(record, e))
         raise e
     else:
         DB.session.commit()
