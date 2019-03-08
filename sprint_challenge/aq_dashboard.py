@@ -45,9 +45,8 @@ def city(city_id=None):
     return render_template('city.html', 
                             above10=above10, 
                             above5=above5,
-                            all_air=all_air
-                            name=this_city.name,
-                            title=this_city.name)
+                            all_air=all_air,
+                            this_city=this_city)
 
 
 class Record(DB.Model):
