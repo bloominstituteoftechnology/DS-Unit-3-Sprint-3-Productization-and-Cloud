@@ -2,8 +2,12 @@
 
 import openaq
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
 
 APP = Flask(__name__)
+APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+DB = SQLAlchemy(APP)
 
 
 def query_aq():
@@ -22,14 +26,47 @@ def query_aq():
         utc_list.append(results[x]['date']['utc'])
         value_list.append(results[x]['value'])
         x = x + 1
-    # BULLY, lists cannot be rendered.
-    return tuple(zip(utc_list, value_list))
+    # BULLY, lists cannot be rendered by Flask, we will cast to string in our root function.
+    return list(zip(utc_list, value_list))
+
+
+class Record(DB.Model):
+    id = DB.Column(DB.Integer, primary_key=True)
+    datetime = DB.Column(DB.String(25))
+    value = DB.Column(DB.Float, nullable=False)
+
+    def __repr__(self):
+        return "Datetime {0} : Value {1} \n".format(self.datetime, self.value)
+
+
+def populate_db():
+    utc = 0
+    value = 1
+
+    query = query_aq()
+
+    for tuples in query:
+
+        record = Record(datetime=tuples[utc], value=tuples[value])
+        DB.session.add(record)
+        DB.session.commit()
 
 
 @APP.route('/')
 def root():
     """Base view. Uses utility functions to return Air Quality data and serves to Flask for web rendering"""
+    print('Time stamps of dangerous air quality!')
+    bad_air = DB.session.query(Record).filter(Record.value >= 10).all()
+    for air in bad_air:
+        return str(air)
 
-    return str(query_aq())
 
-print(query_aq())
+@APP.route('/refresh')
+def refresh():
+    """Pull fresh data from Open AQ and replace existing data."""
+    DB.drop_all()
+    DB.create_all()
+    populate_db()
+    return 'Data refreshed!'
+
+print(root())
