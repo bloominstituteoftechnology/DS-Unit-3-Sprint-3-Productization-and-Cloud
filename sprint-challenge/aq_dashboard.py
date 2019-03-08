@@ -21,7 +21,7 @@ class Record(DB.Model):
 
 def add_record(record):
     try:
-        record = Record(record)
+        # record = Record(record)
         db_record = (Record.query.get(record.id) or 
                      Record(id=record.id, datetime=datetime, value=value))
         DB.session.add(db_record)
@@ -67,6 +67,7 @@ def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    # TODO Get data from OpenAQ, make Record objects with it, and add to db
+    for record in get_los_angeles_data():
+        add_record(record)
     DB.session.commit()
     return 'Data refreshed!'
