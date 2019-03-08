@@ -52,6 +52,7 @@ THE APP
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DB = SQLAlchemy(app)
 
 
@@ -83,7 +84,7 @@ def add_or_update_valudts(city):
 
         for v, d in zip(values, udts):
             DB.session.add(Record(value=v, datetime=d,
-                                  city=city, id=randint(10**4, 10**5)))
+                                  city=city, id=randint(10**9, 10**10)))
     except Exception as e:
         print("some issue", e)
     else:
@@ -113,5 +114,5 @@ def risky():
 
 Finally, return this filtered list of "potentially risky" PM 2.5 datetime/value tuples. You now have a (very basic) dashboard, that stores, updates, and displays useful data!'''
     refresh()
-    x = DB.record.filter(DB.record.value >= 10)
+    x = Record.query.filter(Record.value >= 8).all()
     return str(x)
