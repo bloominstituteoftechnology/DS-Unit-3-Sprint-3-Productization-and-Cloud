@@ -7,6 +7,10 @@ name = "pypi"
 flask = "*"
 flask-sqlalchemy = "*"
 requests = "*"
+py-openaq = "*"
+pandas = "*"
+seaborn = "*"
+matplotlib = "*"
 
 [dev-packages]
 
