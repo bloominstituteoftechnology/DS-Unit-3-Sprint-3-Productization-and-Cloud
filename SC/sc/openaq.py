@@ -10,15 +10,17 @@ import math
 class ApiError(Exception):
     pass
 
+
 class API(object):
     """Generic API wrapper object.
     """
+
     def __init__(self, **kwargs):
-        self._key       = kwargs.pop('key', '')
-        self._pswd      = kwargs.pop('pswd', '')
-        self._version   = kwargs.pop('version', None)
-        self._baseurl   = kwargs.pop('baseurl', None)
-        self._headers   = {'content-type': 'application/json'}
+        self._key = kwargs.pop('key', '')
+        self._pswd = kwargs.pop('pswd', '')
+        self._version = kwargs.pop('version', None)
+        self._baseurl = kwargs.pop('baseurl', None)
+        self._headers = {'content-type': 'application/json'}
 
     def _make_url(self, endpoint, **kwargs):
         """Internal method to create a url from an endpoint.
@@ -56,7 +58,7 @@ class API(object):
         :raises ApiError: raises an exception
         """
         auth = (self._key, self._pswd)
-        url  = self._make_url(endpoint, **kwargs)
+        url = self._make_url(endpoint, **kwargs)
 
         if method == 'GET':
             resp = requests.get(url, auth=auth, headers=self._headers)
@@ -64,14 +66,17 @@ class API(object):
             raise ApiError("Invalid Method")
 
         if resp.status_code != 200:
-            raise ApiError("A bad request was made: {}".format(resp.status_code))
+            raise ApiError(
+                "A bad request was made: {}".format(
+                    resp.status_code))
 
         res = resp.json()
 
         # Add a 'pages' attribute to the meta data
         try:
-            res['meta']['pages'] = math.ceil(res['meta']['found'] / res['meta']['limit'])
-        except:
+            res['meta']['pages'] = math.ceil(
+                res['meta']['found'] / res['meta']['limit'])
+        except BaseException:
             pass
 
         return resp.status_code, res
@@ -79,10 +84,12 @@ class API(object):
     def _get(self, url, **kwargs):
         return self._send(url, 'GET', **kwargs)
 
+
 class OpenAQ(API):
     """Create an instance of the OpenAQ API
 
     """
+
     def __init__(self, version='v1', **kwargs):
         """Initialize the OpenAQ instance.
 

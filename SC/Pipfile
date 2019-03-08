@@ -15,6 +15,9 @@ sklearn = "*"
 gunicorn = "*"
 psycopg2 = "*"
 requests = "*"
+matplotlib = "*"
+seaborn = "*"
+py-openaq = "*"
 
 [requires]
 python_version = "3.6"
