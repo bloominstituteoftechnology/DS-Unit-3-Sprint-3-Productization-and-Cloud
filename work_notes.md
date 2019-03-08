@@ -16,8 +16,8 @@
 3. Keeping on top of project while it grows 
 
 ## Thursday
-1. *What went well (in the context of working on the assignment) today?
-2. What was particularly interesting or surprising about the topic(s) today?
-3. What was the most challenging part of the work today, and why?*
+1. the app is deployed!  
+2. bugs -- finicky, weird bugs. 
+3. directory and input structure, like sometimes putting `.` or `..` isn't enough. i'm starting to explore weird stuffl ike `from __future__` and `import sys` to work around importing files from other directories
 
 

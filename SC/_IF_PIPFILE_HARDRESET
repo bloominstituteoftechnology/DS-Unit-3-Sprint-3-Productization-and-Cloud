@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pipenv install flask flask-sqlalchemy python-decouple numpy sklearn gunicorn dotenv psycopg2 pandas requests
