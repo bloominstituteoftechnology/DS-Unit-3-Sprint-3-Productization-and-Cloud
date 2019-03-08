@@ -11,12 +11,9 @@ DB = SQLAlchemy(APP)
 @APP.route('/')
 def root():
     """Base view."""
-    above5 = Record.query.filter(Record.value >= 5).all()
-    above10 = Record.query.filter(Record.value >= 10).all()
-
+    city_list = [('Los Angeles',1),('Abu Dhabi',2)]
     return render_template('home.html', 
-                            above10=above10, 
-                            above5=above5,
+                            city_list=city_list,
                             title='Air Quality Monitor')
 
 
@@ -25,22 +22,51 @@ def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    # air_stats = times_and_values()
-    for x in times_and_values():
-        db_record = Record(datetime=x[0], value=x[1])
-        DB.session.add(db_record)
+    city_list = ['Los Angeles','Abu Dhabi']
+    
+    for name in city_list:
+        db_city=City(name=name)
+
+        for x in times_and_values(city=db_city.name):
+            db_record = Record(datetime=x[0], value=x[1])
+            db_city.records.append(db_record)
+            DB.session.add(db_record)
     
     DB.session.commit()
     return 'Data refreshed!'
+
+@APP.route('/city/<city_id>', methods=['GET'])
+def city(city_id=None):
+    # city_id = city_id
+    above5 = Record.query.filter(Record.id == city_id, Record.value >= 5).all()
+    above10 = Record.query.filter(Record.id == city_id, Record.value >= 10).all()
+    this_city = City.query.filter(City.id == city_id).one()
+    all_air = Record.query.filter(Record.id == city_id).all()
+    return render_template('city.html', 
+                            above10=above10, 
+                            above5=above5,
+                            all_air=all_air
+                            name=this_city.name,
+                            title=this_city.name)
 
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
     datetime = DB.Column(DB.String(25))
     value = DB.Column(DB.Float, nullable=False)
+    city_id = DB.Column(DB.Integer, DB.ForeignKey('city.id'), nullable=False)
+    city = DB.relationship('City', backref=DB.backref('records', lazy=True))
 
     def __repr__(self):
         return '< Time {} --- Value {} >'.format(self.datetime, self.value)
+
+
+class City(DB.Model):
+    id = DB.Column(DB.Integer, primary_key=True)
+    name = DB.Column(DB.String(25), nullable=False)
+
+    def __repr__(self):
+        return '< {} --- {} >'.format(self.id, self.name)
 
 
 def times_and_values(city='Los Angeles', parameter='pm25'):
@@ -51,3 +77,4 @@ def times_and_values(city='Los Angeles', parameter='pm25'):
         value = row['value']
         results.append((date, value))
     return results
+
