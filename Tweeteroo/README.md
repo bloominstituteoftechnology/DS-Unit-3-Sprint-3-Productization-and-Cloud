@@ -1,1 +1,2 @@
-Simple web app for silly Twitter predictions :)
+# Tweeteroo
+Simple web app for silly Twitter comparisons and predictions :)
