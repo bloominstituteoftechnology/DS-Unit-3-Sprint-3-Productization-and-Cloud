@@ -28,7 +28,7 @@ def root():
     """Base view."""
     # utc_datetime_value = la_pm(city, parameter)
     value_10 = Record.query.filter(Record.value >= 10).all()
-    return value_10
+    return render_template('base.html', title='Air Quality', value_10=value_10)
 
 
 class Record(DB.Model):
@@ -51,4 +51,4 @@ def refresh():
         record = Record(datetime=x[0], value=x[1])
         DB.session.add(record)
     DB.session.commit()
-    return 'Data refreshed!'
+    return render_template('base.html', title='Data refreshed!')
