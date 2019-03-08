@@ -21,29 +21,17 @@ class Record(DB.Model):
 
 def add_record(record):
     try:
-        pass
+        record = Record(record)
+        db_record = (Record.query.get(record.id) or 
+                     Record(id=record.id, datetime=datetime, value=value))
+        DB.session.add(db_record)
+
     except Exception as e:
-        pass
+        print('Error processing {}: {}'.format(username, e))
+        raise e
     else:
-        pass
+        DB.session.commit()
 
-
-@APP.route('/')
-def root():
-    """Base view."""
-    # return 'TODO - part 2 and beyond!'
-    los_angeles_data = get_los_angeles_data()
-    return str(los_angeles_data)
-
-@APP.route('/main')
-def get_los_angeles_data():
-    """ Retrieves 100 observations of measurements of fine particulate
-    matter (PM 2.5) in the Los Angeles area."""
-    status, body = API.measurements(city='Los Angeles', parameter='pm25')
-    dt_values_tups_list = [(dic['date']['utc'], dic['value']) for
-                           dic in body['results']]
-
-    return dt_values_tups_list
 
 @app.route('/record', methods=['POST'])
 @app.route('/record', methods=['GET'])
@@ -64,6 +52,23 @@ def record(name=None):
     #     tweets = []
     # return render_template('user.html', title=name, tweets=tweets,
     #                        message=message)
+
+@APP.route('/')
+def root():
+    """Base view."""
+    # return 'TODO - part 2 and beyond!'
+    los_angeles_data = get_los_angeles_data()
+    return str(los_angeles_data)
+
+@APP.route('/main')
+def get_los_angeles_data():
+    """ Retrieves 100 observations of measurements of fine particulate
+    matter (PM 2.5) in the Los Angeles area."""
+    status, body = API.measurements(city='Los Angeles', parameter='pm25')
+    dt_values_tups_list = [(dic['date']['utc'], dic['value']) for
+                           dic in body['results']]
+
+    return dt_values_tups_list
 
 @APP.route('/refresh')
 def refresh():
