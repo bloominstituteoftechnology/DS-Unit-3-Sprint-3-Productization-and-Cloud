@@ -1,5 +1,10 @@
 # Data Science Unit 3 Sprint Challenge 4
 
+### NOTE TO SELF: -- Currently you need `export FLASK_APP=aq_dashboard.py` and you need to `flask run` from inside the `sc` (interior) directory (12:20pm)
+
+
+
+
 ## Air Quality in the Cloud
 
 In this sprint challenge you will build a Flask-powered web application that
