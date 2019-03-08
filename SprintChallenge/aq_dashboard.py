@@ -1,5 +1,5 @@
 """OpenAQ Air Quality Dashboard with Flask."""
-from flask import Flask, redirect, url_for
+from flask import Flask, render_template
 import openaq
 from flask_sqlalchemy import SQLAlchemy
 
@@ -65,9 +65,9 @@ def root():
    
     risky_pm25 = Record.query.filter(Record.value >= 10.0).all()
 
-    risky_pm25 = ' '.join(str(x) for x in risky_pm25)
+    #risky_pm25 = ' '.join(str(x) for x in risky_pm25)
     
   
-    print(risky_pm25)
+    
   
-    return risky_pm25
+    return render_template('base.html', title='Home', records=risky_pm25)
