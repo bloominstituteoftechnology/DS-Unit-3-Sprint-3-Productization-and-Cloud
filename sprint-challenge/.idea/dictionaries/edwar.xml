@@ -2,6 +2,7 @@
   <dictionary name="edwar">
     <words>
       <w>angeles</w>
+      <w>sqlalchemy</w>
     </words>
   </dictionary>
 </component>

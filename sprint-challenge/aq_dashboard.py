@@ -40,6 +40,9 @@ class Record(DB.Model):
 
 
 def populate_db():
+    """ Acts as a querying object for current OpenAQ data, parses the resulting tuple from query_aq()
+        Writes the parsed data to local database on per record basis.
+    """
     utc = 0
     value = 1
 
@@ -55,7 +58,6 @@ def populate_db():
 @APP.route('/')
 def root():
     """Base view. Uses utility functions to return Air Quality data and serves to Flask for web rendering"""
-    print('Time stamps of dangerous air quality!')
     bad_air = DB.session.query(Record).filter(Record.value >= 10).all()
     for air in bad_air:
         return str(air)
@@ -68,5 +70,3 @@ def refresh():
     DB.create_all()
     populate_db()
     return 'Data refreshed!'
-
-print(root())
