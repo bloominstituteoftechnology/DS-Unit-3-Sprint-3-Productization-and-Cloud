@@ -1,1 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Los Angeles Air Quality</title>
+        <!-- CSS, keywords, metadata goes here -->
+    </head>
 
+    <body>
+        <h1>Los Angeles Air Quality</h1>
+
+        {% block content %}
+        <ul>
+            {% for record in records %}
+            <li>{{ record }}</li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </body>
+</html>
