@@ -9,7 +9,9 @@ api = openaq.OpenAQ()
 @APP.route('/')
 def root():
     """Base view."""
-    return 'TODO - part 2 and beyond!'
+    # return 'TODO - part 2 and beyond!'
+    los_angeles_data = get_los_angeles_data()
+    return str(los_angeles_data)
 
 @APP.route('/main')
 def get_los_angeles_data():
@@ -18,4 +20,4 @@ def get_los_angeles_data():
     status, body = api.measurements(city='Los Angeles', parameter='pm25')
     dt_values_tups_list = [(dic['date'], dic['value']) for dic in body['results']]
 
-    return str(dt_values_tups_list)
+    return dt_values_tups_list
