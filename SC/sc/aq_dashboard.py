@@ -2,7 +2,7 @@
 import openaq
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from random import randint
 
 ''' #!$#!$#!$#!$#!@$#@!$#@!
 
@@ -59,6 +59,7 @@ class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
     datetime = DB.Column(DB.String(25))
     value = DB.Column(DB.Float, nullable=False)
+    city = DB.Column(DB.String(40))
 
     def __repr__(self):
         return f'<value: {self.value}, utc_date: {self.datetime} >'
@@ -72,6 +73,23 @@ def root():
     return s0  # + s1
 
 
+def add_or_update_valudts(city):
+
+    try:
+        api = openaq.OpenAQ()
+        status, resp = api.measurements(city=city, parameter='pm25')
+        values = [x['value'] for x in resp['results']]
+        udts = [x['date']['utc'] for x in resp['results']]
+
+        for v, d in zip(values, udts):
+            DB.session.add(Record(value=v, datetime=d,
+                                  city=city, id=randint(10**4, 10**5)))
+    except Exception as e:
+        print("some issue", e)
+    else:
+        DB.session.commit()
+
+
 @app.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data.
@@ -82,12 +100,18 @@ def refresh():
     DB.drop_all()
     DB.create_all()
 
-    api = openaq.OpenAQ()
-    status, resp = api.measurements(city='Los Angeles', parameter='pm25')
-    values = [x['value'] for x in resp['results']]
-    udts = [x['date']['utc'] for x in resp['results']]
+    add_or_update_valudts("Los Angeles")
+    add_or_update_valudts("Buenos Aires")
+    add_or_update_valudts("Dubai")
 
-
-# TODO Get data from OpenAQ, make Record objects with it, and add to db
-    DB.session.commit()
     return 'Data refreshed!'
+
+
+@app.route('/risky')
+def risky():
+    ''' Now that your data is in a database, revisit your main route - instead of pulling all data live, query the database for any Record objects that have value greater or equal to 10. The filter method of SQLALchemy queries will be invaluable for this.
+
+Finally, return this filtered list of "potentially risky" PM 2.5 datetime/value tuples. You now have a (very basic) dashboard, that stores, updates, and displays useful data!'''
+    refresh()
+    x = DB.record.filter(DB.record.value >= 10)
+    return str(x)
