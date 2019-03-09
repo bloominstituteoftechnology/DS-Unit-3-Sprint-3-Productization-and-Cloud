@@ -1,0 +1,1 @@
+web: gunicorn scdeploy:APP -t 120
