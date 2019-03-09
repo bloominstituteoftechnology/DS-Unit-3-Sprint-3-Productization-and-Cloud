@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Science Unit 3 Sprint Challenge 4 - {{ title }}</title>
+        <!-- CSS, keywords, metadata goes here -->
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+    </head>
+
+    <body>
+        <h1>Stretch!</h1>
+
+        <ul>
+            {% for d in ladata %}
+            <li>{{ d.id }} - {{ d.datetime}} - {{ d.value}}</li>
+            {% endfor %}
+         </ul>
+    </body>
+</html>
