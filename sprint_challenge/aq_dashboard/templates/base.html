@@ -8,7 +8,7 @@
   <h2>Open Air Quality for Los Angeles</h2>
   {% for item in records %}
   <ul>
-    <li>{{ item.datetime }} : {{ item.value }}</li>
+    <li> At {{ item.datetime }} the PM25 was recorded at the level of {{ item.value }} </li>
   </ul>
   {% endfor%}
 </body>
