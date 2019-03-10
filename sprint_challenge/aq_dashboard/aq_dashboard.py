@@ -25,8 +25,16 @@ def refresh():
     DB.drop_all()
     DB.create_all()
     # TODO Get data from OpenAQ, make Record objects with it, and add to db
+    data = get_api_data()
+    for record in data:
+        if not DB.session.query(Record).filter(Record.datetime == record.datetime).first():
+            DB.session.add(record)
+
     DB.session.commit()
-    return 'Data refreshed!'
+
+    records = Record.query.all()
+    b = str(records)
+    return b
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
@@ -44,5 +52,8 @@ def get_api_data():
     status, resp = api.measurements(city='Los Angeles', parameter='pm25')
     api_data = [(item['date']['utc'], item['value'])
                     for item in resp['results']]
+    for record in api_data:
+        data.append(Record(datetime=record[0], value=record[1]))
 
-    return api_data
+    return data
+
