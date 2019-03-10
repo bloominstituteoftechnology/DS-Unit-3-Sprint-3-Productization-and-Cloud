@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open Air Quality for Los Angeles</title>
+</head>
+<body>
+  <h2>Open Air Quality for Los Angeles</h2>
+  {% for item in records %}
+  <ul>
+    <li>{{ item.datetime }} : {{ item.value }}</li>
+  </ul>
+  {% endfor%}
+</body>
+</html>

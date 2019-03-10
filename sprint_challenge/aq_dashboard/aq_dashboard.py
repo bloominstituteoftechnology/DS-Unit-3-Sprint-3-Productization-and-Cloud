@@ -1,5 +1,5 @@
 """   """
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 # import matplotlib.pyplot as plt
 import openaq
@@ -20,7 +20,7 @@ def root():
     records = Record.query.filter(Record.value >= 10).all()
 
     c = str(records)
-    return c
+    return render_template('base.html', records=records)
 
 @APP.route('/refresh')
 def refresh():
@@ -34,7 +34,7 @@ def refresh():
     #list of "potentially risky" PM 2.5
     records = Record.query.filter(Record.value >= 10).all()
     b = str(records)
-    return b
+    return render_template('base.html', records=records, message='Data refreshed')
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
