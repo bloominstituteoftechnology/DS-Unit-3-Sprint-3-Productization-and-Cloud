@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 numpy = "*"
 pandas = "*"
+openaq = "*"
 
 [requires]
 python_version = "3.5"

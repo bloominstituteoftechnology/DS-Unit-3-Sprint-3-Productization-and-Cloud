@@ -44,15 +44,11 @@ class API(object):
 
     def _send(self, endpoint, method='GET', **kwargs):
         """Make an API call of any method
-
         :param endpoint: API endpoint
         :param method: API call type. Options are PUT, POST, GET, DELETE
-
         :type endpoint: string
         :type method: string
-
         :returns: (status_code, json_response)
-
         :raises ApiError: raises an exception
         """
         auth = (self._key, self._pswd)
@@ -81,17 +77,13 @@ class API(object):
 
 class OpenAQ(API):
     """Create an instance of the OpenAQ API
-
     """
     def __init__(self, version='v1', **kwargs):
         """Initialize the OpenAQ instance.
-
         :param version: API version.
         :param kwargs: API options.
-
         :type version: string
         :type kwargs: dictionary
-
         """
         self._baseurl = 'https://api.openaq.org'
 
@@ -99,15 +91,12 @@ class OpenAQ(API):
 
     def cities(self, **kwargs):
         """Returns a listing of cities within the platform.
-
         :param country: limit results by a certain country
         :param limit: limit results in the query. Default is 100. Max is 10000.
         :param page: paginate through the results. Default is 1.
         :param order_by: order by one or more fields (ex. order_by=['country', 'locations']). Default value is 'country'
         :param sort: define the sort order for one or more fields (ex. sort='desc')
-
         :return: dictionary containing the *city*, *country*, *count*, and number of *locations*
-
         :type country: 2-digit ISO code
         :type limit: number
         :type order_by: string or list of strings
@@ -116,9 +105,7 @@ class OpenAQ(API):
         :type country: string or array of strings
         :type df: bool
         :type index: string
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.cities()
@@ -143,23 +130,18 @@ class OpenAQ(API):
 
     def countries(self, **kwargs):
         """Returns a listing of all countries within the platform
-
         :param order_by: order by one or more fields (ex. order_by=['cities', 'locations']). Default value is 'country'
         :param sort: define the sort order for one or more fields (ex. sort='desc')
         :param limit: change the number of results returned. Max is 10000. Default is 100.
         :param page: paginate through results. Default is 1.
-
         :type order_by: string or list
         :type sort: string
         :type limit: int
         :type page: int
         :type df: bool
         :type index: string
-
         :return: dictionary containing the *code*, *name*, *count*, *cities*, and number of *locations*.
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.countries()
@@ -186,7 +168,6 @@ class OpenAQ(API):
 
     def latest(self, **kwargs):
         """Provides the latest value of each parameter for each location
-
         :param city: limit results by a certain city. Defaults to ``None``.
         :param country: limit results by a certain country. Should be a 2-digit
                         ISO country code. Defaults to ``None``.
@@ -200,7 +181,6 @@ class OpenAQ(API):
                         Default value is 2500.
         :param limit: change the number of results returned. Max is 10000. Default is 100.
         :param page: paginate through the results.
-
         :type city: string
         :type country: string
         :type location: string
@@ -212,11 +192,8 @@ class OpenAQ(API):
         :type page: int
         :type df: bool
         :type index: string
-
         :return: dictionary containing the *location*, *country*, *city*, and number of *measurements*
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.latest()
@@ -249,7 +226,6 @@ class OpenAQ(API):
 
     def locations(self, **kwargs):
         """Provides metadata about distinct measurement locations
-
         :param city: Limit results by one or more cities. Defaults to ``None``. Can define as a single city
                         (ex. city='Delhi'), a list of cities (ex. city=['Delhi', 'Mumbai']), or as a tuple
                         (ex. city=('Delhi', 'Mumbai')).
@@ -270,7 +246,6 @@ class OpenAQ(API):
         :param sort: define the sort order for one or more fields (ex. sort='desc')
         :param limit: change the number of results returned. Max is 10000. Default is 100.
         :param page: paginate through the results.
-
         :type city: string, array, or tuple
         :type country: string, array, or tuple
         :type location: string, array, or tuple
@@ -285,12 +260,9 @@ class OpenAQ(API):
         :type page: int
         :type df: bool
         :type index: string
-
         :return: a dictionary containing the *location*, *country*, *city*, *count*, *distance*,
                     *sourceName*, *sourceNames*, *firstUpdated*, *lastUpdated*, *parameters*, and *coordinates*
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.locations()
@@ -320,7 +292,6 @@ class OpenAQ(API):
 
     def measurements(self, **kwargs):
         """Provides data about individual measurements
-
         :param city: Limit results by a certain city. Defaults to ``None``.
         :param country: Limit results by a certain country. Should be a 2-digit
                         ISO country code. Defaults to ``None``.
@@ -342,7 +313,6 @@ class OpenAQ(API):
                             *averagingPeriod*, and *sourceName*.
         :param limit: Change the number of results returned. Max is 10000 and default is 100.
         :param page: Paginate through the results
-
         :type city: string
         :type country: string
         :type location: string
@@ -361,12 +331,9 @@ class OpenAQ(API):
         :type page: number
         :type df: bool
         :type index: string
-
         :return: a dictionary containing the *date*, *parameter*, *value*, *unit*,
             *location*, *country*, *city*, *coordinates*, and *sourceName*.
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.measurements(city = 'Delhi')
@@ -401,21 +368,16 @@ class OpenAQ(API):
     def fetches(self, **kwargs):
         """Provides data about individual fetch operations that are used to populate
         data in the platform.
-
         :param order_by: order by one or more fields (ex. order_by=['timeEnded', 'count']). Default value is 'country'
         :param sort: define the sort order for one or more fields (ex. sort='desc')
         :param limit: change the number of results returned. Max is 10000. Default is 100.
         :param page: paginate through the results. Default is 1.
-
         :type order_by: string or list
         :type sort: string
         :type limit: int
         :type page: int
-
         :return: dictionary containing the *timeStarted*, *timeEnded*, *count*, and *results*
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.fetches()
@@ -461,18 +423,13 @@ class OpenAQ(API):
     def parameters(self, **kwargs):
         """
         Provides a simple listing of parameters within the platform.
-
         :param order_by: order by one or more fields (ex. order_by=['preferredUnit', 'id']). Default value is 'country'
         :param sort: define the sort order for one or more fields (ex. sort='desc')
-
         :type order_by: string or list
         :type sort: string
-
         :return: a dictionary containing the *id*, *name*, *description*, and
             *preferredUnit*.
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.parameters()
@@ -492,24 +449,19 @@ class OpenAQ(API):
     def sources(self, **kwargs):
         """
         Provides a list of data sources.
-
         :param order_by: order by one or more fields (ex. order_by=['active', 'country']). Default value is 'country'
         :param sort: define the sort order for one or more fields (ex. sort='desc')
         :param limit: Change the number of results returned.
         :param page: Paginate through the results
-
         :type limit: number
         :type page: number
         :type df: bool
         :type index: string
         :type order_by: string or list
         :type sort: string
-
         :return: a dictionary containing the *url*, *adapter*, *name*, *city*,
             *country*, *description*, *resolution*, *sourceURL*, *contacts*, and *active*.
-
         :Example:
-
         >>> import openaq
         >>> api = openaq.OpenAQ()
         >>> status, resp = api.sources()
