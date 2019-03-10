@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Open Air Quality for Los Angeles</title>
+  <title>Open Air Quality</title>
 </head>
 <body>
   <h2>Open Air Quality for Los Angeles</h2>
   {% for item in records %}
+  <ul>
+    <li> At {{ item.datetime }} the PM25 was recorded at the level of {{ item.value }} </li>
+  </ul>
+  {% endfor%}
+  <h4>Delhi</h4>
+  {% for item in delirecords %}
   <ul>
     <li> At {{ item.datetime }} the PM25 was recorded at the level of {{ item.value }} </li>
   </ul>
