@@ -15,8 +15,11 @@ DB = SQLAlchemy(APP)
 @APP.route('/')
 def root():
     """Base view."""
-    api_data = get_api_data()
-    c = str(api_data)
+    data = get_api_data()
+    add_data(data)
+    records = Record.query.filter(Record.value >= 10).all()
+
+    c = str(records)
     return c
 
 @APP.route('/refresh')
@@ -26,13 +29,10 @@ def refresh():
     DB.create_all()
     # TODO Get data from OpenAQ, make Record objects with it, and add to db
     data = get_api_data()
-    for record in data:
-        if not DB.session.query(Record).filter(Record.datetime == record.datetime).first():
-            DB.session.add(record)
+    add_data(data)
 
-    DB.session.commit()
-
-    records = Record.query.all()
+    #list of "potentially risky" PM 2.5
+    records = Record.query.filter(Record.value >= 10).all()
     b = str(records)
     return b
 
@@ -43,6 +43,13 @@ class Record(DB.Model):
 
     def __repr__(self):
         return 'Date:{}, pm25: {}'.format(self.datetime, self.value)
+
+def add_data(data):
+
+    for record in data:
+        if not DB.session.query(Record).filter(Record.datetime == record.datetime).first():
+            DB.session.add(record)
+    DB.session.commit()
 
 def get_api_data():
 
