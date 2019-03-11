@@ -251,3 +251,8 @@ just built on another API ([OpenStreetMap](https://www.openstreetmap.org/)).
 Also, read up more on [PM
 2.5](https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm) and how it
 relates to health.
+
+
+
+
+AMEMEBER HOW TO DO THE DICTIONARY [x['date']['utc'] for x in body['results']]
