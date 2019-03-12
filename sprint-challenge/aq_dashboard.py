@@ -7,7 +7,8 @@ import datetime
 APP = Flask(__name__)
 api = openaq.OpenAQ()
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-DB = SQLAlchemy(APP)
+DB = SQLAlchemy()
+DB.init_app(APP)
 
 @APP.route('/')
 def root():
