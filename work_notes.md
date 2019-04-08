@@ -1,19 +1,19 @@
 Monday <br>
--What went well (in the context of working on the assignment) today?
--What was particularly interesting or surprising about the topic(s) today?
--What was the most challenging part of the work today, and why?
+-What went well (in the context of working on the assignment) today? <br>
+-What was particularly interesting or surprising about the topic(s) today? <br> 
+-What was the most challenging part of the work today, and why? <br>
 
-Tuesday
--What went well (in the context of working on the assignment) today?
--What was particularly interesting or surprising about the topic(s) today?
--What was the most challenging part of the work today, and why?
+Tuesday <br>
+-What went well (in the context of working on the assignment) today? <br>
+-What was particularly interesting or surprising about the topic(s) today? <br>
+-What was the most challenging part of the work today, and why? <br>
 
-Wednesday
--What went well (in the context of working on the assignment) today?
--What was particularly interesting or surprising about the topic(s) today?
--What was the most challenging part of the work today, and why?
+Wednesday <br>
+-What went well (in the context of working on the assignment) today? <br>
+-What was particularly interesting or surprising about the topic(s) today? <br>
+-What was the most challenging part of the work today, and why? <br>
 
-Thursday
--What went well (in the context of working on the assignment) today?
--What was particularly interesting or surprising about the topic(s) today?
--What was the most challenging part of the work today, and why?
+Thursday <br>
+-What went well (in the context of working on the assignment) today? <br>
+-What was particularly interesting or surprising about the topic(s) today? <br>
+-What was the most challenging part of the work today, and why? <br>
