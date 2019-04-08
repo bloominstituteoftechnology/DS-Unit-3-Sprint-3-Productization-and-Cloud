@@ -19,4 +19,7 @@ What was the most challenging part of the work today?:
 I might sound like a broken record, but it was definitely just making
 the objects connect properly with foriegn keys. Capitalization is key.
 
+The VSCode install that required a remote host and emulating firefox so the download would go in the right place
+was harder then the assignment. : )
+
 
