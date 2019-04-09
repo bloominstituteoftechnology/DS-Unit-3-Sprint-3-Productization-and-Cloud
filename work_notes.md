@@ -22,4 +22,18 @@ the objects connect properly with foriegn keys. Capitalization is key.
 The VSCode install that required a remote host and emulating firefox so the download would go in the right place
 was harder then the assignment. : )
 
+Tuesday 04/09
+the app now connects to the twitter api and can collect tweets from a given user. Webpage reformatted,
+and can reset db from it.
+
+
+What went well: fewer mistakes
+
+What was particularly interesting or suprising about today?
+The range of options twitter gives you for operating on its api. There's endless ways to expand on
+this app, especially considering how easily it could be mixed with another api, Basilica.
+
+What was the most challenging part of the work today?
+command line stuff that will take a while to run, hard to parse through long api related prints
+such as the list of ids or the directory.
 
