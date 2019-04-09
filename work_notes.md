@@ -14,6 +14,7 @@ What was the most challenging part of the work today, and why?
 
 ==>> Doing all that damned data entry for users and tweets
 
+
 Tuesday, 4/9
 
 What went well (in the context of working on the assignment) today?
@@ -22,7 +23,7 @@ What went well (in the context of working on the assignment) today?
 
 What was particularly interesting or surprising about the topic(s) today?
 
-==>> Nothing, really
+==>> db at 6MB with only siz users (likely mostly basilica stuff)
 
 What was the most challenging part of the work today, and why?
 
