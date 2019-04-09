@@ -23,7 +23,7 @@ What went well (in the context of working on the assignment) today?
 
 What was particularly interesting or surprising about the topic(s) today?
 
-==>> db at 6MB with only siz users (likely mostly basilica stuff)
+==>> db at 6MB with only six users (likely mostly basilica stuff)
 
 What was the most challenging part of the work today, and why?
 
