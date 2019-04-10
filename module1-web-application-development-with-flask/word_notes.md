@@ -1,4 +1,4 @@
-1. pipenv helps in managing our environment. It helps in having a reproducible and deployable environment. Specifically, we can tell if the environment has all all the dependencies we need and can ignore, so that deploying locally and on heroku becomes easier. 
+1. `pipenv` helps in managing our environment. It helps in having a reproducible and deployable environment. Specifically, we can tell if the environment has all all the dependencies we need and can ignore, so that deploying locally and on heroku becomes easier. 
 2. Pipfile and Pipfile.lock helps in specifying whats in our environment so that it can be reproduced and deployed effectively.
 3. __name__ is the internal string, that Python populates directly. If the file name is hello.py, __name__ will be directly replaced by hello.py
 4. Decorators (@) modify functions. It adds context to the function. By definition, "a decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it"
