@@ -19,6 +19,7 @@
 
 ## 4/11/2019
 * https://github.com/extrajp2014/TwitOff
+* https://extrajp2014-twitoff.herokuapp.com/
 * https://github.com/extrajp2014/DS-Unit-3-Sprint-4-Productization-and-Cloud/blob/master/Final_Product.png
 * Deploy application to the web using Heroku
 * Heroku + Flask is an adequate solution to deploy small scall app to the web.
