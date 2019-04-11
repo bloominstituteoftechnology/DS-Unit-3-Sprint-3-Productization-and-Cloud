@@ -30,7 +30,7 @@ What was the most challenging part of the work today, and why?
 ==>> Overcoming Ryan's typo - sorry, Ryan, couldn't resist ;-)
 
 
-Tuesday, 4/10
+Wednesday, 4/10
 
 What went well (in the context of working on the assignment) today?
 
