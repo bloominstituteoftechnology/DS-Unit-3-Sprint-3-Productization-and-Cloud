@@ -48,4 +48,4 @@ def root():
 
     dirty_air = Record.query.filter(Record.value >= 10).all()
 
-    return render_template('htm_hell.html', title='home', readings=dirty_air)
+return render_template('htm_hell.html', title='home', readings=dirty_air)
