@@ -1,5 +1,8 @@
 # Data Science Unit 3 Sprint Challenge 4
 
+## Completed Product
+<img src='https://github.com/extrajp2014/DS-Unit-3-Sprint-4-Productization-and-Cloud/blob/master/sprint-challenge/air_quality_app_screenshot.png'>
+
 ## Air Quality in the Cloud
 
 In this sprint challenge you will build a Flask-powered web application that
