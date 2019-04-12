@@ -1,7 +1,6 @@
 from flask import Flask, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
-import urllib, openaq, json
-import requests
+import openaq
 
 app = Flask(__name__)
 db = SQLAlchemy()
