@@ -36,7 +36,6 @@ def refresh():
     db.drop_all()
     db.create_all()
 
-    city = ' '.join([word.capitalize() for word in city.split('-')])
     samples = particular_matter_samples('Los Angeles')
     records = [Record(datetime=date, city=city, value=measurement) for date, city, measurement in samples]	
 
