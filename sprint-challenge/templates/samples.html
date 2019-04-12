@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block body %}
+  {% if samples|length != 0 %}
+    <ul>
+    {% for sample in samples %}
+    <li>{{ sample.city }} - {{ sample.datetime }} - {{ sample.value }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No samples found. This is likely an error, retrying...</p>
+    <script>
+      setInterval(_ => { 
+        fetch(window.location.host+'/refresh').then(_ => window.reload(true)) 
+      }, 300)
+    </script>
+  {% endif %}
+{% endblock %}
