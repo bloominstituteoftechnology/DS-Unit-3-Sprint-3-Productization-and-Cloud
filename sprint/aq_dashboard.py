@@ -37,8 +37,8 @@ def refresh():
 
 
 
-DB.session.commit()
-return 'Data refreshed!'
+    DB.session.commit()
+    return 'Data refreshed!'
 
 
 
@@ -46,6 +46,6 @@ return 'Data refreshed!'
 def root():
     """Base view."""
 
-    dirty_air = Record.query.filter(Record.value >= 10).all()
+    dirty_air = Record.query.filter(Record.value >= 10.0).all()
 
-return render_template('htm_hell.html', title='home', readings=dirty_air)
+    return render_template('htm_hell.html', title='home', readings=dirty_air)
