@@ -17,8 +17,7 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        
-    return '<Time of Reading {} --- PM2.5 {}>'.format(self.datetime, self.value)
+        return '<Time of Reading {} --- PM2.5 {}>'.format(self.datetime, self.value)
 
 
 @APP.route('/refresh')
@@ -38,8 +37,8 @@ def refresh():
 
 
 
-DB.session.commit()
-return 'Data refreshed!'
+    DB.session.commit()
+    return 'Data refreshed!'
 
 
 
@@ -49,4 +48,4 @@ def root():
 
     dirty_air = Record.query.filter(Record.value >= 10).all()
 
-return render_template('htm_hell.html', title='home', readings=dirty_air)
+    return render_template('htm_hell.html', title='home', readings=dirty_air)
