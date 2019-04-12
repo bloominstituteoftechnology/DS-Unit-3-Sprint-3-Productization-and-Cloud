@@ -1,5 +1,5 @@
 
-from flask import Flask 
+from flask import Flask, render_template
 import openaq
 from flask_sqlalchemy import SQLAlchemy
 
@@ -22,20 +22,8 @@ def root():
     Queries the database and displays potentially risky PM values.
     """
     risky_instances = Record.query.filter(Record.value >= 10).all()
-    return(str(risky_instances))
+    return render_template('base.html', risky_instances=risky_instances)
 
-@APP.route('/get_data')
-def get_data():
-    """Retrieves and returns data from the API."""
-    status, body = api.measurements(city='Los Angeles', parameter='pm25')
-    
-    tuples = []
-    for result in body["results"]:
-        utc = result["date"]["utc"]
-        value = result["value"]
-        tuples.append((utc, value))
-        
-    return str(tuples)
 
 @APP.route('/refresh')
 def refresh():
@@ -50,4 +38,4 @@ def refresh():
         db_record = Record(datetime=utc, value=value)
         DB.session.add(db_record)
     DB.session.commit()
-    return 'Data refreshed!'
+    return render_template('refresh.html', message= 'Data Refreshed!')
