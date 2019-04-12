@@ -1,19 +1,28 @@
 {% extends "index.html" %}
 
 {% block body %}
-  <a href=/refresh>Refresh</a>
+  <input id=city><button id=submit>Retrieve Samples</button>
+  <script>
+    const button = document.getElementById('submit')
+    const input = document.getElementById('city')
+
+    button.onclick = _ => {
+      let city = input.value.replace(' ', '-').toLowerCase()
+      fetch(`http://${window.location.host}/refresh/${city}`)
+        .then(response => {
+          window.location = `http://${window.location.host}/${city}`
+        })
+    }
+  </script>
+  <hr>
+  <h4>{{ city }}</h4>
   {% if samples|length != 0 %}
     <ul>
     {% for sample in samples %}
-    <li>{{ sample.city }} - {{ sample.datetime }} - {{ sample.value }}</li>
+    <li>{{ sample.datetime }} - {{ sample.value }}</li>
     {% endfor %}
     </ul>
   {% else %}
-    <p>No samples found. This is likely an error, retrying...</p>
-    <script>
-      setInterval(_ => { 
-        fetch(window.location.host+'/refresh').then(_ => window.reload(true)) 
-      }, 300)
-    </script>
+    <p>No samples able to be retrieved, please select another city.</p>
   {% endif %}
 {% endblock %}

@@ -1,7 +1,7 @@
 from flask import Flask, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
-import openaq
-import json
+import urllib, openaq, json
+import requests
 
 app = Flask(__name__)
 db = SQLAlchemy()
@@ -24,22 +24,30 @@ db.create_all(app=app)
 def particular_matter_samples(city):
     status, response = openaq_api.measurements(city=city, parameter='pm25')
     air_samples = response['results']
+    
+    if status != 200:
+        return []
+
     return [(sample['date']['utc'], sample['city'], sample['value']) for sample in air_samples]
 
 @app.route('/')
-def index():
-    samples = Record.query.filter(Record.value >= 10).order_by(Record.value.desc()).all()
-    return render_template('samples.html', samples=samples) 
+@app.route('/<city>')
+def index(city='los-angeles'):
+    city = ' '.join([word.capitalize() for word in city.split('-')])
+    samples = Record.query.filter(Record.city == city).filter(Record.value >= 10).order_by(Record.value.desc()).all()
+
+    return render_template('samples.html', samples=samples, city=city) 
 
 @app.route('/refresh')
-def refresh():
-    db.drop_all()
-    db.create_all()
+@app.route('/refresh/<city>')
+def refresh(city='los-angeles'):
+    destination = '/{}'.format(city)
 
-    samples = particular_matter_samples('Los Angeles')
+    city = ' '.join([word.capitalize() for word in city.split('-')])
+    samples = particular_matter_samples(city)
     records = [Record(datetime=date, city=city, value=measurement) for date, city, measurement in samples]	
 
     db.session.add_all(records)
     db.session.commit()
 
-    return redirect(url_for('index'), 302) 
+    return redirect(destination, 302) 
