@@ -49,6 +49,16 @@ Basilica APIs via Python), then:
 
 ## Resources and Stretch Goals
 
+- [Flask routing](http://flask.pocoo.org/docs/1.0/quickstart/#routing) is simple
+  but powerful - take advantage of it!
+- [https://www.getpostman.com/](Postman) is an app to let you test both your
+  routes and a REST API
+- Go deeper with the Twitter API - use paging (offset by oldest fetched Tweet
+  ID) to pull older Tweets, so you can build a larger set of embedding data for
+  a given user
+- [twitter-scraper](https://github.com/kennethreitz/twitter-scraper) is another
+  approach to getting data from Twitter - no auth required (but Twitter may
+  choose to try to break it)
 - Make the home page a bit more useful - links to pulled users, descriptive
   text, etc.
 - Make your app look nicer - the earlier mentioned [Picnic
@@ -58,3 +68,6 @@ Basilica APIs via Python), then:
   takes a long time (and may even be rate limited) - organize your code in
   functions so these tasks can be performed "offline" (without loading the full
   Flask application)
+- Try using some of the other embeddings Basilica can return (images, general
+  text) - you can just experiment with it, or see if you can figure out a way to
+  incorporate it into the application (e.g. Tweeted photos, etc.)

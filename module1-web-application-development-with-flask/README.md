@@ -67,3 +67,5 @@ application using Flask and SQLite. A summary of the overall picture:
   sprint - but if you are interested in it, [Picnic CSS](https://picnicss.com/)
   and [Umbrella JS](https://umbrellajs.com/) are nice lightweight and modern
   tools (alternatives to Bootstrap and JQuery respectively)
+- Experiment with SQLAlchemy models - you can add more fields of interest to the
+  `Tweet` and `User` models and/or add different models for other purposes

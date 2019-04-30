@@ -72,3 +72,5 @@ We'll deploy the app! We'll step through all of the following:
   - But larger more complicated services are often deployed via more powerful
     services like AWS, Google Cloud, and Microsoft Azure
   - Again: Heroku first, and then explore alternatives
+- Add some basic permissions or possibly even an account system, so not everyone
+  can just add users, pull Tweets, or reset data
