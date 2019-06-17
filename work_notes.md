@@ -8,3 +8,6 @@ Created a flask app and database containing dummy data
 - dummy data
   - 2 users
   - 6 tweets.
+---
+
+## Tuesday
