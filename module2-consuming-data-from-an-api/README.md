@@ -45,10 +45,9 @@ Basilica APIs via Python), then:
   with actual Twitter data
 - Add an `embedding` field to your `Tweet` model, and functions to populate it
   with embeddings returned from Basilica
-- Add a `/user/<name>` route and template that pulls and displays user Tweets
 
 ## Resources and Stretch Goals
-
+- Add a `/user/<name>` route and template that pulls and displays user Tweets
 - [Flask routing](http://flask.pocoo.org/docs/1.0/quickstart/#routing) is simple
   but powerful - take advantage of it!
 - [https://www.getpostman.com/](Postman) is an app to let you test both your
