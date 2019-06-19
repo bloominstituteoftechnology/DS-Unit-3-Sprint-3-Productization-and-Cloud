@@ -13,8 +13,11 @@ What was the most challenging part of the work today, and why?
 
 Tuesday: Consuming Data From an API
 What went well (in the context of working on the assignment) today?
+--Successfully debugged a weird issue with my Basilica API key, got the assignment completed and stretch goal of adding a route to user/<username> that displays the recent tweets from that user.
 What was particularly interesting or surprising about the topic(s) today?
+--I have basically no experience with this weeks material, so just working thru bugs and just trying to keep up with all the new material being presented.
 What was the most challenging part of the work today, and why?
+Debugging the Basilica API issue.. Next up was figuring out how to query the SQLAlchemy objects and adding a new route to app.py to complete the assignment.
 
 Wednesday: Adding Data Science to a Web App
 What went well (in the context of working on the assignment) today?
