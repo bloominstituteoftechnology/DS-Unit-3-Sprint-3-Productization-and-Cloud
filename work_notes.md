@@ -48,3 +48,5 @@ _I am still working through the predict code but I am excited to see the predict
 - What was the most challenging part of the work today, and why?
 
 _Today was a catch-up day from yesterday so I am just now trying figure out how to incoroporate the predict aspect of my web app._
+
+https://github.com/standroidbeta/TwitOff
