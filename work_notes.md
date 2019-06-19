@@ -26,3 +26,16 @@ to run the app in the file.  It all still feels like magic to me.
 - **what was the most challenging part about the work today, and why?**
 
   - Getting used to how the routes work was pretty tricky. I had to do a lot of searching on my own, to figure out how flask works.  Making the correct references was hard to intuitively figure out.  Eventually I got something to run though.
+  
+# Day 3: Adding Data Science to web app
+- **what went well**
+
+  - Ultimately the app was able to run with a simple regression fed into it.  It can update correctly. I think. You can add users.  And compare them to see who is most likely to say a certain tweet.  
+  
+- **what was particularly interesting about the topic today?**
+
+  - It is cool to see a basic way in which a predictive model can be used within an app.  
+  
+- **what was the most challenging part about the work today, and why?**
+
+  - Figuring out how flask connects everything together canbe tricky. Especially when setting new routes and making them work well with layouts to display exactly what you want.  A little mispelling or mis-named variable can throw you into a loop as well.
