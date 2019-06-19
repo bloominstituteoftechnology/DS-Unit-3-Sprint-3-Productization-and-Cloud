@@ -9,4 +9,16 @@ What was particularly interesting or surprising about the topic(s) today?
 - I particularly enjoyed using knowledge from both the first and second week of this unit. I am really beginning to form a well grounded understanding of how websites interact with databases. <br>
 
 What was the most challenging part of the work today, and why?
-- Understanding the syntax of Flask. More specifically, understanding why and how the app.py script works. It is critical in data science to understand how databases work with web applications. I will continue to try to gain a more well rounded understanding of this interaction.
+- Understanding the syntax of Flask. More specifically, understanding why and how the app.py script works. It is critical in data science to understand how databases work with web applications. I will continue to try to gain a more well rounded understanding of this interaction.<br>
+
+## Day 2
+[Link to project repo](https://github.com/connorpheraty/TwitOff) <br> <br>
+
+What went well (in the context of working on the assignment) today?
+- Today I better understood the concepts and syntax learned in day 1 (the routing syntax in particular). I was able to pick up HTML quickly as I have had prior experience with the language. I enjoyed working with multiple files in the repo and seeing everything work together. <br>
+
+What was particularly interesting or surprising about the topic(s) today?
+- I am fascinated by how embeddings work, and specifically how Basilica breaks down a string into hundreds of float values that can be analyzed and interpreted with a regression model. I enjoyed learning about how the different components of a web application interact with each other (frontend, backend, database). I look forward to having a more detailed understanding of this area. <br>
+
+What was the most challenging part of the work today, and why?
+- The most challenging part of today (and in part yesterday) is developing a detailed mental model of how all of these files/components work together to form a working web application. I look forward to further studying the syntax of the different files of my package to further build upon my knowledge and understanding.
