@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Air Quality</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+  </head>
+  <body>
+      <nav><a href="/" class="brand"><span>Jason Pham - Air Quality Dashboard</span></a>
+
+      <div class="menu">
+        <a href="/refresh" class="button error">Reset Database</a>
+      </div>
+    </nav>
+
+    <br><br><br>
+    <center>
+    {% for record in records %}
+    DateTime: {{ record.datetime }} | PM25 Value: {{ record.value }}<br>
+               {% endfor %}
+    </center>
+  </body>
+</html>
