@@ -22,3 +22,16 @@ What was particularly interesting or surprising about the topic(s) today?
 
 What was the most challenging part of the work today, and why?
 - The most challenging part of today (and in part yesterday) is developing a detailed mental model of how all of these files/components work together to form a working web application. I look forward to further studying the syntax of the different files of my package to further build upon my knowledge and understanding.
+
+## Day 3
+[Link to project repo](https://github.com/connorpheraty/TwitOff) <br> <br>
+
+What went well (in the context of working on the assignment) today?
+- My understanding of how my html templates interact with the underlying python code has improved. I was able to create my first data science web application! I was able to follow Jon-Cody and Aaron's lectures and had a decent understanding in regards to what they were doing. <br>
+
+ What was particularly interesting or surprising about the topic(s) today?
+ - The most exciting part of today's assignment was running the website and seeing the application actually work! This is the first time that I was able to create a working data science related application from start to finish and I am amazed at the result (however trivial). <br>
+
+What was the most challenging part of the work today, and why? 
+- The most challenging part of the work today was debugging typos and little mistakes in my code. It is easy to be frustrated and lost when consistently getting errors. Attacking each problem with a cool head bit by bit, line by line can be difficult to do when working on the same problem for a long time. Standing up, doing exercise, and breathing some fresh air can help.
+
