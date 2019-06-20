@@ -39,3 +39,16 @@ to run the app in the file.  It all still feels like magic to me.
 - **what was the most challenging part about the work today, and why?**
 
   - Figuring out how flask connects everything together canbe tricky. Especially when setting new routes and making them work well with layouts to display exactly what you want.  A little mispelling or mis-named variable can throw you into a loop as well.
+  
+# Day 4: Deplying Web app on Heroku
+- **what went well**
+
+  - The app is fully deployed and works well. Sent link to some people, and no one had issues with the expected capabilities. So that is cool.  
+  
+- **what was particularly interesting about the topic today?**
+
+  - The fact that people anywhere in the world can see what I have created after today is pretty amazing to me.  I know the internet has made this possible for a while now. But creating an app from scratch (kind of) and deploying it, and having it work is pretty gratifying.
+  
+- **What was the most challengning part about the work today, and why?**
+
+  - Debugging the deployment of the heroku app is hard.  Mostly because I am not used to the errors that it spits out at me.  I am sure with more experience, the intuition of where things are going wrong will improve. But to begin with, it felt like hitting a bunch of road blocks with no detour signs easily available.  Making sure that the right environment is set up for the app is pretty tricky to for me.  All things that are hard to grasp when it is the first time being exposed to them.
