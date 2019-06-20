@@ -27,3 +27,17 @@ Answer: Working with the Twitter API was surprisingly simple and it was interest
 Q&A 3:
 What was the most challenging part of the work today, and why?
 Answer: I had a couple of errors I had to debug. The main one being simply missing a / from my .env file. 
+
+Wednesday:
+
+Q&A 1:
+What went well (in the context of working on the assignment) today? 
+Answer: Finally solved the bug, and was able to work ahead for tomorrow's assignment 
+
+Q&A 2:
+What was particularly interesting or surprising about the topic(s) today? 
+Answer: It is interesting how many little steps it takes to create an application. Alot of things to remember as far as the workflow is concerned. 
+
+Q&A 3:
+What was the most challenging part of the work today, and why?
+Answer: The most challenging part of today was slowing down and triple checking my code. I was in such a mood today where I did not feel like dealing with error messages so by slowing down I actually accomplished more. 
