@@ -21,8 +21,11 @@ Debugging the Basilica API issue.. Next up was figuring out how to query the SQL
 
 Wednesday: Adding Data Science to a Web App
 What went well (in the context of working on the assignment) today?
+--not much, tough day, finally got a working route for the comparison function
 What was particularly interesting or surprising about the topic(s) today?
+--Nothing in particular stands out
 What was the most challenging part of the work today, and why?
+--All of it.. putting all the pieces together, seeing forest thru the trees, etc
 
 Thursday: Web App Deployment
 What went well (in the context of working on the assignment) today?
