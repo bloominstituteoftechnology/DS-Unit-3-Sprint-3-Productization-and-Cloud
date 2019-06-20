@@ -35,3 +35,15 @@ What went well (in the context of working on the assignment) today?
 What was the most challenging part of the work today, and why? 
 - The most challenging part of the work today was debugging typos and little mistakes in my code. It is easy to be frustrated and lost when consistently getting errors. Attacking each problem with a cool head bit by bit, line by line can be difficult to do when working on the same problem for a long time. Standing up, doing exercise, and breathing some fresh air can help.
 
+## Day 4
+[Link to project repo](https://github.com/connorpheraty/TwitOff) <br> <br>
+
+What went well (in the context of working on the assignment) today?
+- Learning how to debug my heroku app deployment. I feel I am getting stronger at reading error messages and debugging in general. It can be a very painstaking process, but very fulfilling when solving a difficult problem. <br>
+
+ What was particularly interesting or surprising about the topic(s) today?
+ - How much work/code goes into hosting a web application. I really underestimated the amount of information that is required particularly at the top of the directory (.env files storing API keys, requirements file listing all imports and versions, Procfile for heroku). <br>
+
+ What was the most challenging part of the work today, and why? 
+ - The most challenging part is and will continue to be in the future -- remembering all the inputs that are necessary to deploy the app. There are a lot of files that are necessary that are not related to the core application (DS function, HTML). Going forward I will have to come back and refresh myself on a lot of the areas (particularly the routing syntax).
+
