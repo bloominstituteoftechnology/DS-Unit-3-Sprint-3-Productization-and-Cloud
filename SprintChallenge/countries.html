@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirQuality Country-City List</title>
+</head>
+<body>
+
+<h1 style="color: maroon">AirQuality</h1>
+<p>A list of cities with air quality data</p>
+<u>Not all cities listed return data</u>
+
+<ul>
+{%  for dictionary in data %}
+    <li><a href="https://api.openaq.org/v1/measurements?city={{ dictionary['urlencoded'] }}&parameter=pm25">{{ dictionary['city'] }}</a></li>
+
+{%  endfor %}
+</ul>
+
+</ul>
+</body>
