@@ -1,12 +1,13 @@
 """
 OpenAQ Air Quality Dashboard with Flask.
 """
+import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import openaq
 
 APP = Flask(__name__)
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+APP.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 DB = SQLAlchemy(APP)
 API = openaq.OpenAQ()
 
