@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Sprint Challenge - {{ title }}</title>
+        <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+    </head>
+
+
+    <nav>
+        <a href="/" class="brand"><span>Air Quality - Sprint Challenge!</span></a>
+              <!-- responsive-->
+        <input id="bmenub" type="checkbox" class="show">
+        <label for="bmenub" class="burger pseudo button">Menu</label>
+            <input id="bmenub" type="checkbox"
+            class="show">
+            <label for="bmenub" class="burger pseudo button">Menu</label>
+            <div class="menu">
+                <a action="/refresh" href="/refresh" class="button success">Refresh Data!</a>
+              </div>
+    </nav>
+        <article class="flex two" style="padding: 3em 4em;">
+        {% block content %}
+        <div>
+            <h1>Bad Air Quality Instances</h1>
+            {% for instance in risky_instances %}
+            <p>At {{ instance.datetime }} Los Angeles had a Particulate Matter of {{ instance.value }}</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
+    </article>
+</html>
