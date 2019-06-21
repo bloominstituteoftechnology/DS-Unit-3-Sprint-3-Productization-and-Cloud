@@ -11,6 +11,8 @@ import urllib.parse
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['ENV'] = 'production'
+
 DB = SQLAlchemy(app)
 
 def _finditem(obj, key):
