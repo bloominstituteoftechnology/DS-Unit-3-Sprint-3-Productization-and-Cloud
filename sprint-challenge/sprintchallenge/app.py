@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
-from .aq_dashboard import show_city_pm25
+from .aq_dashboard import show_city_pm25, query_aqi_level
 from flask_sqlalchemy import SQLAlchemy
-from .models import Record
+from .models import Record, DB
+import requests
 
-
+cities = ['Los Angeles'] #, 'New York', 'Shanghai']
 
 def create_app():
     """Create and configure an instance of the Flask Application"""
@@ -16,7 +17,11 @@ def create_app():
     def root():
         """List of readings from Los Angeles."""
 
-        readings = show_city_pm25('Los Angeles', 'pm25')
+        #this commented out method takes a live view of the readings, part2
+        # readings = show_city_pm25('Los Angeles', 'pm25')
+
+        readings = (query_aqi_level(10))
+        
         return render_template('base.html', readings = readings, message='')
 
     @APP.route('/refresh')
@@ -26,9 +31,10 @@ def create_app():
         DB.create_all()
 
         #add new readings to the database
-        readings = show_city_pm25('Los Angeles', 'pm25')
+        readings = show_city_pm25(city, 'pm25')
+
         for reading in readings:
-            db_reading = Record(datetime= str(reading[0]), value=str(reading[1]))
+            db_reading = Record(datetime= str(reading[0]), value=str(reading[1])) #, city=(reading[2])))
             DB.session.add(db_reading)
         DB.session.commit()
         return 'Data refreshed!'

@@ -11,9 +11,16 @@
         <p>UTC - PM2.5 reading</p>
 
         <ul>
-            {% for tuple in readings %}
-            <li>{{ tuple[0] }} - {{tuple[1]}}</li>
+
+
+            {% for db_object in readings %}
+            <li>{{ db_object.datetime }} - {{db_object.value}}</li>
             {% endfor %}
+
+            <!-- this code block was for displaying a list of tuples -->
+            <!-- {% for tuple in readings %}
+            <li>{{ tuple[0] }} - {{tuple[1]}}</li>
+            {% endfor %} -->
         </ul>
     </body>
 </html>
