@@ -1,4 +1,3 @@
-`
 """Simple openaq to only depend on json, math, and requests (no dfs/plots)."""
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -10,6 +9,7 @@ import math
 
 class ApiError(Exception):
     pass
+
 
 class API(object):
     """Generic API wrapper object.
@@ -75,6 +75,7 @@ class API(object):
 
     def _get(self, url, **kwargs):
         return self._send(url, 'GET', **kwargs)
+
 
 class OpenAQ(API):
     """Create an instance of the OpenAQ API
@@ -489,4 +490,3 @@ class OpenAQ(API):
 
     def __repr__(self):
         return "OpenAQ API"
-`

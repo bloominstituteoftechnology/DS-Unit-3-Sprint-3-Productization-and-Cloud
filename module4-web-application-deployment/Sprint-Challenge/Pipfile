@@ -6,6 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+flask-sqlalchemy = "*"
+requests = "*"
+flask = "*"
+py-openaq = "*"
+python-dateutil = "*"
 
 [requires]
 python_version = "3.6"
