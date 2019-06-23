@@ -75,6 +75,4 @@ def add_records(records, database):
             database.session.add(r)
     DB.session.commit()
 
-© 2019 GitHub, Inc.
-
 
