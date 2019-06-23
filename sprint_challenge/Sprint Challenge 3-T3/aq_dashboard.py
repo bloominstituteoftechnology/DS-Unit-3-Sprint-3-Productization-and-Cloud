@@ -1,11 +1,11 @@
 """OpenAQ Air Quality Dashboard with Flask."""
 from flask import Flask
-import openaq
+import openaq_py
 import requests
 import os
 from flask_sqlalchemy import SQLAlchemy
 
-api = openaq.OpenAQ()
+api = openaq_py.OpenAQ()
 
 APP = Flask(__name__)
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
@@ -25,12 +25,10 @@ class Record(DB.Model):
 
 @APP.route('/')
 def root():
-    retstr = ''
+    retstring = ''
     data = Record.query.filter(Record.value >= 10).all()
 
-    for s in data:
-        retstr = retstr + str(s) + '<br />'
-    return '<body>' + retstr + '</body>'
+    return str(data)
 
 @APP.route('/pull')
 def datapull():
@@ -48,13 +46,11 @@ def datapull():
         DB.session.add(vals)
     DB.session.commit()
     return retstring
-#'TODO - part 2 and beyond!'
 
 @APP.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    # TODO Get data from OpenAQ, make Record objects with it, and add to db
-    DB.session.commit()
+    datapull()
     return 'Data refreshed!'
