@@ -51,6 +51,8 @@ application using Flask and SQLite. A summary of the overall picture:
   API](https://developer.twitter.com/en/apply-for-access) and
   [Basilica](https://www.basilica.ai/), as we will use both APIs in our
   application to get more and real data!
+  
+  Reproduced Ben's lecture and Aaron's TwitOff. Signed up for APIs.
 
 ## Resources and Stretch Goals
 
