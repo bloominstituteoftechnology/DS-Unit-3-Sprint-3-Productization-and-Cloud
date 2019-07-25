@@ -23,5 +23,6 @@ embeddings = []
 
 for submission in submissions:
     if submission.selftext != "":
-        with basilica.Connection(os.getenv("BASILICA_KEY")) as c:
-            embeddings = list(c.embed_sentences(sentences))
+        
+with basilica.Connection(os.getenv("BASILICA_KEY")) as c:
+    embeddings = list(c.embed_sentences(sentences))
