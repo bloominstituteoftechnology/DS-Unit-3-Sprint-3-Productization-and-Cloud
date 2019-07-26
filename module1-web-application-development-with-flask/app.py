@@ -3,6 +3,7 @@ from flask import jsonify
 from joblib import load
 import numpy as np
 from string import ascii_lowercase
+from model import DB
 
 '''Features we use ['RANK','GP','MIN','FG_PCT','FG3_PCT','REB','STL','BLK']
     1. RANK...Last thing you ate
@@ -16,6 +17,9 @@ from string import ascii_lowercase
 
 #create flask web server
 app = Flask(__name__)
+app.config['SQLAlCHEMY_DATABASE_URI'] = 'sqlite:///sql.db'
+DB.init_app(app)
+
 
 def create_x(post_response):
     feats = []
