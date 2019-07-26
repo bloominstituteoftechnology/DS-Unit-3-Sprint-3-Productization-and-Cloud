@@ -7,9 +7,7 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-requests = "*"
 flask-sqlalchemy = "*"
-numpy = "*"
 py-openaq = "*"
 
 [requires]
