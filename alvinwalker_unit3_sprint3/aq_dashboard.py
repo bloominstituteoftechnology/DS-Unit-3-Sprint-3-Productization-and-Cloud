@@ -22,7 +22,7 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        return '<DateTime {} Value {}>.format(self.datetime, self.value)'
+        return 'DateTime {} Value {}'.format(self.datetime, self.value)
 
 @app.route('/')
 
@@ -32,13 +32,14 @@ def root():
     #dirty_data = body['results']
     #data = clean_data(dirty_data)
     #return str(data)
-    connection = sqlite3.connect('db.sqlite3')
-    cur = connection.cursor()
-    cur.execute("SELECT * FROM record WHERE value >= 10")
-    rows = []
-    for row in cur.fetchall():
-        rows.append(row)
-    return str(rows) 
+    #connection = sqlite3.connect('db.sqlite3')
+    #cur = connection.cursor()
+    #cur.execute("SELECT * FROM record WHERE value >= 10")
+    #rows = []
+    #for row in cur.fetchall():
+        #rows.append(row)
+    #return str(rows) 
+    return str(Record.query.filter(Record.value >= 10).all())
 
 @app.route('/refresh')
 
