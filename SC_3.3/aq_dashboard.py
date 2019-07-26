@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import openaq
 import requests
 
-
+# setting up app and database
 APP = Flask(__name__)
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
