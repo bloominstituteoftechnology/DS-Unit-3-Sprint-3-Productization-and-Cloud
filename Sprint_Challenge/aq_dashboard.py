@@ -6,12 +6,12 @@ from flask_sqlalchemy import SQLAlchemy
 """Create and configure an instance of the Flask application."""
 app = Flask(__name__)
 DB = SQLAlchemy(app)
-#app.config('SQLALCHEMY_DATABASE_URI') = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 DB.init_app(app)
 
 
 
-app.config['ENV'] = 'debug' 
+app.config['ENV'] = 'debug'
 
 api = openaq.OpenAQ()
 
@@ -23,8 +23,8 @@ class Record(DB.Model):
 
     def __repr__(self):
         return 'Record {}, Date:{}, Value:{}'.format(self.id, self.datetime, self.value)
-    
-def get_times():
+
+def get_time():
 
     status, body = api.measurements(city='Los Angeles', parameter='pm25')
     lst=[]
@@ -35,18 +35,18 @@ def get_times():
         lst.append((date, value))
     return lst #did str(lst) initially for part 2
 
-def add_records(lst):
+def add_records():
+    lst = get_time()
 
     for i in range(len(lst)):
-        new_record = Record(id = i, datetime = lst[i][0], 
-                            value = lst[i][1])
+        new_record = Record(id = i, datetime = lst[i][0], value = lst[i][1])
         DB.session.add(new_record)
 
 @app.route('/')
 def root():
     get_times()
     r = Record.query.filter(Record.value >= 10).all()
-    return render_template('home.html', title='Home', records = records)
+    return render_template('home.html', title='Home', records = r)
 
 
 @app.route('/refresh')
@@ -54,8 +54,7 @@ def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    times = get_times()
-    add_records(times)
+    add_records()
     DB.session.commit()
     return 'Data refreshed!'
 
@@ -69,7 +68,7 @@ def get_times():
         value = i['value']
 
         lst.append((date, value))
-        
+
         greaterthan10 = []
     for i in lst:
         if i[1] >= 10:
