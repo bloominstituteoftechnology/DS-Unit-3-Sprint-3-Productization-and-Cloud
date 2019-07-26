@@ -1,6 +1,6 @@
 Video Solution of browser session:
 
-[Video Solution]('https://records.screenlife.com/player/e0f6a492-f8c2-4668-bfe1-04f6e53f4b84')
+[Video Solution](https://records.screenlife.com/player/e0f6a492-f8c2-4668-bfe1-04f6e53f4b84)
 
 # Data Science Unit 3 Sprint Challenge 4
 
