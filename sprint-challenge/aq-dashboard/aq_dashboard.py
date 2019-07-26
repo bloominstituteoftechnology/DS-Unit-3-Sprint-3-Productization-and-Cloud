@@ -1,6 +1,7 @@
 """OpenAQ Air Quality Dashboard with Flask."""
 from flask import Flask, render_template, Blueprint
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 import openaq
 import templates
 api = openaq.OpenAQ()
@@ -34,7 +35,7 @@ def root(refreshed=False):
     records = Record.query.filter(Record.value > 10).all()
     record_dicts = []
     for record in records:
-        record_dict = {"id": record.id, "datetime": record.datetime, "value": record.value}
+        record_dict = {"id": record.id, "datetime": datetime.datetime.strptime(record.datetime, '%Y-%m-%dT%H:%M:%S.%fZ'), "value": record.value}
         record_dicts.append(record_dict)
     return render_template('index.html', title="Air Quality Dashboard", la_pm25=record_dicts)
 
