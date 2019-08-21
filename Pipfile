@@ -11,6 +11,10 @@ basilica = "*"
 twitter = "*"
 tweepy = "*"
 requests = "*"
+scikit-learn = "*"
+pandas = "*"
+matplotlib = "*"
+click = "*"
 
 [requires]
 python_version = "3.7"
