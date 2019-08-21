@@ -5,6 +5,10 @@ from twitter import *
 
 
 db_name = "tweet.sqlite3"
+ACCESS_TOKEN = ''
+ACCESS_SECRET =''
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 
 t = Twitter(auth=OAuth(CONSUMER_KEY,
             CONSUMER_SECRET,

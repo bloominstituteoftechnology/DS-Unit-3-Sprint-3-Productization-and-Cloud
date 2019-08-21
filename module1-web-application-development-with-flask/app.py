@@ -5,10 +5,10 @@ from twitter import *
 
 
 db_name = "tweet.sqlite3"
-ACCESS_TOKEN = 'j1oXAjTtfZs1r2GDwV0FdyuCz'
-ACCESS_SECRET = 'nbKixrCr9W9eO0rI7u8XhzXQ9rkvcQG1slnwXfUSHmMAit1O4U'
-CONSUMER_KEY = '15291497-qPQGqhPUGCYm6fdoNlambMqZP0v57hNH0Gh6TSFSr'
-CONSUMER_SECRET = 'mZbRsCP80ScUA34uYdLp8hDD0uodlbL8cCok146d0bTnN'
+ACCESS_TOKEN = ''
+ACCESS_SECRET = ''
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 
 t = Twitter(auth=OAuth(CONSUMER_KEY,
             CONSUMER_SECRET,
