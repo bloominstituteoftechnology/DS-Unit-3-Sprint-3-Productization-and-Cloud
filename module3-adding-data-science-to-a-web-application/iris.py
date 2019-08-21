@@ -28,6 +28,7 @@ def train_fit_save():
     #print(X.head())
     y = iris.iloc[:,5]
     #print(y.head())
+    transform_dict = dict(zip(le.transform(le.classes_), le.classes_))
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=45)
 
@@ -40,7 +41,7 @@ def train_fit_save():
     print(classification_report(y_test, pred))
 
     pickle.dump(model, open(MODEL_FILE, 'wb'))
-    pass
+    return transform_dict
    
 def call_api(url, data):
     send = requests.post(url, data)
@@ -70,12 +71,23 @@ def run(inference):
         X = iris.iloc[:,1:5].to_json()
         y = iris.iloc[:,5].to_json()
         
-        print(y)
         data_score = json.dumps({'X': X, 'y': y})        
         call_score = call_api(url_score, data_score)
-        print(call_score)#.json())
+        print(call_score.json())
+        
+        # making prediction for string output
+        url_pred_text = "http://127.0.0.1:5000/api_text"
+        data_pred_text = json.dumps({'SepalLengthCm': 7, 'SepalWidthCm': 3.5, 'PetalLengthCm': 4.7, 'PetalWidthCm': 1.4})        
+        
+        call_pred_text = call_api(url_pred_text, data_pred_text)
+        print(f'Predict of {data_pred_text} is {call_pred_text.json()}')
+        
     else:    
-        train_fit_save()
+        iris_dict = train_fit_save()
+        # save the dict into a .json file
+        with open('iris_dict.json', 'w') as f:
+            f.write(str(iris_dict))
+        f.close()
     pass
 
 

@@ -25,21 +25,32 @@ def make_predict():
 @app.route("/score", methods=['POST'])
 def model_score():
     data = request.get_json(force=True)
-    print(data['X'], "\n\n")
-    print(data['y'], "\n\n")
-    X = pd.read_json(data['X'])
-    y = pd.read_json(data['y'])
-    print(X, y)
-    #predict_request = [v for k, v in data.items()]
-    #print(predict_request)
-    #predict_request = np.array(predict_request).reshape(1, -1)
-    #print(predict_request)
-    score = iris_model.score(X, y)
     
-    output = {'model_score' : int(score)}
+    X = pd.read_json(data['X']).values
+    y = pd.Series(json.loads(data['y'])).values
+    
+    score = iris_model.score(X, y)
+    output = {'model_score' : score}
     
     return jsonify(results=output)
 
+@app.route("/api_text", methods=['POST'])
+def make_predict_text():
+    data = request.get_json(force=True)
+    predict_request = [v for k, v in data.items()]
+    predict_request = np.array(predict_request).reshape(1, -1)
+    
+    y_pred = iris_model.predict(predict_request)
+    
+    with open('iris_dict.json', 'r') as f:
+        s = f.read()
+        iris_dict = eval(s)
+        
+    print(iris_dict[y_pred[0]])
+    
+    output = {'y_pred' : iris_dict[y_pred[0]]}
+    
+    return jsonify(results=output)
     
 if __name__ == "__main__":
     app.run(debug = True)
