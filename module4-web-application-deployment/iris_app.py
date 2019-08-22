@@ -4,7 +4,9 @@ import numpy as np
 import pandas as pd
 from flask import Flask, jsonify, request, render_template
 
-MODEL_FILE = "iris_model2.pkl"
+MODEL_FILE = "module4-web-application-deployment\iris_model2.pkl"
+OUTPUT_DICT = 'module4-web-application-deployment\iris_dict.json'
+
 # model
 iris_model = pickle.load(open(MODEL_FILE, 'rb'))
 
@@ -19,7 +21,7 @@ def value_predictor(to_predict_list):
 @app.route("/")
 @app.route("/index")
 def index():
-    return flask.render_template('index.html')
+    return render_template('index.html')
     
 @app.route("/result", methods = ['POST'])
 def result():
@@ -27,15 +29,15 @@ def result():
         to_predict_list = request.form.to_dict()
         to_predict_list = list(to_predict_list.values())
         to_predict_list = list(map(float, to_predict_list))
-        
+        print(to_predict_list)
         result = value_predictor(to_predict_list)
-        
-        with open('iris_dict.json', 'r') as f:
+        print(result)
+        with open(OUTPUT_DICT, 'r') as f:
             s = f.read()
             iris_dict = eval(s)
         
         result = iris_dict[result]
-        
+        print(result)
     return render_template('results.html', prediction=result)
 
 @app.route("/api", methods=['POST'])
