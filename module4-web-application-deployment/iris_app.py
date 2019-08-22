@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from flask import Flask, jsonify, request, render_template
 
-MODEL_FILE = "module4-web-application-deployment\iris_model2.pkl"
-OUTPUT_DICT = 'module4-web-application-deployment\iris_dict.json'
+MODEL_FILE = "module4-web-application-deployment/iris_model2.pkl"
+OUTPUT_DICT = 'module4-web-application-deployment/iris_dict.json'
 
 # model
 iris_model = pickle.load(open(MODEL_FILE, 'rb'))
@@ -72,7 +72,7 @@ def make_predict_text():
     
     y_pred = iris_model.predict(predict_request)
     
-    with open('iris_dict.json', 'r') as f:
+    with open(OUTPUT_DICT, 'r') as f:
         s = f.read()
         iris_dict = eval(s)
         
