@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from flask import Flask, jsonify, request, render_template
 
-MODEL_FILE = "module4-web-application-deployment/iris_model2.pkl"
-OUTPUT_DICT = 'module4-web-application-deployment/iris_dict.json'
+MODEL_FILE = "iris_model2.pkl"
+OUTPUT_DICT = "iris_dict.json"
 
 # model
 iris_model = pickle.load(open(MODEL_FILE, 'rb'))
