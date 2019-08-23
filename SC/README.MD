@@ -87,10 +87,10 @@ a number of dependencies you'll also have to have in your environment (`pandas`,
 over the network (the other dependencies allow the API object to return more
 convenient things like dataframes and plots).
 ​
-So, you have also been provided with a file `openaq.py` that provides a minimal
+So, you have also been provided with a file `aq_openaq.py` that provides a minimal
 wrapper, only depending on `requests`. You'll *still* need to `pip` or `pipenv`
 install `requests` (if it's not already in your environment), and then place
-`openaq.py` in the same `sprint-challenge/` directory and run `python`:
+`aq_openaq.py` in the same `sprint-challenge/` directory and run `python`:
 ​
 ```python
 >>> import openaq
@@ -255,7 +255,7 @@ please don't share the base solution itself - thanks!*
 ### Part 5 - Turn it in!
 At a minimum, add `aq_dashboard.py` to your weekly repo
 (`DS-Unit-3-Sprint-4-Productization-and-Cloud`) in a new `sprint-challenge/`
-directory. It is fine to add other files (e.g. `openaq.py`), and if you wrote
+directory. It is fine to add other files (e.g. `aq_openaq.py`), and if you wrote
 any additional files (including a `Pipfile` or `requirements.txt` to facilitate
 deployment), include those as well.
 ​
