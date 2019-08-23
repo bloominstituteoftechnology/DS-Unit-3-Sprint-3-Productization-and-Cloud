@@ -1,6 +1,7 @@
 """OpenAQ Air Quality Dashboard with Flask."""
-from flask import Flask
+from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
+from tabulate import tabulate
 import openaq
 
 
@@ -19,9 +20,14 @@ class Record(DB.Model):
 
     def __repr__(self):
         return f"< Time {self.datetime} --- Value {self.value} >"
-
+        
+    #def __iter__(self):
+    #    return f"< Time {self.datetime} --- Value {self.value} >"
 
 class CityRecord(DB.Model):
+    """
+    Record for City data from OpenAQ
+    """
     id = DB.Column(DB.Integer, primary_key=True)
     city = DB.Column(DB.String(250))
     count = DB.Column(DB.Integer, nullable=False)
@@ -35,7 +41,31 @@ def extract_utc_value(records):
     date_value_pair = [(r['date']['utc'], r['value']) for r in records]
     
     return date_value_pair
+    
+@app.route("/query")
+def index():
+    """
+    query for LA PM2.5
+    """
+    return render_template('index.html')
 
+@app.route("/result", methods = ['POST'])
+def result():
+    """
+    displaying query results for LA PM2.5
+    """
+    if request.method == 'POST':
+        # screw error checking.
+        f = request.form.to_dict()
+        f = f['pm25']
+     
+    out = Record.query.filter(Record.value >= float(f)).all()
+    #print(type(out))
+    #print(out)
+    #print(tabulate(list(out), tablefmt='html'))
+
+    return render_template('results.html', prediction=out)
+    
 @app.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
@@ -67,6 +97,9 @@ def refresh():
 
 @app.route('/refresh_cities')
 def refresh_cities():
+    """
+    Displaying city query from OpenAQ
+    """
     api = openaq.OpenAQ()
     status, body = api.cities()
     if status == 200:
@@ -76,6 +109,10 @@ def refresh_cities():
 
 @app.route('/cities')
 def cities():
+    """
+    Displaying city query from database with data 
+    pulled from OpenAQ
+    """
     out = CityRecord.query.all()
     return str(out)
 
