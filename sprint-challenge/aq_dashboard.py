@@ -1,5 +1,5 @@
 """OpenAQ Air Quality Dashboard with Flask."""
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import openaq
 import requests
@@ -19,9 +19,10 @@ class Record(DB.Model):
         return '<datetime:{}, value:{}>'.format(self.datetime, self.value)
 
 
-def get_utc_pm(city='Los Angeles', paramater='pm25'):
-    status, body = API.measurements()
+def get_utc_pm(city='Los Angeles', parameter='pm25'):
+    status, body = API.measurements(city=city, parameter=parameter)
     values = []
+    #print(status, body)
     for result in body['results']:
         date_utc = result['date']['utc']
         value = result['value']
@@ -30,8 +31,8 @@ def get_utc_pm(city='Los Angeles', paramater='pm25'):
 
 @APP.route('/')
 def root():
-    answers = Record.query.filter(Record.value >= 10.0).all()
-    return str(answers)
+    records = Record.query.filter(Record.value >= 10.0).all()
+    return render_template('dash.html', title='', records=records)
 
 @APP.route('/refresh')
 def refresh():
@@ -44,4 +45,4 @@ def refresh():
         DB.session.add(record)
     DB.session.commit()
 
-    return 'Data refreshed!'
+    return root()
