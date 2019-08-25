@@ -235,7 +235,7 @@ contain comparable information.)
 
 ### Part 4 - Dashboard to the Finish
 ## The Use of SQLAlchemy
-Now that your data is in a database, revisit your main route - instead of
+Now that your data is in a database, revisit your main ('/') route - instead of
 pulling all data live, query the database for any `Record` objects that have
 `value` greater or equal to 10. The
 [filter](https://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.filter)
