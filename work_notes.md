@@ -15,12 +15,13 @@ I would like to know the correct way to get a module to load and run while withi
 
 ## Tuesday, September 17, 2019
 ### What went well (in the context of working on the assignment) today?
-
+I obtained authentication keys obtained and they work.
 
 ### What was particularly interesting or surprising about the topic(s) today?
-
+I am both surprised Twitter allows access to their data via an api, and I am also surprised at the number of hoops one is required to jump through to get that access.
 
 ### What was the most challenging part of the work today, and why?
+Keeping the directory and file structure organized according to convention and requirements is often a stumbling block.
 
 ## Wednesday, September 18, 2019
 ### What went well (in the context of working on the assignment) today?
