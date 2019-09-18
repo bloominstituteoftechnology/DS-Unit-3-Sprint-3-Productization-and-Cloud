@@ -10,8 +10,13 @@ Trying to even understand what the stretch goals and topics mean.
 
 **Tuesday**
 - What went well (in the context of working on the assignment) today?
+Mostly followed instructions and could troubleshoot errors on my own.
+
 - What was particularly interesting or surprising about the topic(s) today?
+How straightforward it was to connect to the Twitter API.
+
 - What was the most challenging part of the work today, and why?
+Understanding the use of classes and methods in building up the database.
 
 **Wednesday**
 - What went well (in the context of working on the assignment) today?
