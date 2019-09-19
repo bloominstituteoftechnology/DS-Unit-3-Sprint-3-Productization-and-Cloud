@@ -28,3 +28,10 @@ Day Tres:
 with Flask and Jinja/Jenga whatever. Crazy, it worked though!
 - The craziest part of today was that the actual data science parts of the site were not that difficult, like, I assumed it would be the hardest but actually using Jinja/Jenja was the hardest by a country mile.
 - Hardest part -> Jinjango, always and forever. I'd be very happy if I never had to use it again.
+
+---
+Day Quatro
+
+- Deploying it was as smoothe as butter. No issues whatsoever there.
+- Nothing was particularly suprising aside from making the Procfile, that was quite cool being able to tell Heroku how long to wait or whatever. Also, getting a refresher on pushing to Heroku was cool too, just to see how a pro does it.
+- Most challenging parts is/was/will be making the website actually cool and good.
