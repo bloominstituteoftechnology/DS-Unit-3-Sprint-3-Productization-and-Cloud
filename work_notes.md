@@ -25,12 +25,13 @@ Keeping the directory and file structure organized according to convention and r
 
 ## Wednesday, September 18, 2019
 ### What went well (in the context of working on the assignment) today?
-
+Today has been a struggle. My code breaks in ways that are not covered in the video.
 
 ### What was particularly interesting or surprising about the topic(s) today?
-
+My head is a bit muddled, so I am not sure what to put here.
 
 ### What was the most challenging part of the work today, and why?
+Getting a sense of what is happening behind the scenes and why with Flask, SQLAlchemy, etc., is difficult. Also, getting into debug mode was working and now it is not.
 
 ## Thursday, September 19, 2019
 ### What went well (in the context of working on the assignment) today?
