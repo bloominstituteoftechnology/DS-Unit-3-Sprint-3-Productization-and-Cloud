@@ -20,8 +20,13 @@ Understanding the use of classes and methods in building up the database.
 
 **Wednesday**
 - What went well (in the context of working on the assignment) today?
+Mostly followed instructions and could troubleshoot errors on my own.
+
 - What was particularly interesting or surprising about the topic(s) today?
+It was interesting to learn about CSS and how making really small improvements makes a big difference to the UI/UX.
+
 - What was the most challenging part of the work today, and why?
+I tried to work ahead, and had issues deploying. Still trying to debug where and why.
 
 **Thursday**
 - What went well (in the context of working on the assignment) today?
