@@ -35,9 +35,10 @@ Getting a sense of what is happening behind the scenes and why with Flask, SQLAl
 
 ## Thursday, September 19, 2019
 ### What went well (in the context of working on the assignment) today?
-
+The app is deployed to Heroku.
 
 ### What was particularly interesting or surprising about the topic(s) today?
-
+I'm wondering how much of the trouble people have on Windows is because Windows makes things difficult, and how much is because instructors are on Macs. I am on Linux, so it is similar enough to Mac for me to follow the lesson pretty closely.
 
 ### What was the most challenging part of the work today, and why?
+There are still bugs in my app. When I add a user, the user and their tweets get added, but sometimes an erro message from Heroku is displayed as well.
