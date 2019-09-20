@@ -2,14 +2,46 @@
 <html lang='en', dir='ltr'>
     <head>
         <meta charset="utf-8">
-        <title>Yea</title>
-
+        <title>PM Meterz</title>
+        <style>
+            body {
+                background-color: aqua;
+            }
+            h1,h2,h3,h4,p {
+                text-align: center;
+            }
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .column1 { float: left; }
+            .column2 { float: right; }
+        </style>
     </head>
     <body>
-        <h1>YEA</h1>
-        <p>ya</p>
+        <h1>How's the air up there?</h1>
+        <hr>
         {% block content %}
-
+            <div>
+                {% for x in values %}
+                    <h3>{{x.value}} PM2.5</h3>
+                    <p>In {{x.city}},{{x.country}} @ {{x.datetime}}</p>
+                {% endfor %}
+            </div>
         {% endblock %}
+        <hr>
+        <div id='footer' class="row">
+            <div class="column1">
+                <p>
+                    Jason Nova
+                </p>
+            </div>
+            <div class="column2">
+                <p style="text-align: right">
+                    2002©
+                </p>
+            </div>
+        </div>
     </body>
 </html>

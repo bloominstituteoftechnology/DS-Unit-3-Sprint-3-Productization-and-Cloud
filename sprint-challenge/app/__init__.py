@@ -1,2 +1,5 @@
-#from .aq_dashboard import create_app
-#APP = create_app
+from flask import Flask
+
+app = Flask(__name__)
+
+import app.aq_dashboard
