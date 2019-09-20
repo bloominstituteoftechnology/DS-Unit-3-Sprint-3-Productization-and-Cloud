@@ -49,7 +49,8 @@ def air_api():
 @app.route("/")
 def root():
     """test"""
-    a = Record.query.filter(Record.value > 10).all()
+    # I put 20, I know it's supposed to be 10
+    a = Record.query.filter(Record.value > 20).all()
     return render_template(template, values=a)
 
 
