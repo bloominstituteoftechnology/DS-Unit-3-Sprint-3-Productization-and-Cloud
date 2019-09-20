@@ -31,14 +31,16 @@ DB = SQLAlchemy(APP)
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
-    datetime = DB.Column(DB.String(25))
+    datetime = DB.Column(DB.DateTime(25))
     value = DB.Column(DB.Float, nullable=False)
-    cities = DB.Column(DB.String(30))
-    countries = DB.Column(DB.String(30))
-    measurements = DB.Column(DB.String(30), primary_key=True)
+    parameter = DB.Column(DB.String(15))
+    location = DB.Column(DB.String(80), nullable=False)
+    city_id = DB.Column(DB.Integer,
+                        DB.ForeignKey('city.id'),
+                        nullable=False)
 
     def __repr__(self):
-        return '<Record {}>'.format(self.measurements)
+        return f'<Record: {self.city}, {self.datetime}, {self.value}>'
 
 
 def pull_data(city='Los Angeles', parameter='pm25'):
