@@ -1,1 +1,1 @@
-web: gunicorn app/aq_dashboard.py -t 100
+web: gunicorn ./app/aq_dashboard.py -t 100
