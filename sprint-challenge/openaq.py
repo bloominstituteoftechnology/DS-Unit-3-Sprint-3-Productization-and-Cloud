@@ -10,15 +10,16 @@ import math
 class ApiError(Exception):
     pass
 
+
 class API(object):
     """Generic API wrapper object.
     """
     def __init__(self, **kwargs):
-        self._key       = kwargs.pop('key', '')
-        self._pswd      = kwargs.pop('pswd', '')
-        self._version   = kwargs.pop('version', None)
-        self._baseurl   = kwargs.pop('baseurl', None)
-        self._headers   = {'content-type': 'application/json'}
+        self._key = kwargs.pop('key', '')
+        self._pswd = kwargs.pop('pswd', '')
+        self._version = kwargs.pop('version', None)
+        self._baseurl = kwargs.pop('baseurl', None)
+        self._headers = {'content-type': 'application/json'}
 
     def _make_url(self, endpoint, **kwargs):
         """Internal method to create a url from an endpoint.
