@@ -1,5 +1,7 @@
 """OpenAQ Air Quality Dashboard with Flask."""
-from flask import Flask
+from flask import Flask, render_template, request
+from openaq_py import *
+
 
 
 APP = Flask(__name__)
@@ -8,14 +10,24 @@ APP = Flask(__name__)
 @APP.route('/')
 def root():
     """Base view."""
-    api.measurements(city='Los Angeles', parameter='pm25')
 
 
-def search():
+    return "Welcome to OpenAQ"
+
+
+def results():
     import openaq
-    dates = utc_datetime.query.all()
-    values = value.query.all()
-    return render_template('base.html', title='Home', dates=dates, values=values)
+    api = openaq.OpenAQ()
+    status, body = api.cities()
+    api.measurements(city=cities, parameter='pm25')
+
+#     city = cities.query.all()
+#     country = countries.query.all()
+#     dates = utc_datetime.query.all()
+#     values = value.query.all()
+
+    print(status)
+    print(body)
 
 
 
@@ -44,5 +56,5 @@ def refresh():
     DB.session.commit()
     return 'Data refreshed!'
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    APP.run(debug=True)
