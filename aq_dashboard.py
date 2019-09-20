@@ -1,4 +1,4 @@
-"""OpenAQ Air Quality Dashboard with Flask."""
+"""OpenAQ AAir Quality Dashboard with Flask."""
 import openaq
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
