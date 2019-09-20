@@ -10,13 +10,6 @@ status, body = api.cities()
 APP = Flask(__name__)
 
 
-@APP.route('/')
-def root():
-    """Base view."""
-
-
-    return str(api.measurements(city='Los Angeles', parameter='pm25'))
-
 @APP.route('/status')
 def status():
     api = openaq.OpenAQ()
@@ -28,19 +21,6 @@ def body():
     api = openaq.OpenAQ()
     status, body = api.cities()
     return str(body)
-
-
-#
-#
-# #     city = cities.query.all()
-# #     country = countries.query.all()
-# #     dates = utc_datetime.query.all()
-# #     values = value.query.all()
-#
-#     print(status)
-#     print(body)
-
-
 
 
 from flask_sqlalchemy import SQLAlchemy
@@ -55,21 +35,37 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
     cities = DB.Column(DB.String(30))
     countries = DB.Column(DB.String(30))
-    measurements = DB.Column(DB.String(30))
+    measurements = DB.Column(DB.String(30), primary_key=True)
 
     def __repr__(self):
-        return '<Record {}>'.format(self.datetime), '<Record {}>'.format(self.value)
+        return '<Record {}>'.format(self.measurements)
 
+
+def pull_data(city='Los Angeles', parameter='pm25'):
+    status, body = api.measurements(city=city, parameter=parameter)
+    values = []
+    for result in body['results']:
+        date_utc = result['date']['utc']
+        value = result['value']
+        values.append((date_utc, value))
+    return values
+
+@APP.route('/')
+def root():
+    records = Record.query.filter(Record.value >= 10.0).all()
+    return render_template('base.html', title='', records=records)
 
 @APP.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
-
     DB.drop_all()
     DB.create_all()
-    DB.session.add(id, datetime, value, measurements)
+    data = pull_data()
+    for r in data:
+        record = Record(datetime=r[0], value=r[1])
+        DB.session.add(record)
     DB.session.commit()
-    return 'Data refreshed!'
+
 
 if __name__ == "__main__":
     APP.run(debug=True)
