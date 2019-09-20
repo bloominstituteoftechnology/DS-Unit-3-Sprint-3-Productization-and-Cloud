@@ -53,6 +53,9 @@ class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
     datetime = DB.Column(DB.String(25))
     value = DB.Column(DB.Float, nullable=False)
+    cities = DB.Column(DB.String(30))
+    countries = DB.Column(DB.String(30))
+    measurements = DB.Column(DB.String(30))
 
     def __repr__(self):
         return '<Record {}>'.format(self.datetime), '<Record {}>'.format(self.value)
@@ -61,9 +64,10 @@ class Record(DB.Model):
 @APP.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
+
     DB.drop_all()
     DB.create_all()
-    DB.session.add(api.cities)
+    DB.session.add(id, datetime, value, measurements)
     DB.session.commit()
     return 'Data refreshed!'
 
