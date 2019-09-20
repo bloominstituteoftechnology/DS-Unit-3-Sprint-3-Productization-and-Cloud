@@ -21,7 +21,7 @@ def create_app():
             add_or_update_records(get_records(api))
         # Filter risky records
         value = 10
-        records = Record.query.all()
+        records = Record.query.filter(Record.value >= value)
         return render_template('base.html', title='Home', records=records)
 
     @app.route('/refresh')
