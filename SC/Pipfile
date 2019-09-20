@@ -10,6 +10,7 @@ flask = "*"
 flask-sqlalchemy = "*"
 requests = "*"
 gunicorn = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.7"
