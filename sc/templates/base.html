@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenAQ - {{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <a href="/refresh" class="button warning">Update Readings</a>
+        <!-- a href="/reset" class="button error">Reset Database</a> -->
+      </div>
+    </nav>
+
+    <article class="flex two" style="padding: 3em 1em;">
+      {% block content %}
+      <div>
+        <h1>{{ title }}</h1>
+        {% for record in filtered %}
+        <a href="/{{ record }}"><span class="stack">{{ record }}</span></a>
+        {% endfor %}
+      </div>
+    {% endblock %}
+  </article>
+  </body>
+</html>
