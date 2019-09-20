@@ -1,6 +1,9 @@
 """OpenAQ Air Quality Dashboard with Flask."""
 from flask import Flask, render_template, request
-from openaq_py import *
+import openaq
+
+api = openaq.OpenAQ()
+status, body = api.cities()
 
 
 
@@ -12,22 +15,30 @@ def root():
     """Base view."""
 
 
-    return "Welcome to OpenAQ"
+    return str(api.measurements(city='Los Angeles', parameter='pm25'))
 
-
-def results():
-    import openaq
+@APP.route('/status')
+def status():
     api = openaq.OpenAQ()
     status, body = api.cities()
-    api.measurements(city=cities, parameter='pm25')
+    return str(status)
 
-#     city = cities.query.all()
-#     country = countries.query.all()
-#     dates = utc_datetime.query.all()
-#     values = value.query.all()
+@APP.route('/body')
+def body():
+    api = openaq.OpenAQ()
+    status, body = api.cities()
+    return str(body)
 
-    print(status)
-    print(body)
+
+#
+#
+# #     city = cities.query.all()
+# #     country = countries.query.all()
+# #     dates = utc_datetime.query.all()
+# #     values = value.query.all()
+#
+#     print(status)
+#     print(body)
 
 
 
@@ -44,7 +55,7 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        return 'TODO - write a nice representation of Records'
+        return '<Record {}>'.format(self.datetime), '<Record {}>'.format(self.value)
 
 
 @APP.route('/refresh')
@@ -52,7 +63,7 @@ def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    # TODO Get data from OpenAQ, make Record objects with it, and add to db
+    DB.session.add(api.cities)
     DB.session.commit()
     return 'Data refreshed!'
 
