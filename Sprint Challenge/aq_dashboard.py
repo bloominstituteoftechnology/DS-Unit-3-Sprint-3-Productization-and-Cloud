@@ -1,5 +1,5 @@
 """OpenAQ Air Quality Dashboard with Flask."""
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import openaq
 from flask_sqlalchemy import SQLAlchemy
 
@@ -25,12 +25,16 @@ def root():
     return '\n'.join(map(str, recordlist))
 
 @APP.route('/search', methods=['POST'])
-def search(country='US', city='Los Angeles', parameter='pm25'):
+def search(country=None, city=None, parameter='pm25'):
     country = request.values['country_name']
     city = request.values['city_name']
 
-    status, body = api.measurements(countries=country,city=city, parameter=parameter)
-    return body
+    status, body = api.measurements(country=country,city=city, parameter=parameter)
+
+    if len(body['results']) == 0:
+        return jsonify({'response':0, 'message':'Sorry, API only supports measurements in the last 90 days.'})
+    else:
+        return jsonify({'response':1,'message':body['results']})
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)

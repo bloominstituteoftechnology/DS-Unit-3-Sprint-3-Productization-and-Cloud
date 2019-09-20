@@ -22,17 +22,20 @@
         <div class="row">
             <div class="col-md-5">
                 <form action="#" id="search">
-                    <label for="country_name">Country</label>
-                    <input id="country_name" name="country_name" placeholder="Country" value="US" >
+                    <label for="country">Country</label>
+                    <select name="country_name"  id="country" size="5">
+                    </select>
 
-                    <label for="city_name">City</label>
-                    <input id="city_name" name="city_name" placeholder="City" value="Los Angeles">
+                    <label for="city">City</label>
+                    <select name="city_name"  id="city" size="5">
+                    </select>
 
                     <input onclick="Search(event)" type="submit" value="Submit">
                 </form>
+                <p id="error"></p>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-6">
+            <div class="col-md-6 records">
 
             </div>
         </div>
