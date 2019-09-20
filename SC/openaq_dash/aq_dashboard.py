@@ -19,7 +19,7 @@ def create_app():
         db_records = Record.query.all()
         if not db_records:
             add_or_update_records(get_records(api))
-        # Filter risky records
+        # Filter "potentially risky" records
         value = 10
         records = Record.query.filter(Record.value >= value)
         return render_template('base.html', title='Home', records=records)
