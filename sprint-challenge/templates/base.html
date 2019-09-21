@@ -8,8 +8,13 @@
   <body>
     <h1>OpenAQ!! Page 1!</h1>
     
-    {% block for content %}
-  	<p> Content goes here... </p>
+    {% block content %}
+   <p>Readings over 10 (PM2.5) (Potentially Risky)</p>
+	<ul>
+        {% for rec in potentially_risky %}
+        <li>{{rec.datetime}} - {{rec.value}}  </li>
+        {% endfor %}
+    </ul>
     {% endblock %}
   </body>
 </html>

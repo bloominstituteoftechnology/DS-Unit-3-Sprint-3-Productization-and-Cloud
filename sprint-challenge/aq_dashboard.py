@@ -10,6 +10,7 @@ status, body = api.cities()
 APP = Flask(__name__)
 
 
+
 @APP.route('/status')
 def status():
     api = openaq.OpenAQ()
@@ -31,16 +32,19 @@ DB = SQLAlchemy(APP)
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
-    datetime = DB.Column(DB.DateTime(25))
+    datetime = DB.Column(DB.String(25))
     value = DB.Column(DB.Float, nullable=False)
-    parameter = DB.Column(DB.String(15))
-    location = DB.Column(DB.String(80), nullable=False)
-    city_id = DB.Column(DB.Integer,
-                        DB.ForeignKey('city.id'),
-                        nullable=False)
+    # parameter = DB.Column(DB.String(15))
+    # location = DB.Column(DB.String(80), nullable=False)
+    # city_id = DB.Column(DB.Integer, nullable=False)
 
     def __repr__(self):
-        return f'<Record: {self.city}, {self.datetime}, {self.value}>'
+        return f'<Record: {self.datetime}, {self.value}>'
+
+@APP.route('/')
+def root():
+    potentially_risky = Record.query.filter(Record.value >= 10.0).all()
+    return render_template('base.html', title='', potentially_risky=potentially_risky)
 
 
 def pull_data(city='Los Angeles', parameter='pm25'):
@@ -52,10 +56,6 @@ def pull_data(city='Los Angeles', parameter='pm25'):
         values.append((date_utc, value))
     return values
 
-@APP.route('/')
-def root():
-    records = Record.query.filter(Record.value >= 10.0).all()
-    return render_template('base.html', title='', records=records)
 
 @APP.route('/refresh')
 def refresh():
@@ -67,7 +67,7 @@ def refresh():
         record = Record(datetime=r[0], value=r[1])
         DB.session.add(record)
     DB.session.commit()
-
+    return "DB refreshed!"
 
 if __name__ == "__main__":
     APP.run(debug=True)
