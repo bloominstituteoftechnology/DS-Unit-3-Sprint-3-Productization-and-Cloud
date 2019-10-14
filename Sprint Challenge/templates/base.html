@@ -20,7 +20,8 @@
     <article class="flex one" style="padding: 3em 1em;">
       {% block content %}
       <div>
-        <h1>High PM 2.5 Readings in {{ city }}
+        <h1>High PM 2.5 Readings in 
+            <a href='./locations/{{city}}'>{{ city }}</a>
         </h1>
         <ul>
             {% for record in records %}
