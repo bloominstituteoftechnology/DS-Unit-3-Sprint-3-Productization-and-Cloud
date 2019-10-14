@@ -1,6 +1,6 @@
 """OpenAQ Air Quality Dashboard with Flask."""
 from datetime import datetime
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import openaq
 
@@ -32,7 +32,9 @@ def get_measurements(city='Los Angeles', parameter='pm25'):
 def root():
     """Base view."""
     records = Record.query.filter(Record.value >= 10).all()
-    return str(records)
+    return render_template('base.html',
+                           city='Los Angeles',
+                           records=records)
 
 
 @APP.route('/refresh')
