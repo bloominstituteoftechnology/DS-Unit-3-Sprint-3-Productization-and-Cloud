@@ -12,6 +12,7 @@ DB = SQLAlchemy(APP)
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
     utc_datetime = DB.Column(DB.DateTime)
+    location = DB.Column(DB.String(50))
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
@@ -21,9 +22,10 @@ class Record(DB.Model):
 def get_measurements(city='Los Angeles', parameter='pm25'):
     api = openaq.OpenAQ()
     status, body = api.measurements(city=city, parameter=parameter)
-    return [(datetime.strptime(result['date']['utc'],
-                               '%Y-%m-%dT%H:%M:%S.%f%z'),
-             result['value']) for result in body['results']]
+    return [{'utc_datetime': datetime.strptime(result['date']['utc'],
+                                               '%Y-%m-%dT%H:%M:%S.%f%z'),
+             'location': result['location'],
+             'value': result['value']} for result in body['results']]
 
 
 @APP.route('/')
@@ -42,7 +44,9 @@ def refresh():
     DB.create_all()
     data = get_measurements()
     for record in data:
-        DB.session.add(Record(utc_datetime=record[0], value=record[1]))
+        DB.session.add(Record(utc_datetime=record['utc_datetime'],
+                              location=record['location'],
+                              value=record['value']))
     DB.session.commit()
     return 'Data refreshed!'
 
