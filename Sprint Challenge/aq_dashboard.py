@@ -56,7 +56,9 @@ def locations(city='Los Angeles'):
     """Pull location meta-data from Open AQ and display it."""
     api = openaq.OpenAQ()
     status, body = api.locations(city=city)
-    locations = [result['location'] for result in body['results']]
+    locations = [{'name': loc['location'],
+                  'latitude': loc['coordinates']['latitude'],
+                  'longitude': loc['coordinates']['longitude']} for loc in body['results']]
     return render_template('locations.html',
                            city=city,
                            locations=locations)
