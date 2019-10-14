@@ -22,8 +22,8 @@
       <div>
         <h1>Locations in {{ city }}</h1>
         <ul>
-            {% for location in locations %}
-            <li>{{ location }}</li>
+            {% for loc in locations %}
+            <li>{{ loc['name'] }} (Latitude: {{ loc['latitude'] }}, Longitude {{ loc['longitude'] }})</li>
             {% endfor %}
         </ul>
       </div>
