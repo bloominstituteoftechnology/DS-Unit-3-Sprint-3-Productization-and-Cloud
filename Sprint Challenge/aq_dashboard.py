@@ -5,15 +5,13 @@ from flask_sqlalchemy import SQLAlchemy
 import openaq
 
 APP = Flask(__name__)
-
-
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 DB = SQLAlchemy(APP)
 
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)
-    utc_datetime = DB.Column(DB.DateTime(timezone=True))
+    utc_datetime = DB.Column(DB.DateTime)
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
@@ -47,3 +45,14 @@ def refresh():
         DB.session.add(Record(utc_datetime=record[0], value=record[1]))
     DB.session.commit()
     return 'Data refreshed!'
+
+
+@APP.route('/locations/<city>')
+def locations(city='Los Angeles'):
+    """Pull location meta-data from Open AQ and display it."""
+    api = openaq.OpenAQ()
+    status, body = api.locations(city=city)
+    locations = [result['location'] for result in body['results']]
+    return render_template('locations.html',
+                           city=city,
+                           locations=locations)
