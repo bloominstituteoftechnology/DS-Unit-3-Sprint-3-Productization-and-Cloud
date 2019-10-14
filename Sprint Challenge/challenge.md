@@ -1,4 +1,4 @@
-# Data Science Unit 3 Sprint Challenge 4
+# Data Science Unit 3 Sprint Challenge 3
 
 ## Air Quality in the Cloud
 
@@ -6,7 +6,7 @@ In this sprint challenge you will build a Flask-powered web application that
 displays data about air quality. You may use any tools and references you wish,
 but your final code should reflect *your* work and be saved in `.py` files
 (*not* notebooks), and added to your
-`DS-Unit-3-Sprint-4-Productization-and-Cloud` repo, in a new `sprint-challenge`
+`DS-Unit-3-Sprint-3-Productization-and-Cloud` repo, in a new `sprint-challenge`
 directory.
 
 You may use any imports/environments/tools you wish, but the baseline is:
@@ -254,7 +254,7 @@ please don't share the base solution itself - thanks!*
 
 ### Part 5 - Turn it in!
 At a minimum, add `aq_dashboard.py` to your weekly repo
-(`DS-Unit-3-Sprint-4-Productization-and-Cloud`) in a new `sprint-challenge/`
+(`DS-Unit-3-Sprint-3-Productization-and-Cloud`) in a new `sprint-challenge/`
 directory. It is fine to add other files (e.g. `openaq.py`), and if you wrote
 any additional files (including a `Pipfile` or `requirements.txt` to facilitate
 deployment), include those as well.
