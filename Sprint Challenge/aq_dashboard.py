@@ -31,7 +31,8 @@ def get_measurements(city='Los Angeles', parameter='pm25'):
 @APP.route('/')
 def root():
     """Base view."""
-    return str(get_measurements())
+    records = Record.query.filter(Record.value >= 10).all()
+    return str(records)
 
 
 @APP.route('/refresh')
