@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>High PM 2.5 Readings - {{ city }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="brand"><span>Air Quality Dashboard</span></a>
+
+      <!-- responsive-->
+      <input id="bmenub" type="checkbox" class="show">
+      <label for="bmenub" class="burger pseudo button">Menu</label>
+
+      <div class="menu">
+        <a href="/refresh" class="button warning">Refresh Data</a>
+      </div>
+    </nav>
+
+    <article class="flex one" style="padding: 3em 1em;">
+      {% block content %}
+      <div>
+        <h1>High PM 2.5 Readings in {{ city }}
+        </h1>
+        <ul>
+            {% for record in records %}
+            <li>{{ record.utc_datetime }} UTC -- Value: {{ record.value }}</li>
+            {% endfor %}
+        </ul>
+      </div>
+      {% endblock %}
+    </article>
+
+  </body>
+</html>
