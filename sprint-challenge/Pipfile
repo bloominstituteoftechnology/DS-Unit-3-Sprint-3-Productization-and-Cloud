@@ -6,13 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask = "*"
-flask-sqlalchemy = "*"
-requests = "*"
 pandas = "*"
-seaborn = "*"
+seabron = "*"
 matplotlib = "*"
-py-openaq = "*"
+requests = "*"
+flask = "*"
+flask-sqlalchmey = "*"
 
 [requires]
 python_version = "3.7"
