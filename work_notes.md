@@ -8,7 +8,7 @@ Todays assignment went well and I was able to replicate the lecture example pret
 
 ## Tuesday:
 
-The aissignment today went well. I was able to pull tweets from the API and populate my database with them. I was also able to make a new column with the embeded tweet data using Basilica. The hardest part of the assignment was populating my flask page with the newly gathered information. It took me a couple different tries but eventually I was able to make it work.
+The assignment today went well. I was able to pull tweets from the API and populate my database with them. I was also able to make a new column with the embeded tweet data using Basilica. The hardest part of the assignment was populating my flask page with the newly gathered information. It took me a couple different tries but eventually I was able to make it work.
 
 ## Wednesday
 
