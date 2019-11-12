@@ -11,3 +11,11 @@ Link to Twitoff project repo: https://github.com/owenburton/Twitoff
 - Basilica looks interesting, though I haven't dug deeper than surface-level yet.
 3. What was the most challenging part of the work today, and why?
 - Being okay with not understanding why we need every specific file for setting up the flask app and what each one does. It's challenging because a lot of the names for the modules and classes are similar. I might be getting terms mixed up.
+
+# 11/12/2019 (module 2)
+1. What went well (in the context of working on the assignment) today?
+- Using Twitter/Basilica API, repopulating the database with real users and tweets
+2. What was particularly interesting or surprising about the topic(s) today?
+- Basilica makes embeddings super easy. I'm excited to pull more data from twitter
+3. What was the most challenging part of the work today, and why?
+- simple syntax errors, because I couldn't see them right away
