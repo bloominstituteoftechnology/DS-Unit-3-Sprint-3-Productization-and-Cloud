@@ -19,3 +19,11 @@ Link to Twitoff project repo: https://github.com/owenburton/Twitoff
 - Basilica makes embeddings super easy. I'm excited to pull more data from twitter
 3. What was the most challenging part of the work today, and why?
 - simple syntax errors, because I couldn't see them right away
+
+# 11/13/2019 (module 3)
+1. What went well (in the context of working on the assignment) today?
+- making functions for predictions, connecting the flask framework to html files, and deploying locally
+2. What was particularly interesting or surprising about the topic(s) today?
+- found out that html still reads comments, so had to delete them
+3. What was the most challenging part of the work today, and why?
+- bugs, because I didn't know that the comments in the html files were what was wrong
