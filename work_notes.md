@@ -18,3 +18,33 @@ Monday- Module 1.
     saved the "__init__" in the wrong place but after getting it into
     "TWITOFF" I was able to laucnh the flask shell and use DB to make the
     database.
+
+Tuesday- Module 2
+    1. Configured our flask application to display the user.
+    2. Used the API keys given by Twitter and Basillica in our code through
+        a hidden file.
+    3. Wrote a `base.html` with a flask template.
+    4. Wrote a python file to get the users into our database with
+        `from TWITOFF.twitter import *`
+        `twitter_user= TWITTER.get_user('elonmusk')`
+        `tweets = twitter_user.timeline(count=200, exclude_replies=True,
+            include_rts=False, tweet_mode='extended')`
+        `tweets[0].text` displays one of the tweets for us to see.
+    5. Reset our existing database by adding `/reset` to our flask app for
+        ease.
+    6. Now that we had our database ready for the tweets we want to add
+        we add it with `db_user=User(id=twitter_user.id, name=twitter_user.
+            screen_name, newest_tweet_id=tweets[0].id)`
+        ```
+for tweet in tweets:
+    embedding = BASILICA.embed_sentence(tweet.full_text,
+                                        model='twitter')
+    db_tweet = Tweet(id=tweet.id, text=tweet.full_text[:500],
+                     embedding=embedding)
+    DB.session.add(db_tweet)
+    db_user.tweets.append(db_tweet)
+
+DB.session.add(db_user)
+DB.session.commit()
+        ```
+
