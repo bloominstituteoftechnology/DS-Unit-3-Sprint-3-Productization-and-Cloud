@@ -19,5 +19,8 @@
 * 11/12/2019
 
 - What went well (in the context of working on the assignment) today?
+- Already connected to tweepy and Basilica APIs
 - What was particularly interesting or surprising about the topic(s) today?
+- My chat with my team lead, Richmond
 - What was the most challenging part of the work today, and why?
+- I was grappling with the strftime method from the Datetime module
