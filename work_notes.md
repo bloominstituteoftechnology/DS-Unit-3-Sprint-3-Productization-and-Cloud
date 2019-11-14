@@ -22,3 +22,14 @@ Really liked the .env business. Definitely a cooler solution that my earlier ".p
 
 ### What was the most challenging part of the work today, and why?
 Ran into a stupid bug fairly early on in the lecture that somewhat stymied my ability to follow along. Once it was settled, it appeared I hadn't messed up anything substantial when I was following blind. Bad focus during assignment time, in large part due to ambivalence about today's particular stretch goals.
+
+## Module three
+
+### What went well (in the context of working on the assignment) today?
+Most things. Even adding a few little stretches (extra nav buttons, left margin, percent probability) went smoothly.
+
+### What was particularly interesting or surprising about the topic(s) today?
+Starting to get a feel for how an app like this is structured. It's interesting!
+
+### What was the most challenging part of the work today, and why?
+Because I did a little stretch yesterday that almost overlapped with today's naming, I had to scramble to undo that to avoid problems. Unpleasant experience. 
