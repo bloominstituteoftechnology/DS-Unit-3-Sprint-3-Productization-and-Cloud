@@ -70,3 +70,23 @@ Wednesday- Module3
     7. As a side note, `user.html` and `prediction.html` inherit elements from
         `base.html` in order to avoid redundancy and do less work overall. Also
         The forms we add are inside `base.html`.
+
+Thursday- Module4
+    1. Today we started by testing our app with gunicorn(I was able to do this
+        by running gunicorn within ubuntu WSL)
+    2. We then continued to log in to heroku with `heroku login`
+    3. Then we create a respository in heroku with 
+        `heroku git:remote -a jeanfraga-twitoff`
+    4. We verify that we have the git working with `git remote --verbose`
+    5. before we can add it to heroku we create a `Procfile` with 
+        `web: gunicorn TWITOFF:APP -t 120` inside. (This file is finicky
+        and needs to be created without any .filetype)
+    6. We also need to create the keys in heroku.com through settings, this way
+        we can get .env into the heroku server to log into twitter
+    7. Now we can push everything to heroku by using git with
+        `git push heroku master` 
+    8. We also need to create our postgres link by making the key, this can be
+        automated by using `heroku addons:create heroku-postgresql:hobby-dev`
+        then we can check it worked by using heroku config.
+    9. Just to make sure our server didn't get the old information from sqlite
+        we use `jeanfraga-twitoff.herokuapp.com/reset`
