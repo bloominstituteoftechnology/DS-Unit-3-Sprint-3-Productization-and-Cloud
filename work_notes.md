@@ -27,3 +27,11 @@ Link to Twitoff project repo: https://github.com/owenburton/Twitoff
 - found out that html still reads comments, so had to delete them
 3. What was the most challenging part of the work today, and why?
 - bugs, because I didn't know that the comments in the html files were what was wrong
+
+# 11/14/2019 (module 4)
+1. What went well (in the context of working on the assignment) today?
+- deploying to heroku, using heroku from the command line, looking at heroku logs when errors were thrown
+2. What was particularly interesting or surprising about the topic(s) today?
+- it's cool how easy it is to use gunicorn, and that heroku can automatically set up a postgresql database for you
+3. What was the most challenging part of the work today, and why?
+- Understanding how heroku really works. I get the overall ideas. I'm spending time looking up what exactly everything is (caching, microframeworks, etc.)
