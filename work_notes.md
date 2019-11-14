@@ -36,15 +36,37 @@ Tuesday- Module 2
         we add it with `db_user=User(id=twitter_user.id, name=twitter_user.
             screen_name, newest_tweet_id=tweets[0].id)`
         ```
-for tweet in tweets:
-    embedding = BASILICA.embed_sentence(tweet.full_text,
-                                        model='twitter')
-    db_tweet = Tweet(id=tweet.id, text=tweet.full_text[:500],
-                     embedding=embedding)
-    DB.session.add(db_tweet)
-    db_user.tweets.append(db_tweet)
+        for tweet in tweets:
+            embedding = BASILICA.embed_sentence(tweet.full_text,
+                                                model='twitter')
+            db_tweet = Tweet(id=tweet.id, text=tweet.full_text[:500],
+                             embedding=embedding)
+            DB.session.add(db_tweet)
+            db_user.tweets.append(db_tweet)
 
-DB.session.add(db_user)
-DB.session.commit()
+        DB.session.add(db_user)
+        DB.session.commit()
         ```
 
+Wednesday- Module3
+    1. We first added a way for the client to take an input of the twitter
+        user we want to evaluate through `twitter.py` by using a function
+        that relates to `base.html`. The function reads the tweets and saves
+        them to the database.
+    2. We added a `/user/<name>` to display the tweets that the model is using
+        to make the predictions.
+    3. We make a `predict.py` file and import our models, BASILICA as well as
+        sklearn, numpy and Pickle(for caching).
+    4. In this file we continue to make the information we have available into
+        the format our LogisticRegression can process by running the tweets
+        into our BASILICA(Deep neural newtowrk) that turns the sentence into
+        these floats that the model can compare. (What we do here is a bit
+        outside of the scope of what we have learned so far, more information
+        will come in Unit 4 when we cover Machine Learning)
+    5. We finish by writing the html file that will present the information
+        our model finds by saying who would be more likely to say something.
+    6. Then we add a form that lets the client choose between the twitter users
+        available in the database to compare.
+    7. As a side note, `user.html` and `prediction.html` inherit elements from
+        `base.html` in order to avoid redundancy and do less work overall. Also
+        The forms we add are inside `base.html`.
