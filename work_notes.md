@@ -57,3 +57,20 @@ depending on the input.
 The HTML; I have little experience with HTML so it took some time to figure out how to do
 what I wanted to do with it. I ended up learning about the Bootstrap stylesheet though,
 which was very helpful!
+
+## Thursday November 14
+
+### What went well (in the context of working on the assignment) today?
+
+Again, most everything went well. I managed to deploy to Heroku during lecture, so I spent
+the rest of the day helping other people and adding some images to my app.
+
+### What was particularly interesting or surprising about the topic(s) today?
+
+I thought the process of setting environmental variables for Heroku was pretty interesting.
+
+### What was the most challenging part of the work today, and why?
+
+Nothing was particularly difficult today, but if I had to say something, figuring out how to
+add Twitter users' profile pictures to the app took some time, until I realized that I just
+needed to add a new column to the "User" table.
