@@ -33,3 +33,14 @@ Starting to get a feel for how an app like this is structured. It's interesting!
 
 ### What was the most challenging part of the work today, and why?
 Because I did a little stretch yesterday that almost overlapped with today's naming, I had to scramble to undo that to avoid problems. Unpleasant experience. 
+
+## Module four
+
+### What went well (in the context of working on the assignment) today?
+It deployed to heroku with minimal issues.
+
+### What was particularly interesting or surprising about the topic(s) today?
+Finding out all the shit I was apparently supposed to be magically absorbing during the frantic two-hour codealongs.
+
+### What was the most challenging part of the work today, and why?
+Coping emotionally with how little I've learned this week.
