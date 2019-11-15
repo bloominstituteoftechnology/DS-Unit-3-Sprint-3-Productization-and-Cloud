@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+
+<p>{{ message }}</p>
+
+<form action="/refresh" method="post">
+    <input type="submit" value="Refresh">
+</form>
+
+<ul>
+
+    {% for record in records %}
+
+    <li> < time: {{ record.datetime }} - value: {{ record.value }} > </li>
+
+</ul>
+
+{% endblock %}

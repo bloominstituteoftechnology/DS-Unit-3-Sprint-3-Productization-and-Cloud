@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Test Title! </title>
+            <!-- add in a style sheet from picnicss.com -->
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
+    </head>
+
+
+    <body>
+
+        <h1> OpenAQ query here! </h1>
+        {% block content %}
+
+        <form action="/refresh" method="post">
+            <input type="submit" value="Refresh">
+        </form>
+
+        <ul>
+
+            {% for record in records %}
+
+            <li> < time: {{ record.datetime }} - value: {{ record.value }} > </li>
+
+            {% endfor %}
+    
+        </ul>
+
+
+        {% endblock %}
+    </body>
+</html>
