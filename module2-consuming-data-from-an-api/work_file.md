@@ -13,5 +13,13 @@ Getting a solid understanding of which terminal I should be working in to make t
 Friday 12/06/19 
 
 What went well (in the context of working on the assignment) today?
+
+I was finally able to complete assignment one and added more to my project than requested. I have 4 users, and each user has 3 tweets assigned to them, which are actual quotes of things they've said.
+
 What was particularly interesting or surprising about the topic(s) today?
+
+I have worked in Access databases a lot. It was really interesting to see and delve into what was going on under the hood all that time.
+
 What was the most challenging part of the work today, and why?
+
+Getting code to work, after trying to fix 100 other things, I finally discovered I had missed a space in my app.py. I will begin assignment 2 tomorrow and hope to have completed that assignment by Monday so that I am caught up to the rest of the class. 
