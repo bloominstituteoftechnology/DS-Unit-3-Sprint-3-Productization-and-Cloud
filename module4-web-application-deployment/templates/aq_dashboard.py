@@ -4,7 +4,13 @@ from flask import Flask
 APP = Flask(__name__)
 
 
+
 @APP.route('/')
 def root():
     """Base view."""
     return 'TODO - part 2 and beyond!'
+
+@APP.route('/')
+def run_api():
+    """Pulling data from OpenAQ API"""
+    return
