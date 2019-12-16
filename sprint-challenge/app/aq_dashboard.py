@@ -1,5 +1,5 @@
-
 """OpenAQ Air Quality Dashboard with Flask."""
+# imports
 import openaq
 from app import app
 from flask import Flask, jsonify
@@ -13,11 +13,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 DB = SQLAlchemy(app)
 api = openaq.OpenAQ()
 
-def results(city='Los Angeles', parameter='pm25'):
+
+def utc_values(city='Los Angeles', parameter='pm25'):
+    """Takes in air quality measurements and returns list of utc and values"""
     status, body = api.measurements(city='Los Angeles', parameter='pm25')
-    dictionary = body['results']
+    big_dict = body['results']
     date = []
-    for i in dictionary:
+    for i in big_dict:
         for x, y in i.items():
             if x == 'date':
                 date.append(y)
@@ -28,16 +30,18 @@ def results(city='Los Angeles', parameter='pm25'):
                 utc.append(d)
 
     value = []
-    for p in dictionary:
+    for p in big_dict:
         for q, r in p.items():
             if q == 'value':
                 value.append(r)
 
-    measured = list(zip(utc, value))
-    return measured
+    list_of_zipped_items = list(zip(utc, value))
+    return list_of_zipped_items
+
 
 @app.route('/')
 def root():
+    """Returns values greater than 10"""
     risky = Record.query.filter(Record.value >= 10).all()
     return str(risky)
 
@@ -48,7 +52,8 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        return '< Date-time: {} - PM value: {} >'.format(self.datetime, self.value)
+        return '< Date-time: {} - Value: {} >'.format(self.datetime,
+                                                      self.value)
 
 
 @app.route('/refresh')
@@ -56,10 +61,10 @@ def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
     DB.create_all()
-    a = results(city='Los Angeles', parameter='pm25')
-    for i in a:
-        m = Record(datetime=i[0], value=i[1])
-        DB.session.add(m)
+    la = utc_values(city='Los Angeles', parameter='pm25')
+    for v in la:
+        tupl = Record(datetime=v[0], value=v[1])
+        DB.session.add(tupl)
 
     DB.session.commit()
     return 'Data refreshed!'
