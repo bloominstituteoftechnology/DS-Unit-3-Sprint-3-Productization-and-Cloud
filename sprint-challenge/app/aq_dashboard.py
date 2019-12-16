@@ -1,16 +1,16 @@
 
 """OpenAQ Air Quality Dashboard with Flask."""
 import openaq
-from flask import Flask
+from app import app
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from decouple import config
 import requests
 
-APP = Flask(__name__)
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
-DB = SQLAlchemy(APP)
+DB = SQLAlchemy(app)
 api = openaq.OpenAQ()
 
 def results(city='Los Angeles', parameter='pm25'):
@@ -22,20 +22,24 @@ def results(city='Los Angeles', parameter='pm25'):
             if x == 'date':
                 date.append(y)
     utc = []
-    for i in date:
-        for x, y in i.items():
-            if x == 'utc':
-                utc.append(y)
+    for b in date:
+        for c, d in b.items():
+            if c == 'utc':
+                utc.append(d)
 
     value = []
-    for i in value:
-        for x, y in i.items():
-            if x == 'value':
-                value.append(x)
+    for p in dictionary:
+        for q, r in p.items():
+            if q == 'value':
+                value.append(r)
 
     measured = list(zip(utc, value))
-
     return measured
+
+@app.route('/')
+def root():
+    risky = Record.query.filter(Record.value >= 10).all()
+    return str(risky)
 
 
 class Record(DB.Model):
@@ -44,13 +48,10 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        return '<Time {} --- Value {}>'.format(self.datetime, self.value)
+        return '< Date-time: {} - PM value: {} >'.format(self.datetime, self.value)
 
-@APP.route('/')
-def root():
-    return "Homepage"
 
-@APP.route('/refresh')
+@app.route('/refresh')
 def refresh():
     """Pull fresh data from Open AQ and replace existing data."""
     DB.drop_all()
@@ -59,8 +60,6 @@ def refresh():
     for i in a:
         m = Record(datetime=i[0], value=i[1])
         DB.session.add(m)
+
     DB.session.commit()
     return 'Data refreshed!'
-
-
-    return APP
