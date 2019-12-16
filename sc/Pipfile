@@ -10,6 +10,8 @@ flask = "*"
 flask-sqlalchemy = "*"
 requests = "*"
 py-openaq = "*"
+python-decouple = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"

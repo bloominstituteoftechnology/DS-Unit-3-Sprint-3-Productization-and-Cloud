@@ -15,4 +15,4 @@ def API():
 	api = openaq.OpenAQ()
 	status, body = api.measurements(city='Los Angeles', parameter='pm25')
 	data = body['result']
-	return data
+	data

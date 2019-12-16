@@ -8,10 +8,3 @@ class City(DB.Model):
 
 	def __repr__(self):
 		return '<City {}>'.format(self.city)
-#
-# class parameter(DB.Model):
-# 	id = DB.Column(DB.BigInteger, primary_key=True)
-# 	text = DB.Column(DB.Unicode(500), nullable=False)
-#
-# 	def __repr__(self):
-# 		return '<Parameter {}>'.format(self.parameter)
