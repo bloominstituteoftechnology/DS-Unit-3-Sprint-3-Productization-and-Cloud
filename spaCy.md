@@ -10,7 +10,7 @@ First, install spacy and a pretrained model.
 >pipenv install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz
 ```
 
-Note that I'm using the small model since it's fast to download (11 MB). There's also medium (en_core_web_md-2.2.5, 91 MB) and large (en_core_web_lg-2.2.5, 789 MB), which are more accurate. Note that the large model is too large to be put on Heroku, but the medium model can still be used.
+Note that we're using the small model since it's fast to download (11 MB). There's also medium (en_core_web_md-2.2.5, 91 MB) and large (en_core_web_lg-2.2.5, 789 MB) models, which are more accurate. Note that the large model is too large to be put on Heroku, but the medium model can still be used.
 
 -------------------------------------
 
@@ -49,4 +49,4 @@ The app should work at this point without further modification. It will not be a
 
 If you had Basilica working before, you'll need to reset your SQL database to flush out the old embeddings which are not compatible with our new model.
 
-In principal, this same procedure with only slight variation should work for any word library with embeding models, such as gensim, mxnet, etc.
+In principal, this same procedure with only slight variation should work for any library with word-embeding models such as gensim, mxnet, etc.
