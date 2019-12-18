@@ -7,6 +7,7 @@ Once you get the intuition of workflow, despite the huge amount of new informati
 
 --------------------
 # Day 2 - Consuming Data from an API
+Things were going pretty well until embedding. I don't know if it is a problem with Basilica server, because I checked every step I made and I still get errors when embedding. I sent the errors screenshots to the channel, tomorrow I take care of this.
 
 --------------------
 # Day 3 - Adding Data Science to a Web Application
