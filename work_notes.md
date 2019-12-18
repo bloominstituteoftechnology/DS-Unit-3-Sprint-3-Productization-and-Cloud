@@ -24,3 +24,10 @@ Day: module 2
 2) It doesn't look like a lot of code, however the code is quite sufisticated.
 
 3) There was a lot to take in that you couldn't dive in depth to why certain things are done. Need to accept thats just how its done.
+
+Day: module 3
+1) The assignment worked today on the first try
+
+2) How all the independent files come together to get the final product to work as intended.
+
+3) The most challenging part about today was following along there was a lot of code that refrencced different locations. It become confusing at times.  
