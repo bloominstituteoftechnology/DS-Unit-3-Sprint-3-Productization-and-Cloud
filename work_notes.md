@@ -30,4 +30,11 @@ Day: module 3
 
 2) How all the independent files come together to get the final product to work as intended.
 
-3) The most challenging part about today was following along there was a lot of code that refrencced different locations. It become confusing at times.  
+3) The most challenging part about today was following along there was a lot of code that refrencced different locations. It become confusing at times. 
+
+Day: module 4 
+1) the app worked one the first try 
+
+2) Its kinda straight forward to deploy an app on heroku after you have it developed locally
+
+3) The most difficult part about today was making sure you imported things correctly to heroku to make it work.
