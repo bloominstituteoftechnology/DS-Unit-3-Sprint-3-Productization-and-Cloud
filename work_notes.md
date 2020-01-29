@@ -1,3 +1,5 @@
+Click [here](https://github.com/jwross24/twitoff) for my TwitOff project repo!
+
 ## Module 1 - Web Application Development with Flask
 ### What went well (in the context of working on the assignment) today?
 Overall, the assignment was pretty easy, but I'm interested to see how we can use the
