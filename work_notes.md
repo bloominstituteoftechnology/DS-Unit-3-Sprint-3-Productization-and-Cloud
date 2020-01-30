@@ -16,18 +16,24 @@ and explained a lot of what was going on as he progressed through the project.
 
 ## Module 2 - Consuming Data from an API
 ### What went well (in the context of working on the assignment) today?
-
+The lecture was very easy to follow and Aaron did well into going in-depth and
+explaining the design decisions as he went along.
 
 ### What was particularly interesting or surprising about the topic(s) today?
-
+It was fun to think about different ways to implement the functions in the
+`twitter.py` file. I was also able to finish the stretch goal of implementing
+the `/user/<name>` route.
 
 ### What was the most challenging part of the work today, and why?
-
+The most challenging part was figuring out the new route for each user and
+implementing the logic to interact with the database.
 
 ## Module 3 - Adding Data Science to a Web Application
 ### What went well (in the context of working on the assignment) today?
 I didn't have to debug much aside from some very small problems, and following along
-with the lecture was fairly straightforward.
+with the lecture was fairly straightforward. I was also able to make a full clone of
+the published app available [here](http://twitoff.herokuapp.com/) by analyzing the
+template structure and implementing the necessary routes and HTML.
 
 ### What was particularly interesting or surprising about the topic(s) today?
 I think caching the models with Redis is something that can take the project from a
