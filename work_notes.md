@@ -49,3 +49,17 @@ Doing a logistic regression on the Basilica embeddings is very intereseting.
 - What was the most challenging part of the work today, and why?
 
 Debugging my code, to figure out the what/where/why from the error messages.
+
+*Module 4*
+
+- What went well (in the context of working on the assignment) today?
+
+Deployed my app!
+
+- What was particularly interesting or surprising about the topic(s) today?
+
+Evaluating model performance (and by doing so, being able to compare different models) is not straight forward.  
+
+- What was the most challenging part of the work today, and why?
+
+Debugging Heroku can be quite challenging.
