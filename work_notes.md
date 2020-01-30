@@ -2,7 +2,8 @@
 Building a real deployed full-stack application, backed by Data Science
 --------------------
 
-Link to my project repo: [TwitOff](https://github.com/Okocha76/TwitOff)
+Link to my project repo: [TwitOff - GitHub](https://github.com/Okocha76/TwitOff)
+Link to web app on Heroku: [TwitOff - Heroku](https://okocha76-twitoff.herokuapp.com)
 
 *Module 1*
 
@@ -34,3 +35,17 @@ Interaction with both Twitter and Basilica API is quite smooth.
 
 Had some troubles setting up my local/pipenv environment, SQLAlchemy in particular gave some headaches.  
 Interaction between the module 1 lecture from Ben Manning and the prerecorded module 2 lecture from Bruno Janota was not seamless. 
+
+*Module 3*
+
+- What went well (in the context of working on the assignment) today?
+
+Reproduced the lecture, added forms to compare/add users.
+
+- What was particularly interesting or surprising about the topic(s) today?
+
+Doing a logistic regression on the Basilica embeddings is very intereseting.  
+
+- What was the most challenging part of the work today, and why?
+
+Debugging my code, to figure out the what/where/why from the error messages.
