@@ -10,10 +10,10 @@ flask = "*"
 flask-sqlalchemy = "*"
 basilica = "*"
 tweepy = "*"
-python-decouple = "*"
 scikit-learn = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.7"
