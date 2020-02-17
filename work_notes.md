@@ -22,3 +22,9 @@ so it's harder to figure out where something unexpected is coming from.
 I'm enjoying the Basilica package. I worked it into another side project
 that I am working on (a Kaggle competition about analyzing tweets 
 about disasters). 
+
+I was able to work out the syntax for the Tweep library but I'm having more
+trouble with SQLAlchemy. I think I can get it, though, it's just a matter of
+taking more time to read the documentation. My goal is to get the web app to
+dynamically update the tweets table with the most recent tweet from a user when
+they are added to the database.
