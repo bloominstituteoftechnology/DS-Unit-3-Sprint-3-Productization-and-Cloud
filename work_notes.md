@@ -1,4 +1,8 @@
-Day 1:
+###github Repo: https://github.com/unburied/TwitOff
+
+
+####Notes
+#####Day 1:
 - What went well (in the context of working on the assignment) today?
 Only managed to deploy hello world. Working on getting main ip going.
 - What was particularly interesting or surprising about the topic(s) today?
