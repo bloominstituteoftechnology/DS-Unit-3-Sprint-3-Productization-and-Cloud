@@ -18,3 +18,7 @@ just by scanning for keywords. But in this case, the text of one page
 is determined by a combination of the Python script and the HTML file
 so it's harder to figure out where something unexpected is coming from. 
 
+###Module 2 Assignment
+I'm enjoying the Basilica package. I worked it into another side project
+that I am working on (a Kaggle competition about analyzing tweets 
+about disasters). 
