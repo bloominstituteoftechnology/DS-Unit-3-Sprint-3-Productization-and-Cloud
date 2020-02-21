@@ -14,7 +14,7 @@ they are technical or not, can click and enjoy!
 
 Sign up for a free [Heroku](https://www.heroku.com/) account - you shouldn't
 need to provide credit card information. Then read their [getting started on
-Herkou with
+Heroku with
 Python](https://devcenter.heroku.com/articles/getting-started-with-python)
 guide, and optionally follow along (the example app is Django, but the process
 will be similar with Flask).
