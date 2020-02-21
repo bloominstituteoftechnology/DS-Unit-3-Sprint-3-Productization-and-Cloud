@@ -28,3 +28,13 @@ trouble with SQLAlchemy. I think I can get it, though, it's just a matter of
 taking more time to read the documentation. My goal is to get the web app to
 dynamically update the tweets table with the most recent tweet from a user when
 they are added to the database.
+
+###Module 3 and 4
+I was able to get my Flask app written and deployed to Heroku. Right now, I can use it
+to add users to a database, see their recent tweets, and determine which of those
+recent tweets has had the most interaction. 
+
+I'm trying to build a model to predict how many interactions a new tweet will
+have, based on the behavior of a user's followers in the past. I'm running into 
+issues formatting the data so it fits into the model. I'll keep working on that
+leading into the weekend. 
