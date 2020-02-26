@@ -1,12 +1,11 @@
 Twitoff repository link:
 https://github.com/doinalangille/Twitoff
 
-Day 1:
+Day 2:
 **What went well:**
-I created the model for Tweet and User. I added fake data to my local database
+Wrote methods to pull actual Users and Tweets
+Added an embedding field to the Tweet model
 
 **What was particularly interesting or surprising about the topic(s) today:**
-It is a completely new topic, and I am excited to make this app more complex
+It is practical to use API and to have access to real data from different sources
 
-**What was the most challenging part of the work today, and why?**
-The most challenging part was to follow the instructions, but I watched the recording from previous cohorts, and finally I understood what I have to do
