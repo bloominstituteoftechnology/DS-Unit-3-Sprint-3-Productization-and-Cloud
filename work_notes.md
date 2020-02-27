@@ -20,3 +20,14 @@
   - error handling
   - everything else
  
+### Module 3
+- What went well (in the context of working on the assignment) today?
+  - got it done
+  - running flask in debug mode made troubleshooting much easier
+- What was particularly interesting or surprising about the topic(s) today?
+  - difficulty of templates and database stuff and routes
+  - difficulty of finding useful information in these modules' documentation
+- What was the most challenging part of the work today, and why?
+  - trying to organinze my code
+  - trying to code in a framework wth no guidance on best practices using that framework
+
