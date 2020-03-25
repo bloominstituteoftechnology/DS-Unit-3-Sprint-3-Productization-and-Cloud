@@ -11,14 +11,19 @@ There are a lot of different parts, and understanding how all of them come and w
 
 # module 2 
 ### What went well:
+Connected to basilica API!
 ### What was particularly interesting or suprising about the topic(s) today:
+I've been excited to learn about APIs, how they work, and how I can access them. :)
 ### Most challenging part:
-
+I still don't have twitter API access and the instructor's credentials aren't working.
 
 # module 3 
 ### What went well:
+I felt like I could follow along with the lecture.
 ### What was particularly interesting or suprising about the topic(s) today:
+I liked learning about pickle and how we can train models and save it for later so that we can load our data into it even after the app is deployed.
 ### Most challenging part:
+I STILL don't have Twitter API access
 
 # module 4
 ### What went well:
