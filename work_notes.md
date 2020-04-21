@@ -1,0 +1,15 @@
+## Repo location: 
+https://github.com/maiali13/ma-twitoff
+
+# Monday
+### What went well (in the context of working on the assignment) today?
+Lecture was well explained and relatively easy to follow, despite all the new content. I am getting more used to pushing changes to git as I work and keeping all the directories organized and navigatable. 
+
+### What was particularly interesting or surprising about the topic(s) today?
+It is pretty cool to build an app and then see it work and my changes do something.
+
+### What was the most challenging part of the work today, and why?
+Getting the database to actually save the input data, it wasn't explicitly covered in lecture and I've been encountering weird silent failures. 
+
+
+# Tuesday 
