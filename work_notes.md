@@ -13,3 +13,11 @@ Getting the database to actually save the input data, it wasn't explicitly cover
 
 
 # Tuesday 
+### What went well (in the context of working on the assignment) today?
+Basilica API config. 
+
+### What was particularly interesting or surprising about the topic(s) today?
+APIs are cool. How much user data is stored by the Twitter API
+
+### What was the most challenging part of the work today, and why?
+blockers, blockers, blockers. sqlite3 db errors and 400 errors on the app
