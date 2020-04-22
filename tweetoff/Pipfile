@@ -11,6 +11,9 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 pandas = "*"
 basilica = "*"
+python-dotenv = "*"
+requests = "*"
+tweepy = "*"
 
 [requires]
 python_version = "3.7"
