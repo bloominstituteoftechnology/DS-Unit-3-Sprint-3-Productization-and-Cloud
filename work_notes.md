@@ -28,7 +28,7 @@ blockers, blockers, blockers. sqlite3 db errors and 400 errors on the app
 Setting up a the model and prediction forms.  
 
 ### What was particularly interesting or surprising about the topic(s) today?
-APIs are cool. How much user data is stored by the Twitter API
+the challenges of making an accurate model that the app will load
 
 ### What was the most challenging part of the work today, and why?
 blockers, blockers, blockers. sqalchemy errors and 500 errors when trying to run the app
