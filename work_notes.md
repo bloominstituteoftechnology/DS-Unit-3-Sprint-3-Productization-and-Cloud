@@ -1,5 +1,5 @@
 ## Repo location: 
-https://github.com/maiali13/ma-twitoff
+https://github.com/maiali13/twitoff-ma
 
 # Monday
 ### What went well (in the context of working on the assignment) today?
