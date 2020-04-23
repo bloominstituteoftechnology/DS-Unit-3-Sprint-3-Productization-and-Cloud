@@ -36,7 +36,10 @@ blockers, blockers, blockers. sqalchemy errors and 500 errors when trying to run
 
 # Thursday
 ### What went well (in the context of working on the assignment) today?
+Fixed some blockers from yesterday!
 
 ### What was particularly interesting or surprising about the topic(s) today?
+The deceptive simplicity of deploying the app to heroku
 
 ### What was the most challenging part of the work today, and why?
+Trying to absorb all of this new information and actually get the "simple" heroku app deployed :)
