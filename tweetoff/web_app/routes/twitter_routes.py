@@ -9,13 +9,13 @@ twitter_routes = Blueprint("twitter_routes", __name__)
 
 
 @twitter_routes.route("/users/<screen_name>/fetch")
-def get_user(screen_name=None):
+def fetch_user_data(screen_name=None):
     print(screen_name)
 
     api = twitter_api_client()
     twitter_user = api.get_user(screen_name)
     statuses = api.user_timeline(
-        screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+        screen_name, tweet_mode="extended", count=150)# , exclude_replies=False, include_rts=False)
     print("STATUSES COUNT:", len(statuses))
     #return jsonify({"user": user._json, "tweets": [s._json for s in statuses]})
 
@@ -58,3 +58,18 @@ def get_user(screen_name=None):
     #breakpoint()
     return "OK"
     #return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
+
+
+@twitter_routes.route("/users")
+@twitter_routes.route("/users.json")
+def list_users():
+    db_users = User.query.all()
+    users_response = parse_records(db_users)
+    return jsonify(users_response)
+
+
+@twitter_routes.route("/users/<screen_name>")
+def get_user(screen_name=None):
+    print(screen_name)
+    db_user = User.query.filter(User.screen_name == screen_name).one()
+    return render_template("user.html", user=db_user, tweets=db_user.tweets)
