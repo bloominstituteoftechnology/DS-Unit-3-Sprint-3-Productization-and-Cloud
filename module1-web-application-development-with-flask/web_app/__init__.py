@@ -6,7 +6,7 @@
 from flask import Flask
 from web_app.models import db, migrate
 from web_app.routes.tweets_routes import tweets_routes
-from web_app.routes.user_routes import user_routes
+from web_app.routes.home_routes import home_routes
 
 DATABASE_URI = "sqlite:///C:\\Users\\jessi\\OneDrive\\Documents\\School\\Python\\Unit_3\\Sprint_3\\DS-Unit-3-Sprint-3-Productization-and-Cloud\\twitoff_development.db"
 
@@ -18,7 +18,7 @@ def create_app():
     migrate.init_app(app, db)
 
     app.register_blueprint(tweets_routes)
-    app.register_blueprint(user_routes)
+    app.register_blueprint(home_routes)
 
     return app
 
