@@ -1,0 +1,26 @@
+<!-- web_app/templates/tweets.html -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>tweets Page</title>
+{% endblock %}
+
+{% block content %}
+
+    <h2>Welcome to the tweets Page</h2>
+
+    <p>{{ message }}</p>
+
+    {% if tweets %}
+        <ul>
+        {% for tweet in tweets %}
+            <li>{{ tweet["title"] }}</li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>tweets not found.</p>
+    {% endif %}
+
+{% endblock %}
