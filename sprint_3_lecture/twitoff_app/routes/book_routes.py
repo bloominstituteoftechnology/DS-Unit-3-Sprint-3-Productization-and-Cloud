@@ -22,3 +22,15 @@ def list_books_for_humans():
     ]
     return render_template("books.html", message="Here's some books", books=books)
 
+@book_routes.route("/books/new")
+def new_book():
+    return render_template("new_book.html")
+
+@book_routes.route("/books/create", methods=['POST'])
+def create(book):
+    print("FORM DATA:", dict(request.form))
+    # todo: store in database
+    return jsonify({
+        "message" : "BOOK CREATED OK (TODO)",
+        "book" : dict(request.form)
+    })
