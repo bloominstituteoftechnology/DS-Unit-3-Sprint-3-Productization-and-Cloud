@@ -6,9 +6,8 @@ home_routes = Blueprint("home_routes", __name__)
 
 @home_routes.route("/")
 def index():
-    x = 2 + 2
-    return f"Hello World! {x}"
+    return "Welcome to our twitoff, hosted by lambda school students!"
 
 @home_routes.route("/about")
 def about():
-    return "About me"
+    return "Here we will be creating a dataframe of usernames and a dataframe of their tweets."

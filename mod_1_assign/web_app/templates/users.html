@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Users</title>
 </head>
 <body>
 
 
-    <h1>Books Page</h1>
-    <h2>Subheading</h2>
+    <h1>Twitter Users Page</h1>
+    <h2>Includes twitter handles</h2>
 
     <p>{{ message }}</p>
 
-    {% if books %}
+    {% if users %}
         <ul>
-        {% for book in books %}
-            <li>{{ book["title"] }}</li>
+        {% for user in users %}
+            <li>{{ user.handle }}</li>
         {% endfor %}
         </ul>
 
     {% else %}
-        <p>Books not found.</p>
+        <p>Users not found.</p>
     {% endif %}
 
 
