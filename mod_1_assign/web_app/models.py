@@ -8,9 +8,15 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 class Users(db.Model):
-    #__table_name__ = "books"
+    __table_name__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     handle = db.Column(db.String(128))
+
+class Tweets(db.Model):
+    __table_name__ = "tweets"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    tweet = db.Column(db.String(500))
 
 def parse_records(database_records):
     """
