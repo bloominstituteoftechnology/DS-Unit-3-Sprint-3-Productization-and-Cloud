@@ -34,8 +34,7 @@ def user_create_new_tweet(username=None):
     return redirect(f"/users/{username}/")
 
 
-
-@user_routes.route("/users/new")
+@user_routes.route("/users/new/")
 def new_user():
     return render_template("new_user.html")
 
