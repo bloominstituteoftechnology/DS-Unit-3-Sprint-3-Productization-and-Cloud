@@ -6,8 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+python-dotenv = "*"
+requests = "*"
+basilica = "*"
+tweepy = "*"
 flask = "*"
-flask-sqlalchemy = "*"
 flask-migrate = "*"
 
 [requires]
