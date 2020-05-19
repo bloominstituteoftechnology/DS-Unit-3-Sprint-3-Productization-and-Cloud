@@ -1,0 +1,5 @@
+# Ignore secret credentials
+.env
+
+twitoff_app.db
+Pipfile.lock
