@@ -1,5 +1,10 @@
+
+
+# ignore dev database stuff:
+
+migrations/
+twitoff_app.db
+
 # Ignore secret credentials
 .env
 
-twitoff_app.db
-Pipfile.lock
