@@ -15,16 +15,18 @@
     <h1>New tweets Page</h1>
 
     <p>Please fill out the form below to add a new tweet to the database:</p>
-@@ -27,11 +22,4 @@ <h1>New tweets Page</h1>
-        <button>Submit</button>
-    </form>
-
-
-
-
-
+    <form action="/tweets/create" method="POST">
+      <label>Tweet:</label>
+      <input type="text" name="Tweets.full_text" placeholder="Tweet XYZ" value="Tweet XYZ">
+      <label>Twitter Handle:</label>
+      <select name="twitter_handle">
+        <option handle="H1">Handle 1</option>
+        <option handle="H2">Handle 2</option>
+      </select>
+      <button>Submit</button>
+  </form>
+  {% endblock %}
 
 
 </body>
 </html>
-{% endblock %}

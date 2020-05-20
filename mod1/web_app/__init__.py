@@ -5,10 +5,15 @@ from flask import Flask
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.tweet_routes import tweet_routes
+from web_app.routes.twitter_routes import twitter_routes
+import os
+from dotenv import load_dotenv
 
-DATABASE_URI = "sqlite:///C:\\Users\\Mike\\LambdaSchool\\DS-Unit-3-Sprint-3-Productization-and-Cloud\\mod1\\web_app_99.db" # using absolute filepath on Windows (recommended) h/t: https://stackoverflow.com/a/19262231/670433
+load_dotenv()
 
-SECRET_KEY = "TWITTER_API_SECRET" # todo: use env var to customize
+DATABASE_URI = "sqlite:///C:\\Users\\Mike\\LambdaSchool\\unit3\\DS-Unit-3-Sprint-3-Productization-and-Cloud\\mod1\\web_app_99.db" # using absolute filepath on Windows (recommended) h/t: https://stackoverflow.com/a/19262231/670433
+
+SECRET_KEY = os.getenv("TWITTER_API_SECRET", default="OOPS")
 
 def create_app():
     app = Flask(__name__)
@@ -21,6 +26,7 @@ def create_app():
 
     app.register_blueprint(home_routes)
     app.register_blueprint(tweet_routes)
+    app.register_blueprint(twitter_routes)
     return app
 
 if __name__ == "__main__":
