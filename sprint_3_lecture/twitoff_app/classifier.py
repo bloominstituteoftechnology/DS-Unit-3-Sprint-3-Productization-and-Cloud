@@ -37,7 +37,7 @@ if __name__ == "__main__":
     clf = load_model()
     print("CLASSIFIER:", clf)
 
-    breakpoint()
+    # breakpoint()
 
     X, y = load_iris(return_X_y=True) # just to have some data to use when predicting
     inputs = X[:2, :]
