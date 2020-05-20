@@ -1,31 +1,26 @@
-import basilica
+from basilica import Connection
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = os.getenv("BASILICA_API_KEY")
+API_KEY = os.getenv("BASILICA_API_KEY", default='OOPS')
 
-def basilica_api_client():
-    connection = basilica.Connection(API_KEY)
-    print(type(connection)) #> <class 'basilica.Connection'>
-    return connection
+connection = Connection(API_KEY)
+print(type(connection))
 
 if __name__ == "__main__":
 
-    print("---------")
-    connection = basilica_api_client()
+    embedding = connection.embed_sentence("HELLO WORLD")
+    print(embedding) #>
 
-    print("---------")
-    sentence = "Hello again"
-    sent_embeddings = connection.embed_sentence(sentence)
-    print(list(sent_embeddings))
+    sentences = [
+        "This is a sentence!",
+        "This is a similar sentence!",
+        "I don't think this sentence is very similar at all...",
+    ]
 
-    print("---------")
-    sentences = ["Hello world!", "How are you?"]
-    print(sentences)
-    # it is more efficient to make a single request for all sentences...
-    embeddings = connection.embed_sentences(sentences)
-    print("EMBEDDINGS...")
-    print(type(embeddings))
-    print(list(embeddings)) # [[0.8556405305862427, ...], ...]
+    embeddings = list(connection.embed_sentences(sentences))
+    for embed in embeddings:
+        print("----------")
+        print(embed) #> a list with 768 floats from -1 to 1

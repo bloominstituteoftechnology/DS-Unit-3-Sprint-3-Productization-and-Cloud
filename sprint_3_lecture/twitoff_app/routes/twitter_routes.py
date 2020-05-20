@@ -3,7 +3,7 @@
 from flask import Blueprint, render_template, jsonify
 from twitoff_app.models import db, User, Tweet, parse_records
 from twitoff_app.services.twitter_service import twitter_api_client
-from twitoff_app.services.basilica_service import basilica_api_client
+from twitoff_app.services.basilica_service import connection as basilica_connection
 
 twitter_routes = Blueprint("twitter_routes", __name__)
 
@@ -15,7 +15,9 @@ def get_user(screen_name=None):
     api = twitter_api_client()
 
     twitter_user = api.get_user(screen_name)
-    statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+    # statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+    statuses = api.user_timeline(screen_name, tweet_mode="extended", count=500, exclude_replies=False, include_rts=True)
+
     print("STATUSES COUNT:", len(statuses))
     #return jsonify({"user": user._json, "tweets": [s._json for s in statuses]})
 
@@ -30,10 +32,8 @@ def get_user(screen_name=None):
     #return "OK"
     #breakpoint()
 
-    basilica_api = basilica_api_client()
-
     all_tweet_texts = [status.full_text for status in statuses]
-    embeddings = list(basilica_api.embed_sentences(all_tweet_texts, model="twitter"))
+    embeddings = list(basilica_connection.embed_sentences(all_tweet_texts, model="twitter"))
     print("NUMBER OF EMBEDDINGS", len(embeddings))
 
     # TODO: explore using the zip() function maybe...
