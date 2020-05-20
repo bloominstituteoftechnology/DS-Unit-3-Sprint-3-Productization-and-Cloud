@@ -53,5 +53,12 @@ def get_user(screen_name=None):
         db.session.add(db_tweet)
         counter+=1
     db.session.commit()
-    #breakpoint()
+    # breakpoint()
     return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
+
+@twitter_routes.route("/users")
+def print_users():
+    user_records = User.query.all()[:10]
+    tweet_records = Tweet.query.all()[:10]
+
+    return render_template("user.html", user=user_records, tweets=tweet_records)
