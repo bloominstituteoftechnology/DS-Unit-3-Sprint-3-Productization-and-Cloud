@@ -6,6 +6,8 @@ from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.tweet_routes import tweet_routes
 from web_app.routes.twitter_routes import twitter_routes
+from web_app.routes.stats_routes import stats_routes
+
 import os
 from dotenv import load_dotenv
 
@@ -27,17 +29,8 @@ def create_app():
     app.register_blueprint(home_routes)
     app.register_blueprint(tweet_routes)
     app.register_blueprint(twitter_routes)
+    app.register_blueprint(stats_routes)
     return app
-
-@app.route('/iris')
-def iris():    
-    from sklearn.datasets import load_iris
-    from sklearn.linear_model import LogisticRegression
-    X, y = load_iris(return_X_y=True)
-    clf = LogisticRegression(random_state=0, solver='lbfgs',
-                          multi_class='multinomial').fit(X, y)
-
- return str(clf.predict(X[:2, :]))
 
 if __name__ == "__main__":
     my_app = create_app()
