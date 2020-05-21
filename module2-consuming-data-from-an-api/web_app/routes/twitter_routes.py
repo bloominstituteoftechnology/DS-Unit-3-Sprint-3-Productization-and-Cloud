@@ -1,12 +1,13 @@
 from flask import Blueprint, render_template, jsonify
 from web_app.services.twitter_service import twitter_api
-from web_app.services.basilica_service import Connection as basilica_connection
+from web_app.services.basilica_service import basilica_api_client
 from web_app.models import User, Tweet, db
+from pdb import set_trace as st
 
 twitter_routes = Blueprint("twitter_routes", __name__)
 
 
-@twitter_routes.route("/users/<screen_name>")
+@twitter_routes.route("/users/<screen_name>/")
 def get_user(screen_name=None):
     print(screen_name)
     api = twitter_api()
@@ -24,9 +25,10 @@ def get_user(screen_name=None):
     #breakpoint()
 
     all_tweet_texts = [status.full_text for status in statuses]
-    embeddings = list(basilica_connection.embed_sentences(all_tweet_texts, model="twitter"))
+    st()
+    basilica_connection = basilica_api_client()
+    embeddings = list(basilica_connection.embed_sentences(sentences=all_tweet_texts, model="twitter"))
     print("NUMBER OF EMBEDDINGS", len(embeddings))
-
     # TODO: explore using the zip() function maybe...
     counter = 0
     for status in statuses:

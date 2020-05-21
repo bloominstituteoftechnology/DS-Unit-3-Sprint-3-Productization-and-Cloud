@@ -8,19 +8,24 @@ from sqlalchemy.orm import joinedload
 user_routes = Blueprint("user_routes", __name__)
 
 
+@user_routes.route("/")
+def index():
+    return redirect("/users/")
+
+
 @user_routes.route("/users/")
 def list_users():
     user_records = User.query.all()
     return render_template("users.html", users=user_records)
 
 
-@user_routes.route("/users/<username>/")
-def list_user_tweets(username=None):
-    user = User.query.filter_by(username=username).first()
-    user_id = user.id
-    user_tweets = Tweet.query.filter_by(user_id=user_id).all()
-    # st()
-    return render_template("user_tweets.html", username=username, user_tweets=user_tweets)
+# @user_routes.route("/users/<username>/")
+# def list_user_tweets(username=None):
+#     user = User.query.filter_by(username=username).first()
+#     user_id = user.id
+#     user_tweets = Tweet.query.filter_by(user_id=user_id).all()
+#     # st()
+#     return render_template("user_tweets.html", username=username, user_tweets=user_tweets)
 
 
 # @user_routes.route("/users/<username>/new_tweet", methods=["POST"])
@@ -41,7 +46,7 @@ def new_user():
 
 @user_routes.route("/users/create", methods=["POST"])
 def create_user():
-    new_user = User(username=request.form["username"])
+    new_user = User(screen_name=request.form["username"])
     print("FORM DATA:", dict(request.form))
     db.session.add(new_user)
     db.session.commit()
