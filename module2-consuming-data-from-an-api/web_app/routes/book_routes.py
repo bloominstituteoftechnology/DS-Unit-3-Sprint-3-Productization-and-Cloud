@@ -9,7 +9,7 @@ book_routes = Blueprint("book_routes", __name__)
 @book_routes.route("/books.json")
 def list_books_json():
     book_records = Book.query.all()
-    return jsonify(books)
+    return jsonify(book_records)
 
 
 @book_routes.route("/books")
@@ -26,18 +26,8 @@ def new_book():
 @book_routes.route("/books/create", methods=["POST"])
 def create_book():
     print("FORM DATA:", dict(request.form))
-    # st()
-    new_book = Book(title=request.form["Book_title"], author_id=request.form["author_name"])
+    new_book = Book(title=request.form["book_title"], author_id=request.form["author_name"])
+
     db.session.add(new_book)
     db.session.commit()
-
-    # return jsonify({
-    #     "message": "BOOK CREATED OK",
-    #     "book": dict(request.form)
-    # })
     return redirect(f"/books")
-
-
-
-
-
