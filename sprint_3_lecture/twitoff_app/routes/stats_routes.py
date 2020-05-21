@@ -62,12 +62,14 @@ def predict():
                   "Space is awesome", "I love Grimes", "Come play basketball", 
                   "Sports is the shit", "Get it Lebron!", "Come check out the game"]
 
+    
+
     for text in tweet_texts:
         example_embedding = basilica_connection.embed_sentence(text, model="twitter")
         result = classifier.predict([example_embedding])
         predictions.append(result)
 
-    breakpoint()
+    # breakpoint()
 
     #return jsonify({"message": "RESULTS", "most_likely": result[0]})
     return render_template("results.html",
