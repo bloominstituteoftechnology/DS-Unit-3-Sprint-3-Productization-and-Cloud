@@ -10,7 +10,6 @@ twitter_routes = Blueprint("twitter_routes", __name__)
 @twitter_routes.route("/users/<screen_name>/")
 def get_user(screen_name=None):
     print(screen_name)
-    st()
     api = twitter_api()
     user = api.get_user(screen_name)
     statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
@@ -26,7 +25,7 @@ def get_user(screen_name=None):
     #breakpoint()
 
     all_tweet_texts = [status.full_text for status in statuses]
-    st()
+    # st()
     basilica_connection = basilica_api_client()
     embeddings = list(basilica_connection.embed_sentences(sentences=all_tweet_texts, model="twitter"))
     print("NUMBER OF EMBEDDINGS", len(embeddings))
