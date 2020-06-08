@@ -16,9 +16,15 @@ What was the most challenging part of the work today, and why?
 ## Module Two
 What went well (in the context of working on the assignment) today?
 
+  Assignment has been challenging so far, ran into an issue with the database where it couldnt drop fields that I had previously created and no longer wanted. Fixed this by deleting it all from my computer and then re cloning the repository from github again
+
 What was particularly interesting or surprising about the topic(s) today?
 
+  how much the database was not cooperating
+
 What was the most challenging part of the work today, and why?
+  
+  Working with the database, it just kept running into errors
 
 ## Module Three
 What went well (in the context of working on the assignment) today?
