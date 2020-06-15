@@ -20,7 +20,7 @@ def list_books_for_humans():
         {"id": 2, "title": "Book 2"},
         {"id": 3, "title": "Book 3"},
     ]
-    return render_template("books.html", message="Here's some books", books=books)
+    return render_template("books.html", message="Find books below", books=books)
 
 @book_routes.route("/books/new")
 def new_book():
