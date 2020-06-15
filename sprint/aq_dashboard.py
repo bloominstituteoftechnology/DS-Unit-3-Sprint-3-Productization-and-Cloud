@@ -8,7 +8,7 @@ import os
 """Create and configure an instance of the flask app"""
 APP = Flask(__name__)
 api = openaq.OpenAQ()
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'slqite:///db.sqlite3'
+APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DB = SQLAlchemy(APP)
 
@@ -26,8 +26,9 @@ def la_pm(city='Los Angeles', parameter='pm25'):
 def root():
     """Base view."""
     # utc_datetime_value = la_pm(city, parameter)
+    value_10 = Record.query.filter(Record.value >= 10).all()
+    return render_template('base.html', title='Air Quality', value_10=value_10)
 
-    return "TODO Part 3"
 
 
 class Record(DB.Model):
@@ -50,4 +51,4 @@ def refresh():
         record = Record(datetime=x[0], value=x[1])
         DB.session.add(record)
     DB.session.commit()
-    return 'Data refreshed!'
+    return render_template('base.html', title='Data refreshed!')
