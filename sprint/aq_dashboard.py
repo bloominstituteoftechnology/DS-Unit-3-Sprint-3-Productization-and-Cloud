@@ -25,7 +25,7 @@ def la_pm(city='Los Angeles', parameter='pm25'):
 @APP.route('/')
 def root():
     """Base view."""
-    # utc_datetime_value = la_pm(city, parameter)
+    utc_datetime_value = la_pm(city, parameter)
     value_10 = Record.query.filter(Record.value >= 10).all()
     return render_template('base.html', title='Air Quality', value_10=value_10)
 
