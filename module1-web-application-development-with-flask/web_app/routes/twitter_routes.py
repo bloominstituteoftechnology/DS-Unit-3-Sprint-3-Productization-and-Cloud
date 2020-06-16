@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, jsonify
 from web_app.services.twitter_service import api as twitter_api_client
+from web_app.models import db, User, Tweet, parse_records
 
 twitter_routes = Blueprint("twitter_routes", __name__)
 
@@ -38,7 +39,7 @@ def fetch_user(screen_name=None):
         print(status.full_text)
         print("----")
 
-        embedding = basilica_api_client.embed_sentence(status.full_text, model="twitter")
+        embedding = embeddings[index]
         #print(dir(status))
         # get existing tweet from the db or initialize a new one:
         db_tweet = Tweet.query.get(status.id) or Tweet(id=status.id)
