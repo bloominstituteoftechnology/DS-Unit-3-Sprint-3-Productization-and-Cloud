@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify
+pifrom flask import Blueprint, render_template, jsonify
 from web_app.services.twitter_service import api as twitter_api_client
 from web_app.models import db, User, Tweet, parse_records
 
@@ -9,9 +9,8 @@ def fetch_user(screen_name=None):
     print(screen_name)
 
     twitter_user = twitter_api_client.get_user(screen_name)
-
-    
-    #statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+    tweets = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+    print("TWEETS COUNT:", len(tweets))
     #return jsonify({"user": user._json, "tweets": [s._json for s in statuses]})
 
     
@@ -24,7 +23,7 @@ def fetch_user(screen_name=None):
     db.session.add(db_user)
     db.session.commit()
     #return "OK"
-    #breakpoint()
+    breakpoint()
 
     basilica_api = basilica_api_client()
 

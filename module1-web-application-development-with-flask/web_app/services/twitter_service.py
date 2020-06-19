@@ -17,9 +17,6 @@ print("API CLIENT:", api)
 
 user = api.get_user("britnelikecafe")
 print("TWITTER USER:", type(user))
-
-breakpoint()
-
 print(user.id)
 print(user.screen_name)
 print(user.name)
@@ -28,6 +25,7 @@ tweets = api.user_timeline("britnelikecafe")
 print("TWEETS", type(tweets))
 print(type(tweets[0])) 
 
+breakpoint()
 tweet = tweets[0]
 print(tweet.id)
-print(tweet.full_text)
+print(tweet.text)
