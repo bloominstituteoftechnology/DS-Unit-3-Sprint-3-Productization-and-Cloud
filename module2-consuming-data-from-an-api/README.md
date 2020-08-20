@@ -32,8 +32,8 @@ access to the API.
 ## Live Lecture Task
 
 We'll get set up to access both the Twitter and Basilica APIs in our Flask
-application, using environment variables (facilitated with [Python
-Decouple](https://github.com/henriquebastos/python-decouple)) to ensure we don't
+application, using environment variables (facilitated with [python-dotenv]
+(https://github.com/theskumar/python-dotenv)) to ensure we don't
 check any secrets into git.
 
 ## Assignment
