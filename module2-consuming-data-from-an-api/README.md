@@ -70,3 +70,8 @@ Basilica APIs via Python), then:
 - Try using some of the other embeddings Basilica can return (images, general
   text) - you can just experiment with it, or see if you can figure out a way to
   incorporate it into the application (e.g. Tweeted photos, etc.)
+- Try converting your application to use spaCy instead of Basilica. Basic
+  instructions can be found in [spaCy.md](../spaCy.md). How does this 
+  affect the performance and usability of the app? Look through 
+  [spaCy's documentation](https://spacy.io/api). What options does spaCy offer
+  that weren't available in Basilica?
