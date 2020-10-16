@@ -9,8 +9,7 @@ when starting out, but there are some steps and hoops to get it working.
 ## Learning Objectives
 
 - Connect to the Twitter API and query for tweets by various parameters
-- Connect to Basilica API and retrieve and manipulate embeddings for given
-  entities
+- Implement a SpaCy NLP model to create embeddings from our tweet text.
 
 ## Before Lecture
 
@@ -22,29 +21,29 @@ application that analyzes the textual content of Tweets for comparing different
 Twitter users. Also check out [Tweepy](https://tweepy.readthedocs.io/), a Python
 package that facilitates accessing the Twitter API.
 
-Sign up for [Basilica](https://www.basilica.ai), and read and follow their
-[Python quickstart](https://www.basilica.ai/quickstart/python/). This service
-will let you get embeddings (rich high-dimensional representations of the
-"meaning" of a given entity,  e.g. Tweets) to fit predictive models such as
-regression. They make their own Python package (`basilica`) for facilitating
-access to the API.
+Explore the [SpaCy](https://spacy.io/usage/spacy-101). This service will 
+let you use the [word2vect](https://en.wikipedia.org/wiki/Word2vec) to fit
+predictive models such as regression to numerical data. This allows us to work
+with things data scientist like most - digits - opposed to unstructured words.
+These numbers are referred to as "embeddings" - the numbers representing the words 
+or phrases from the vocabulary.
 
 ## Live Lecture Task
 
-We'll get set up to access both the Twitter and Basilica APIs in our Flask
+We'll get set up to access the Twitter API and add the SpaCy model to our Flask
 application, using environment variables (facilitated with
 [python-dotenv](https://github.com/theskumar/python-dotenv)) to ensure we
 don't check any secrets into git.
 
 ## Assignment
 
-Reproduce the steps from lecture (ensure you can access both the Twitter and
-Basilica APIs via Python), then:
+Reproduce the steps from lecture (ensure you can access both the Twitter API 
+and SpacCy package & model via Python), then:
 
 - Write methods to pull actual Users and Tweets and replace your invented data
   with actual Twitter data
 - Add an `embedding` field to your `Tweet` model, and functions to populate it
-  with embeddings returned from Basilica
+  with embeddings returned from the implemented SpaCy model.
 
 ## Resources and Stretch Goals
 - Add a `/user/<name>` route and template that pulls and displays user Tweets
@@ -67,6 +66,5 @@ Basilica APIs via Python), then:
   takes a long time (and may even be rate limited) - organize your code in
   functions so these tasks can be performed "offline" (without loading the full
   Flask application)
-- Try using some of the other embeddings Basilica can return (images, general
-  text) - you can just experiment with it, or see if you can figure out a way to
-  incorporate it into the application (e.g. Tweeted photos, etc.)
+- Try using some of the other information form the Twitter API and maybe figure out
+  what information from the API might be fun to play with and store in our database.
