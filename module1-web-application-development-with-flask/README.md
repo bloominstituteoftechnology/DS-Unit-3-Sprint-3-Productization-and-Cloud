@@ -48,9 +48,9 @@ application using Flask and SQLite. A summary of the overall picture:
   your local (SQLite) database with some invented data (at least 6 Tweets and 2
   Users)
 - For tomorrow, make sure to sign up for the [Twitter Developer
-  API](https://developer.twitter.com/en/apply-for-access) and
-  [Basilica](https://www.basilica.ai/), as we will use both APIs in our
-  application to get more and real data!
+  API](https://developer.twitter.com/en/apply-for-access) and check out the
+  [SpaCy documentation](https://spacy.io/usage/spacy-101), as we will use both 
+  APIs in our application to get more and real data!
 
 ## Resources and Stretch Goals
 
