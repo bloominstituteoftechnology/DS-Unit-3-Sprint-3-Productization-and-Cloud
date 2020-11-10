@@ -42,7 +42,7 @@ and SpacCy package & model via Python), then:
 
 - Write methods to pull actual Users and Tweets and replace your invented data
   with actual Twitter data
-- Add an `embedding` field to your `Tweet` model, and functions to populate it
+- Add an `embedding` (the represenative numbers) field to your `Tweet` model, and functions to populate it
   with embeddings returned from the implemented SpaCy model.
 
 ## Resources and Stretch Goals
