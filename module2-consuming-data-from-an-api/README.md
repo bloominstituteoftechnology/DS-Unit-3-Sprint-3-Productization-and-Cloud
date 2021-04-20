@@ -44,6 +44,7 @@ and SpacCy package & model via Python), then:
   with actual Twitter data
 - Add an `embedding` (the representative numbers) field to your `Tweet` model, and functions to populate it
   with embeddings returned from the implemented SpaCy model.
+  
 
 ## Resources and Stretch Goals
 - Add a `/user/<name>` route and template that pulls and displays user Tweets
@@ -68,3 +69,14 @@ and SpacCy package & model via Python), then:
   Flask application)
 - Try using some of the other information form the Twitter API and maybe figure out
   what information from the API might be fun to play with and store in our database.
+  
+  
+## Twitter Developer Account Alternative
+If you are having trouble getting access to a Twitter developer account check out [this API](https://lambda-ds-twit-assist.herokuapp.com/) that
+will allow you to make HTTP GET request to a third party API to get back information about a specific user. 
+
+All you need to do is utilize the `requests` library and make a get request to the following url and specifiy the user within the endpoint.
+```python
+https://lambda-ds-twit-assist.herokuapp.com/user/<twitter_handle>
+```
+Then you need to populate the values and ids into the database with SQLAlchemy.
