@@ -79,4 +79,11 @@ All you need to do is utilize the `requests` library and make a get request to t
 ```python
 https://lambda-ds-twit-assist.herokuapp.com/user/<twitter_handle>
 ```
-Then you need to populate the values and ids into the database with SQLAlchemy.
+Then you need to populate the values and ids into the database with SQLAlchemy. An example of a request may look like the following:
+```python
+import ast # for unpacking the literal string object 
+import requests
+
+status = requests.get("https://lambda-ds-twit-assist.herokuapp.com/user/elonmusk")
+elon = ast.literal_eval(status.text)
+```
