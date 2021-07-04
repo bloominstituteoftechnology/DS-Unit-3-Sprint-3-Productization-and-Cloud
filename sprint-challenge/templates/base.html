@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Los Angelos Air Quality</title>
+        <subtitle>DS1 Unit 3 Sprint 4 OpenAQ App Challenge</subtitle>
+    </head>
+    <body>
+        <h1>Records for Queries</h1>
+        <ul>            
+            {% for record in records %}
+            <li>{{ record }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
