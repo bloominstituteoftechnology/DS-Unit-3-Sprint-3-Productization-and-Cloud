@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenAQ - {{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="brand"><span>OpenAQ</span></a>
+      <div class="menu">
+        <a href="/refresh" class="button warning">Refresh Database</a>
+      </div>
+    </nav>
+
+    <article class="flex two" style="padding: 3em 1em;">
+      {% block content %}
+        <p>{{ display_data }}</p>
+      {% endblock %}
+    </article>
+
+  </body>
+</html>
