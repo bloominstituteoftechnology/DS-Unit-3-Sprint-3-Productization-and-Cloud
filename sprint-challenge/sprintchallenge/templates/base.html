@@ -1,0 +1,26 @@
+“base template home page”
+
+<html>
+    <head>
+        <title>AQ Dashboard</title>
+        <!-- CSS, keywords, metadata goes here -->
+        <h1> {{ message }}  </h1>
+    </head>
+    <body>
+        <h1>Los Angeles Readings </h1>
+        <p>UTC - PM2.5 reading</p>
+
+        <ul>
+
+
+            {% for db_object in readings %}
+            <li>{{ db_object.datetime }} - {{db_object.value}}</li>
+            {% endfor %}
+
+            <!-- this code block was for displaying a list of tuples -->
+            <!-- {% for tuple in readings %}
+            <li>{{ tuple[0] }} - {{tuple[1]}}</li>
+            {% endfor %} -->
+        </ul>
+    </body>
+</html>
