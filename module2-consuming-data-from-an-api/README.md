@@ -37,6 +37,8 @@ don't check any secrets into git.
 
 ## Assignment
 
+This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
+
 Reproduce the steps from lecture (ensure you can access both the Twitter API 
 and SpacCy package & model via Python), then:
 
