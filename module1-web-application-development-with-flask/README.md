@@ -42,6 +42,8 @@ application using Flask and SQLite. A summary of the overall picture:
 
 ## Assignment
 
+This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
+
 - Reproduce the steps from lecture: write and run a basic local Flask web
   application
 - Create a model for `Tweet` and `User` as demonstrated in lecture, and populate
