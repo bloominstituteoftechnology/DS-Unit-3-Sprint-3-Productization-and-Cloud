@@ -35,6 +35,8 @@ We'll deploy the app! We'll step through all of the following:
 
 ## Assignment
 
+This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
+
 - Deploy your app! Suggested app name `twitoff-yourusername`
 - Debug! You'll definitely have to debug some...
   - `heroku log` is your (command line) friend, as is `heroku run` (see below)
