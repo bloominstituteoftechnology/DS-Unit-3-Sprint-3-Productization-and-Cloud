@@ -29,6 +29,8 @@ as we can in the application.
 
 ## Assignment
 
+This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
+
 - Reproduce the lecture tasks (logistic regression fitting, predicting,
   returning) in a REPL/notebook, with different (real) data you select and pull
 - Continue incorporating the predictive code in the application - you should be
