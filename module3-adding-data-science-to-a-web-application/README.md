@@ -37,8 +37,8 @@ This assignment will closely follow lesson - the main importance of the assignme
   able to write fairly pure functions, and then invoke them from Flask routes
 - Add a form to let the client select two Twitter Users and enter Tweet text to
   predict which user is more likely to tweet the given text
-- Add a form to let the client request new Twitter Users be added, and add their
-  Tweets/make them available for predictive modeling as well
+- Add a form to let the client request new Twitter Users be added and after submission adds their
+  Tweets to the database making them available for our predictive model.
 
 ## Resources and Stretch Goals
 
