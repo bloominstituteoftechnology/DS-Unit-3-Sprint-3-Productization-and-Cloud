@@ -32,8 +32,7 @@ or phrases from the vocabulary.
 
 We'll get set up to access the Twitter API and add the SpaCy model to our Flask
 application, using environment variables (facilitated with
-[python-dotenv](https://github.com/theskumar/python-dotenv)) to ensure we
-don't check any secrets into git.
+[python-dotenv](https://github.com/theskumar/python-dotenv)) to ensure we don't check any secrets (API keys, passwords, etc.) into git.
 
 ## Assignment
 
@@ -52,7 +51,7 @@ and SpacCy package & model via Python, then:
 - Add a `/user/<name>` route and template that pulls and displays user Tweets
 - [Flask routing](http://flask.pocoo.org/docs/1.0/quickstart/#routing) is simple
   but powerful - take advantage of it!
-- [https://www.getpostman.com/](Postman) is an app to let you test both your
+- [postman](https://www.postman.com/downloads/) is an app to let you test both your
   routes and a REST API
 - Go deeper with the Twitter API - use paging (offset by oldest fetched Tweet
   ID) to pull older Tweets, so you can build a larger set of embedding data for
