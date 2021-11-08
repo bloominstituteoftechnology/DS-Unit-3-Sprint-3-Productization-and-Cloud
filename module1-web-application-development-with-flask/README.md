@@ -13,46 +13,25 @@ have to *understand* them and their components.
 
 ## Before Lecture
 
+If you haven't already, complete the SSH key setup instructions for [adding an SSH key to your local machine](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and also [adding that same SSH key to your GitHub profile](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) so that you can push and pull repositories to GitHub using SSH as the connection/authentication method. If you do this, you'll be able to more directly follow along with any Git/GitHub related portions of our guided projects. (We'll also be learning more about Git and GitHub during our upcoming Build Week.)
+
 Read up on [Flask](http://flask.pocoo.org/), a "microframework" for developing
 web applications. All this really means is that it's small and modular, and
 mostly just provides for URL routing and responses - for other things
 (templates, database, forms) you pick and choose your own other packages (and
 we'll give you some specific choices for this week).
 
-This is in contrast with [Django](https://www.djangoproject.com/), the most
-popular "industry-grade" Python web application framework. Django is
-*opinionated*, and comes with built-in modules for pretty much everything.
+Flask is not as fully featured as a development framework as other Python web development frameworks (like Django for example). However, its simplicity lets us build an app by writing code that is closer to vanilla Python. Because the framework's doing less work for us, there's less about how the framework works that we'll have to learn --And even then, there will still be a whole lot to learn.
 
-There are more projects built with Django than Flask, but Flask is solidly
-second place in the Python web application ecosystem, and is a better minimal
-choice for a data scientist who just wants to get some results.
+If you're interested in getting into web development with Python with bigger and more serious projects (for example if you need user authentication where people can log in, and log out) then I would recommend looking into Django. You'll see a lot of similarities between Django and Flask, but Django has a more sophisticated set of features for building big web applications.
 
 ## Live Lecture Task
 
-We're going to kick off with an overview of the major parts of a web application
-(front-end, back-end, database), and then develop our own prototype web
-application using Flask and SQLite. A summary of the overall picture:
-
-- Front-end: the "look-and-feel" of an application, as well as any logic that is
-  executed by client-side (browser) JavaScript (which has grown surprisingly
-  powerful)
-- Back-end: the routing and "business logic", where responses
-  (what the client sees) are built and APIs and databases are accessed
-- Database: the "source of truth", where data is persisted and updated
+See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module1-web-application-development-with-flask/guided-project.md)
 
 ## Assignment
 
-This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
-
-- Reproduce the steps from lecture: write and run a basic local Flask web
-  application
-- Create a model for `Tweet` and `User` as demonstrated in lecture, and populate
-  your local (SQLite) database with some invented data (at least 6 Tweets and 2
-  Users)
-- For tomorrow, make sure to sign up for the [Twitter Developer
-  API](https://developer.twitter.com/en/apply-for-access) and check out the
-  [SpaCy documentation](https://spacy.io/usage/spacy-101), as we will use both 
-  APIs in our application to get more and real data!
+See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module1-web-application-development-with-flask/assignment.md)
 
 ## Resources and Stretch Goals
 
@@ -62,8 +41,7 @@ This assignment will closely follow lesson - the main importance of the assignme
   (object-relational mapping), and will let us both (a) not have to write SQL,
   and (b) use OOP to interact with data with multiple backends (SQLite locally,
   and PostgreSQL in the cloud)
-- [SQLAlchemy Data
-  Types](https://docs.sqlalchemy.org/en/latest/core/type_basics.html) are needed
+- [SQLAlchemy Data Types](https://docs.sqlalchemy.org/en/latest/core/type_basics.html) are needed
   to build usable models that will translate to SQL
 - Making the front-end look nice is very much a stretch goal throughout this
   sprint - but if you are interested in it, [Picnic CSS](https://picnicss.com/)
