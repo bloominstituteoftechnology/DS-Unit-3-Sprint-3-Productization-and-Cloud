@@ -21,30 +21,15 @@ application that analyzes the textual content of Tweets for comparing different
 Twitter users. Also check out [Tweepy](https://tweepy.readthedocs.io/), a Python
 package that facilitates accessing the Twitter API.
 
-Explore the [SpaCy](https://spacy.io/usage/spacy-101). This service will 
-let you use the [word2vect](https://en.wikipedia.org/wiki/Word2vec) to fit
-predictive models such as regression to numerical data. This allows us to work
-with things data scientist like most - digits - opposed to unstructured words.
-These numbers are referred to as "embeddings" - the numbers representing the words 
-or phrases from the vocabulary.
+Explore the [SpaCy](https://spacy.io/usage/spacy-101). This service will let you use the [word2vect](https://en.wikipedia.org/wiki/Word2vec) to fitpredictive models such as regression to numerical data. This allows us to work with things data scientist like most - digits - opposed to unstructured words. These numbers are referred to as "embeddings" - the numbers representing the words or phrases from the vocabulary.
 
 ## Live Lecture Task
 
-We'll get set up to access the Twitter API and add the SpaCy model to our Flask
-application, using environment variables (facilitated with
-[python-dotenv](https://github.com/theskumar/python-dotenv)) to ensure we don't check any secrets (API keys, passwords, etc.) into git.
+See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module2-consuming-data-from-an-api/guided-project.md)
 
 ## Assignment
 
-This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
-
-Ensure you can access both the Twitter API 
-and SpacCy package & model via Python, then:
-
-- Write methods to pull actual Users and Tweets and replace your invented data
-  with actual Twitter data
-- Add an `tweet_vect` (the numbers representing the tweets) field to your `Tweet` model, and functions to populate it
-  with embeddings/vectors returned from the implemented SpaCy model.
+See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module2-consuming-data-from-an-api/assignment.md)
   
 
 ## Resources and Stretch Goals
