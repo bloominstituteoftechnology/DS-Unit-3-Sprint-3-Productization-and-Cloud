@@ -305,7 +305,6 @@ def vectorize_tweets(tweet_text):
 Remember how our app would throw an error if we tried to add a user to our database, but there was no twitter account with that screen name? Well we can wrap parts of our `add_or_update_user()` function in what's called a `try - except` statement. The code in the `try` block will run first and if an error is thrown then the `except` block is triggered. If there is no error thrown in the `try` block then the `except` section is skipped and the `else` statement is run. In this way we will only make alterations to the DB if all of the lines in the `try` block have run successfully.
 
 ```python
-
 def add_or_update_user(username):
     """
     Gets twitter user and tweets from twitter DB
@@ -371,12 +370,12 @@ class User(DB.Model):
     # id column
     id = DB.Column(DB.BigInteger, primary_key=True)
     # name column
-    name = DB.Column(DB.String, nullable=False)
+    username = DB.Column(DB.String, nullable=False)
     # keeps track of id for the newest tweet said by user
     newest_tweet_id = DB.Column(DB.BigInteger)
 
     def __repr__(self):
-        return "<User: {}>".format(self.name)
+        return "<User: {}>".format(self.username)
 
 
 class Tweet(DB.Model):
@@ -395,7 +394,7 @@ class Tweet(DB.Model):
 
 ## Create an update user route on our app.py
 
-Last but not least we'll create an `/update` route on our app that will call an `update_all_user():` function whenever it is accessed.
+Last but not least we'll create an `/update` route on our app that will call an `update_all_user()` function whenever it is accessed. The `update_all_users()` function will go in the twitter.py file.
 
 ```python
 def update_all_users():

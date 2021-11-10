@@ -20,25 +20,11 @@ clean. Also note - clear and clean code is *not* the same thing as clever code.
 
 ## Live Lecture Task
 
-In lecture we will add predictive functionality using
-[sklearn.linear_model.LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html),
-training on Tweet embeddings from our database for given users. We'll accept
-client requests via simple forms, and return the results with a new template. We
-will start by exploring the code with a REPL or notebook, and then put as much
-as we can in the application.
+See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module3-adding-data-science-to-a-web-application/guided-project.md)
 
 ## Assignment
 
-This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
-
-- Reproduce the lecture tasks (logistic regression fitting, predicting,
-  returning) in a REPL/notebook, with different (real) data you select and pull
-- Continue incorporating the predictive code in the application - you should be
-  able to write fairly pure functions, and then invoke them from Flask routes
-- Add a form to let the client select two Twitter Users and enter Tweet text to
-  predict which user is more likely to tweet the given text
-- Add a form to let the client request new Twitter Users be added and after submission adds their
-  Tweets to the database making them available for our predictive model.
+See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module3-adding-data-science-to-a-web-application/assignment.md)
 
 ## Resources and Stretch Goals
 
