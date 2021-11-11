@@ -24,30 +24,11 @@ so you can follow along with deploying in lecture.
 
 ## Live Lecture Task
 
-We'll deploy the app! We'll step through all of the following:
-
-- Creating the app on Heroku
-- Adding Heroku as a git remote (Heroku deploys using git)
-- Making sure we have an appropriate `Procfile` (tells Heroku the process to
-  run)
-- Setting config vars (the Heroku equivalent of environment variables)
-- Launching and connecting to a Heroku PostgreSQL instance
+See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module4-web-application-deployment/guided-project.md)
 
 ## Assignment
 
-This assignment will closely follow lesson - the main importance of the assignment today is to ensure that you understand the steps that took place.
-
-- Deploy your app! Suggested app name `twitoff-yourusername`
-- Debug! You'll definitely have to debug some...
-  - `heroku log` is your (command line) friend, as is `heroku run` (see below)
-  - Logging into the Heroku control panel in your browser can also help
-  - `heroku config:set variable=value` lets you set environment variables
-  - `heroku addons:create heroku-postgresql:hobby-dev` creates a free hosted
-    PostgreSQL database and assigns the `DATABASE_URL` environment variable
-    appropriately ([more
-    info](https://devcenter.heroku.com/articles/heroku-postgresql))
-- Help your classmates! Deploying is always rough at first, and you'll see and
-  learn new things by helping each other as well
+See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module4-web-application-deployment/assignment.md)
 
 ## Resources and Stretch Goals
 
