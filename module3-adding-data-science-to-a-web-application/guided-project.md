@@ -17,7 +17,7 @@ Then start up the virtual environment
 
 `pipenv shell`
 
-Then, within the `twitoff` folder create a new file called `predit.py`
+Then, within the `twitoff` folder create a new file called `predict.py`
 
 `touch predict.py`
 
