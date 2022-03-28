@@ -11,21 +11,21 @@ application using Flask and SQLite. A summary of the overall picture:
   (what the client sees) are built and APIs and databases are accessed
 - Database: the "source of truth", where data is persisted and updated
 
-## "Productionization" of Data Science models
+## "Productization" of Data Science models
 
 ![CRISP-DM Visual Guide](/images/crisp-dm.png)
 
-What is productionization?
+What is productization?
 
 "The process of turning a prototype of a design into a version that can be more easily mass-produced"
 
-Productionization is all about publishing our data science work in a way that helps others benefit from it. This can mean:
+Productization is all about publishing our data science work in a way that helps others benefit from it. This can mean:
 
 - Creating a written report of our analysis
 - Publishing a dashboard
 - Putting a trained model into a software application so that people can access it.
 
-What are some examples of "productionized" data science that you have benefitted from?
+What are some examples of "productized" data science that you have benefitted from?
 
 ## What are Web Applications and how do they work?
 
