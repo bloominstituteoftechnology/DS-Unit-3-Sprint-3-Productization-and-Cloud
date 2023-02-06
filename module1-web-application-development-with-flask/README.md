@@ -25,7 +25,7 @@ Flask is not as fully featured as a development framework as other Python web de
 
 If you're interested in getting into web development with Python with bigger and more serious projects (for example if you need user authentication where people can log in, and log out) then I would recommend looking into Django. You'll see a lot of similarities between Django and Flask, but Django has a more sophisticated set of features for building big web applications.
 
-## Live Lecture Task
+## Guided Project Task
 
 See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module1-web-application-development-with-flask/guided-project.md)
 
