@@ -92,7 +92,7 @@ What's a Procfile?
 
 From the command line, create a `Procfile` in the root of your `twitoff-DS##` project folder.
 
-Next, we'll install a more Heroku-friendly way of starting up our Flask web server. We'llinstall a tool called `gunicorn` and we'll tell Heroku in the `Procfile` how to use gunicorn to start up our app.
+Next, we'll install a more Heroku-friendly way of starting up our Flask web server. We'll install a tool called `gunicorn` and we'll tell Heroku in the `Procfile` how to use gunicorn to start up our app. Please note: gunicorn does not work on Windows. Windows users should skip the installation, but you still need the Procfile specified in the next step after installation.
 
 `pipenv install gunicorn`
 
@@ -100,7 +100,7 @@ After gunicorn has finished installing, open your Procfile and add this line:
 
 `web: gunicorn twitoff:APP -t 120`
 
-This tells Heroku to use `gunicorn` to start up our heroku ap and tells it where it can find the APP variable. We'll also give this a timeont of 120 seconds. because we're working on the free tier Heroku Dyno our app may take a little while to startup. We don't want it to stop trying to startup simply because the Heroku instance isn't very powerful, so this timeout is extra generous to allow plenty of time for Heroku to try and launch the app before erring out with a "gateway timeout" message.
+This tells Heroku to use `gunicorn` to start up our heroku ap and tells it where it can find the APP variable. We'll also give this a timeout of 120 seconds. because we're working on the free tier Heroku Dyno our app may take a little while to startup. We don't want it to stop trying to startup simply because the Heroku instance isn't very powerful, so this timeout is extra generous to allow plenty of time for Heroku to try and launch the app before erring out with a "gateway timeout" message.
 
 Once you've installed `gunicorn` and added a `Procfile` with this line of code in it, be sure to push your changes back to GitHub and then go ahead and try to redeploy the app.
 
@@ -108,7 +108,12 @@ Once you've installed `gunicorn` and added a `Procfile` with this line of code i
 
 When you redeploy the app, you may see new errors in the Heroku Logs, this time you'll see a `H10` error. One thing that can trigger this error message is missing environment variables. Remember that we used our `.gitignore` to make sure that our `.env` file would never be pushed to GitHub? Well Heroku can't see the `.env` file so it doesn't have our Twitter API keys and it doesn't know where to find the database within our app.
 
-Go ahead and add your `TWITTER_API_KEY`, `TWITTER_API_KEY_SECRET` and `DATABSE_URI` environment variables to Heroku. Heroku calls these "Config Vars" and you can add them under the "Settings tab within Heroku.
+Go ahead and add your environment variables to Heroku. Heroku calls these "Config Vars" and you can add them under the "Settings tab within Heroku. The required env vars are as follows:
+
+```
+DATABASE_URL=sqlite:///db.sqlite3
+NOT_TWITTER_URL=https://not-twitter.herokuapp.com
+```
 
 ![Heroku Config Vars](/images/config-vars.png)
 

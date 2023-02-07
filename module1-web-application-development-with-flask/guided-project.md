@@ -105,7 +105,7 @@ and
 
 `flask run`
 
-You should see a message about your app running on a development server along with the a messaget that the app is running on a url:
+You should see a message about your app running on a development server along with a message that the app is running on a url:
 
 ```bash
  * Running on http://127.0.0.1:5000/
@@ -382,10 +382,10 @@ We'll need to change our home `'/'` route so that it queries the DB for users an
 
 ```python
 @app.route('/')
-    def root():
-        # return page contents
-        users = User.query.all()
-        return render_template('base.html', title="Home", users=users)
+def root():
+    # return page contents
+    users = User.query.all()
+    return render_template('base.html', title="Home", users=users)
 ```
 
 Last of all, we'll add a for loop to our `base.html` file so that new pieces of html get added to the page for each user. Change the `<article> stuff in here</article>` section to look like the following:
@@ -400,4 +400,4 @@ Last of all, we'll add a for loop to our `base.html` file so that new pieces of 
     </article>
 ```
 
-After you've added that for loop restart your app, reset and populate your database and see if you can see database usernames being displayed on the home page. What you're seing there is the result of a full-stack web app that's detecting the route the user is visiting, querying the database, and then inserting the queried data into the HTML that the server is returning to the browser. Pretty Cool!
+After you've added that for loop restart your app, reset and populate your database and see if you can see database usernames being displayed on the home page. What you're seeing there is the result of a full-stack web app that's detecting the route the user is visiting, querying the database, and then inserting the queried data into the HTML that the server is returning to the browser. Pretty Cool!
