@@ -31,13 +31,13 @@ Today we're going to knock out the steps 1, 2, and 3 of what our app does.
 
 Before we can make requests to the Twitter API from our app we need to install a few new python packages
 
-- `tweepy` - Makes it easy to query the twitter API with Python.
+- `not_tweepy` - Makes it easy to query the NotTwitter API with Python. To install this package, copy the folder `not_tweepy` to the root of your local project folder. This package is a replacement for tweepy.
 - `spacy` - A whole bunch of NLP tools, but the main one that we'll be using translates text into a numeric representation called "word embeddings."
 - `python-dotenv` - Reads key-value pairs from a `.env` file and sets them as environment variables within our app.
 
 From the command line working from the root of your project folder `twitoff-DS##` run the command:
 
-`pipenv install tweepy spacy python-dotenv`
+`pipenv install spacy python-dotenv`
 
 Then feel free to start up your virtual environment
 
@@ -85,17 +85,18 @@ TWITTER_API_KEY_SECRET=ZMSUwwVVf9HvnS7u1fPwNCkyvfDEHwsbD1XCLgntZdAlA
 ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
 FLASK_APP=twitoff
+NOT_TWITTER_URL=https://not-twitter.herokuapp.com
 ```
 
-Notice how we don't put the values on the right side inside of quotation marks to turn them into strings? It's not necessary to store these variables as strings because this isn't a `.py` file.
+Notice how we don't put the values inside of quotation marks to turn them into strings? It's not necessary to store these variables as strings because this isn't a `.py` file.
 
 Saving our Flask app's name as an environment variable makes it easier to launch the Flask python REPL. We can now start that REPL by just using the command `flask shell`.
 
-In order for your environment variables to take effect, you'll need to close your command line editor and reopen it. So go ahead and shut down your virtual environment, close the terminal (or git bash) and then reopen it and restart your virtual environment.
+In some situations, on some systems, in order for your environment variables to take effect, you'll need to close your command line editor and reopen it. So go ahead and shut down your virtual environment, close the terminal (or git bash) and then reopen it and restart your virtual environment. This is not typically required on Linux or Mac.
 
-## Get tweets from the twitter API and add them to our database
+## Get tweets from the NotTwitter API and add them to our database
 
-Let's see if we can get some tweets from the twitter API using our new credentials by running some code in the Python REPL.
+Let's see if we can get some not_tweets by running some code in the Python REPL.
 
 Start the REPL.
 
@@ -105,17 +106,17 @@ Import the function that we'll use to retrieve our environment varaibles from th
 
 `>>> from os import getenv`
 
-Retrieve our our API Key and API Secret and save them to variables within our REPL.
+Retrieve our API Key and API Secret and save them to variables within our REPL.
 
 `>>> key = os.getenv('TWITTER_API_KEY')`
 
 `>>> secret = os.getenv('TWITTER_API_KEY_SECRET')`
 
-Import tweepy so that we can use it to connect to the Twitter API.
+Import not_tweepy so that we can use it to connect to the NotTwitter API.
 
-`>>> import tweepy`
+`>>> import not_tweepy as tweepy`
 
-Authenticate with the twitter API
+Authenticate
 
 `>>> auth = tweepy.OAuthHandler(key, secret)`
 
@@ -123,11 +124,11 @@ Connect to the API using our authenticated session
 
 `>>> twitter = tweepy.API(auth)`
 
-Create a user (specified by their twitter handle) that we can query the API for.
+Declare a user that we can query the API for.
 
 `>>> user = 'elonmusk'`
 
-Get a bunch of info related to the 'elonmusk' twitter account.
+Get a bunch of info related to the 'elonmusk' account.
 
 `>>> twitter_user = twitter.get_user(screen_name=user)`
 
@@ -139,13 +140,9 @@ Look at the `id` of the twitter user
 
 `>>> twitter_user.id`
 
-See when the account was first created
-
-`>>> twitter_user.created_at`
-
 Get the most recent tweets pertaining to this user
 
-`>>> tweets = twitter_user.timeline(count=200, exclude_replies=True, include_rts=False, tweet_mode='extended')`
+`>>> tweets = twitter_user.timeline()`
 
 Grab the most recent tweet
 
@@ -155,25 +152,15 @@ Look at the text of elon musk's most recent tweet
 
 `>>> tweet1.full_text`
 
-Look at the username of the user who tweeted it.
-
-`>>> tweet1.user.name`
-
-Look at the twitter handle of the user
-
-`>>> tweet1.user.screen_name`
-
-Each tweet has a user object tied to it in a very similar way to how we created a relationship between a user and tweets within our own database.
-
-## Add code to connect to Twitter to our app
+## Add code to connect NotTwitter to our app
 
 Within the inner `twitoff` folder create a new file called `twitter.py`
 
 ```python
-'''Handles connection to Tiwtter API using Tweepy'''
+'''Handles connection to NotTiwtter API using NotTweepy'''
 
 from os import getenv
-import tweepy
+import not_tweepy as tweepy
 import spacy
 from .models import DB, Tweet, User
 
@@ -247,7 +234,7 @@ See how many tweets we successfully added? Why did our code not add 200 tweets?
 
 `>>> len(elonmusk.tweets)`
 
-One you've added a few users, see if they show up on the home page of the app at `localhost:5000` when you run the app.
+Once you've added a few users, see if they show up on the home page of the app at `localhost:5000` when you run the app.
 
 ## Get SpaCy Word Embeddings
 
@@ -401,7 +388,7 @@ def update_all_users():
     usernames = []
     Users = User.query.all()
     for user in Users:
-        usernames.apppend(user.username)
+        usernames.append(user.username)
     
     return usernames
 ```

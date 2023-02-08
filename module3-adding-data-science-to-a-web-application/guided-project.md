@@ -354,7 +354,7 @@ def create_app():
         try:
             if request.method == 'POST':
                 add_or_update_user(name)
-                message = "User {} Succesfully added!".format(name)
+                message = "User {} Successfully added!".format(name)
 
             tweets = User.query.filter(User.username == name).one().tweets
 
