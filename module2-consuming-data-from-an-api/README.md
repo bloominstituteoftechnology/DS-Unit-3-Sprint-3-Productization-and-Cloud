@@ -44,4 +44,35 @@ See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productiz
   
   
 ## Twitter Developer Account
-[Note about NotTwitter & NotTweepy]
+- Twitter Dev Account and API keys are no longer required.
+- Anywhere that tweepy is mentioned use not_tweepy instead.
+
+- When you see this:
+```python
+import tweepy
+```
+- Do this instead:
+```python
+import not_tweepy as tweepy
+```
+
+Twitter is changing their API policies and tweepy is going offline very soon. The dev team at Bloom Tech implemented a Twitter-API-like clone and an API interface library to bridge the gap. We named the Twitter API "NotTwitter" and the library "NotTweepy". To install NotTweepy simply copy the folder `not_tweepy` into your local repo at the root level of your project.
+
+- Project
+  - twitoff
+  - not_tweepy
+
+NotTwitter has been prepopulated with tweets from the following users:
+- calebhicks
+- elonmusk
+- rrherr
+- SteveMartinToGo
+- alyankovic
+- NASA
+- jkhowland
+- Austen
+- common_squirrel
+- KenJennings
+- ConanOBrien
+- big_ben_clock
+- IAM_SHAKESPEARE
