@@ -13,13 +13,13 @@ have to *understand* them and their components.
 
 ## Before Lecture
 
-If you haven't already, complete the SSH key setup instructions for [adding an SSH key to your local machine](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and also [adding that same SSH key to your GitHub profile](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) so that you can push and pull repositories to GitHub using SSH as the connection/authentication method. If you do this, you'll be able to more directly follow along with any Git/GitHub related portions of our guided projects. (We'll also be learning more about Git and GitHub during our upcoming Build Week.)
+If you haven't already, complete the SSH key setup instructions for [adding an SSH key to your local machine](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and also [adding that same SSH key to your GitHub profile](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) so that you can push and pull repositories to GitHub using SSH as the connection/authentication method. If you do this, you'll be able to more directly follow along with any Git/GitHub related portions of our guided projects. 
 
 Read up on [Flask](http://flask.pocoo.org/), a "microframework" for developing
 web applications. All this really means is that it's small and modular, and
 mostly just provides for URL routing and responses - for other things
 (templates, database, forms) you pick and choose your own other packages (and
-we'll give you some specific choices for this week).
+we'll give you some specific choices for this sprint).
 
 Flask is not as fully featured as a development framework as other Python web development frameworks (like Django for example). However, its simplicity lets us build an app by writing code that is closer to vanilla Python. Because the framework's doing less work for us, there's less about how the framework works that we'll have to learn --And even then, there will still be a whole lot to learn.
 
