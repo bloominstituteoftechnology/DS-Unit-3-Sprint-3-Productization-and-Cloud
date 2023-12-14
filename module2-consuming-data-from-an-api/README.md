@@ -46,6 +46,10 @@ See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productiz
 ## Twitter Developer Account
 - Twitter Dev Account and API keys are no longer required.
 - Anywhere that tweepy is mentioned use not_tweepy instead.
+- make sure that you create a `.env` file inside the root directory and add the not twitter url
+```
+NOT_TWITTER_URL=https://not-twitter.herokuapp.com
+```
 
 - When you see this:
 ```python
