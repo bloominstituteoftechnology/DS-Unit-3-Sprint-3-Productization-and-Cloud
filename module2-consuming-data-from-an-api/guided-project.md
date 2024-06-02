@@ -108,9 +108,9 @@ Import the function that we'll use to retrieve our environment varaibles from th
 
 Retrieve our API Key and API Secret and save them to variables within our REPL.
 
-`>>> key = os.getenv('TWITTER_API_KEY')`
+`>>> key = getenv('TWITTER_API_KEY')`
 
-`>>> secret = os.getenv('TWITTER_API_KEY_SECRET')`
+`>>> secret = getenv('TWITTER_API_KEY_SECRET')`
 
 Import not_tweepy so that we can use it to connect to the NotTwitter API.
 
