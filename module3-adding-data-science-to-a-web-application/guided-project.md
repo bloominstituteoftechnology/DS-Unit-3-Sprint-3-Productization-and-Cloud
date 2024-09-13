@@ -185,13 +185,13 @@ def predict_user(user0_name, user1_name, hypo_tweet_text):
 
 `flask shell`
 
-`>>> from twittoff.predict import predict_user`
+`>>> from twitoff.predict import predict_user`
 
 We can only make predictions for users that are already in our database, so let's make sure we know who those users are.
 
 `>>> from twitoff.models import User`
 
-`>>> Users.query.all()`
+`>>> User.query.all()`
 
 `>>> predict_user('elonmusk','ryanallred','Data Science is the best!')`
 
