@@ -302,7 +302,7 @@ def add_or_update_user(username):
         twitter_user = TWITTER.get_user(username)
         # Either updates or adds user to our DB
         db_user = (User.query.get(twitter_user.id)) or User(
-            id=twitter_user.id, name=username)
+            id=twitter_user.id, username=username)
         DB.session.add(db_user)  # Add user if don't exist
 
         # Grabbing tweets from "twitter_user"
