@@ -85,7 +85,7 @@ TWITTER_API_KEY_SECRET=ZMSUwwVVf9HvnS7u1fPwNCkyvfDEHwsbD1XCLgntZdAlA
 ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
 FLASK_APP=twitoff
-NOT_TWITTER_URL=https://not-twitter.herokuapp.com
+NOT_TWITTER_URL=https://twitoff-be.onrender.com/
 ```
 
 Notice how we don't put the values inside of quotation marks to turn them into strings? It's not necessary to store these variables as strings because this isn't a `.py` file.
@@ -102,7 +102,7 @@ Start the REPL.
 
 `python`
 
-Import the function that we'll use to retrieve our environment varaibles from the `.env` file.
+Import the function that we'll use to retrieve our environment variables from the `.env` file.
 
 `>>> from os import getenv`
 

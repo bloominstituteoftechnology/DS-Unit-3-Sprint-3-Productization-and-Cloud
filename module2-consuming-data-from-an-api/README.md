@@ -23,8 +23,8 @@ See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Produ
 
 See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module2-consuming-data-from-an-api/assignment.md)
   
-
 ## Resources and Stretch Goals
+
 - Add a `/user/<name>` route and template that pulls and displays user Tweets
 - [Flask routing](http://flask.pocoo.org/docs/1.0/quickstart/#routing) is simple
   but powerful - take advantage of it!
@@ -42,20 +42,22 @@ See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productiz
 - Try using some of the other information form the Twitter API and maybe figure out
   what information from the API might be fun to play with and store in our database.
   
-  
 ## Twitter Developer Account
+
 - Twitter Dev Account and API keys are no longer required.
 - Anywhere that tweepy is mentioned use not_tweepy instead.
 - make sure that you create a `.env` file inside the root directory and add the not twitter url
-```
-NOT_TWITTER_URL=https://not-twitter.herokuapp.com
-```
+
+`NOT_TWITTER_URL=https://twitoff-be.onrender.com/`
 
 - When you see this:
+
 ```python
 import tweepy
 ```
+
 - Do this instead:
+
 ```python
 import not_tweepy as tweepy
 ```
@@ -67,6 +69,7 @@ Twitter is changing their API policies and tweepy is going offline very soon. Th
   - not_tweepy
 
 NotTwitter has been prepopulated with tweets from the following users:
+
 - calebhicks
 - elonmusk
 - rrherr

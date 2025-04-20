@@ -5,10 +5,10 @@ This assignment will closely follow lesson - the main importance of the assignme
 - Deploy your app! Suggested app name `twitoff-yourusername`
 - Debug! You'll definitely have to debug some...
 
-If using the Heroku CLI the following commands may be helpful to you.
+If using the Render.com dashboard or CLI, the following tips may be helpful to you:
 
-- `heroku log` is your (command line) friend, as is `heroku run` (see below)
-- Logging into the Heroku control panel in your browser can also help
-- `heroku config:set variable=value` lets you set environment variables
-- `heroku addons:create heroku-postgresql:hobby-dev` creates a free hosted PostgreSQL database and assigns the `DATABASE_URL` environment variable appropriately ([more info](https://devcenter.heroku.com/articles/heroku-postgresql))
+- Checking the logs in the Render.com dashboard is your friend, as is running commands in the shell interface
+- Logging into the Render.com control panel in your browser can help troubleshoot issues
+- Adding environment variables via the Environment tab in your service settings is crucial for configuration
+- Render.com offers PostgreSQL databases that you can easily connect to your application ([more info](https://render.com/docs/databases))
 - Help your classmates! Deploying is always rough at first, and you'll see and learn new things by helping each other as well

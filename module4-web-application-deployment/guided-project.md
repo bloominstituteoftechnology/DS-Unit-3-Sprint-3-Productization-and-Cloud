@@ -2,11 +2,11 @@
 
 We'll deploy the app! We'll step through all of the following:
 
-- Creating the app on Heroku
-- Adding Heroku as a git remote (Heroku deploys using git)
-- Making sure we have an appropriate `Procfile` (tells Heroku the process to
+- Creating the app on Render.com
+- Adding Render.com as a git remote (Render.com deploys using git)
+- Making sure we have an appropriate build configuration (tells Render.com the process to
   run when starting up our app)
-- Setting config vars (the Heroku equivalent of environment variables)
+- Setting environment variables (the Render.com equivalent of environment variables)
 
 ## Turning an existing folder into a git repository
 
@@ -34,7 +34,7 @@ I was going to put a copy of the commands here, but I won't because the commands
 
 ## Pushing an existing repo to GitHub
 
-If your app has already been created as a git repository or if you've made additional changes to your files since connecting it with GitHub, go ahead and make sure that the latest changs have been pushed to GitHub. From the command line run:
+If your app has already been created as a git repository or if you've made additional changes to your files since connecting it with GitHub, go ahead and make sure that the latest changes have been pushed to GitHub. From the command line run:
 
 Tells us if any files or folders have been modified since we last pushed changes to GitHub
 
@@ -58,73 +58,67 @@ Send the changes across the wire to GitHub. If you have an old repository you mi
 
 And that's it. You should now be able to see all of the updated files on GitHub!
 
-## Making a new app on Heroku
+## Making a new app on Render.com
 
-If you haven't already. Sign up for an account at [Heroku.com](https://heroku.com). Once you have an account, make a new app (not a pipeline!). Give this app a unique name for your project.
+If you haven't already. Sign up for an account at [Render.com](https://render.com). Once you have an account, create a new Web Service. Give this app a unique name for your project.
 
-Once you have created the new app, select the "Connect to GitHub" Deployment Method. Once you do this you'll be prompted to connect Heroku to your GitHub account. Go ahead and follow the instructions as indicated to give heroku permissions to access your account. Then we'll search for the specific repository that we want to link to this Heroku App. Once you've linked the repository to the Heroku app, this will allow Heroku to grab all of the files in the GitHub repository and use them when launching the app. This has the benefit of making it very easy to update your app on Heroku. You simply need to push your changes to GitHub and then come to Heroku and tell it to redeploy. It's a pretty slick system!
+Once you have created the new web service, connect it to your GitHub repository. Once you do this you'll be prompted to connect Render.com to your GitHub account. Go ahead and follow the instructions as indicated to give Render.com permissions to access your account. Then select the specific repository that you want to link to this Render.com Web Service. Once you've linked the repository to the Render.com service, this will allow Render.com to grab all of the files in the GitHub repository and use them when launching the app. This has the benefit of making it very easy to update your app on Render.com. You simply need to push your changes to GitHub and then Render.com will automatically redeploy. It's a pretty slick system!
 
-Once you've connected your app to GitHub. Scroll down to the "Manual Deploy" section and to deploy the `main` branch. Hit the `Deploy Branch` button. This will start up some deployment logs where you'll see Heroku installing the dependencies listed in your pipfile. When it's done it should give you a URL for your deployed app!
+Once you've connected your app to GitHub, configure your build settings and click the "Create Web Service" button. This will start up the deployment process where you'll see Render.com installing the dependencies listed in your requirements file. When it's done it should give you a URL for your deployed app!
 
 Go ahead and try and navigate to your deployed app once the build has completed. You may find that you get a screen saying you have an application error. That's ok! We'll work to debug what might be going on.
 
-![Heroku Application Error](/images/application-error.png)
+![Render.com Application Error](/images/application-error.png)
 
-## Debugging a H14 application error
+## Debugging application errors
 
-To view the error logs for your app. Come back to Heroku and in the top right corner of the screen, click the `More` buttton. You will be shown a dropdown menu where the first option is "view logs" go ahead and click on that.
+To view the error logs for your app. Come back to Render.com and navigate to your web service dashboard. Click on the "Logs" tab to view the application logs.
 
-![View Heroku Application Logs](/images/view-logs.png)
+![View Render.com Application Logs](/images/view-logs.png)
 
 You might see a couple of telling messages in these logs.
 
 1) You might see some messages about Twitter authentication failing. Hmmm... Why might that be?
 
-2) If you navigate to your application or refresh the page on the Application Error screen you'll see a new message show up in the logs that says something like:
+2) If you navigate to your application or refresh the page on the Application Error screen you'll see new error messages in the logs.
 
-`at=error code=H10 desc="App crashed" method=GET path="/" host=twitoff-ds32.herokuapp.com`
+One common issue is that Render.com might not know how to start your app. Unlike Heroku which uses a Procfile, Render.com uses a Start Command configuration.
 
-The error code `H10` is important H stands for Heroku and means that this is a Heroku-specific error code. If you google what H10 errors are you'll see a lot of people talking about Procfiles.
+From the Render.com dashboard, go to your web service settings and update the Start Command. For a Flask application, you might use something like:
 
-What's a Procfile?
+`gunicorn twitoff:APP -t 120`
 
-`Procfile` is short for "Process File" and it's a file that we can include in our app that will tell Heroku how to start our app. Heroku might not know to call `flask run` to start the app.
-
-From the command line, create a `Procfile` in the root of your `twitoff-DS##` project folder.
-
-Next, we'll install a more Heroku-friendly way of starting up our Flask web server. We'll install a tool called `gunicorn` and we'll tell Heroku in the `Procfile` how to use gunicorn to start up our app. Please note: gunicorn does not work on Windows. Windows users should skip the installation, but you still need the Procfile specified in the next step after installation.
+Next, we'll install a more deployment-friendly way of starting up our Flask web server. We'll install a tool called `gunicorn` and configure Render.com to use it to start our app. Please note: gunicorn does not work on Windows. Windows users should skip the installation.
 
 `pipenv install gunicorn`
 
-After gunicorn has finished installing, open your Procfile and add this line:
+After gunicorn has finished installing, make sure to update your Start Command in the Render.com settings as shown above.
 
-`web: gunicorn twitoff:APP -t 120`
+This tells Render.com to use `gunicorn` to start up our app and tells it where it can find the APP variable. We'll also give this a timeout of 120 seconds because our app may take a little while to startup. We don't want it to stop trying to startup simply because the instance isn't very powerful, so this timeout is extra generous to allow plenty of time for Render.com to try and launch the app before erring out with a "gateway timeout" message.
 
-This tells Heroku to use `gunicorn` to start up our heroku ap and tells it where it can find the APP variable. We'll also give this a timeout of 120 seconds. because we're working on the free tier Heroku Dyno our app may take a little while to startup. We don't want it to stop trying to startup simply because the Heroku instance isn't very powerful, so this timeout is extra generous to allow plenty of time for Heroku to try and launch the app before erring out with a "gateway timeout" message.
+Once you've installed `gunicorn` and configured the Start Command, be sure to push your changes back to GitHub and Render.com will automatically redeploy the app.
 
-Once you've installed `gunicorn` and added a `Procfile` with this line of code in it, be sure to push your changes back to GitHub and then go ahead and try to redeploy the app.
+## Setting up environment variables
 
-## Debugging a H10 application error
+When you redeploy the app, you may see new errors in the Render.com Logs. One thing that can trigger error messages is missing environment variables. Remember that we used our `.gitignore` to make sure that our `.env` file would never be pushed to GitHub? Well Render.com can't see the `.env` file so it doesn't have our Twitter API keys and it doesn't know where to find the database within our app.
 
-When you redeploy the app, you may see new errors in the Heroku Logs, this time you'll see a `H10` error. One thing that can trigger this error message is missing environment variables. Remember that we used our `.gitignore` to make sure that our `.env` file would never be pushed to GitHub? Well Heroku can't see the `.env` file so it doesn't have our Twitter API keys and it doesn't know where to find the database within our app.
-
-Go ahead and add your environment variables to Heroku. Heroku calls these "Config Vars" and you can add them under the "Settings tab within Heroku. The required env vars are as follows:
+Go ahead and add your environment variables to Render.com. You can add these under the "Environment" tab in your web service settings. The required env vars are as follows:
 
 ```
 DATABASE_URL=sqlite:///db.sqlite3
-NOT_TWITTER_URL=https://not-twitter.herokuapp.com
+NOT_TWITTER_URL=https://twitoff-be.onrender.com/
 ```
 
-![Heroku Config Vars](/images/config-vars.png)
+![Render.com Environment Variables](/images/config-vars.png)
 
-After you've added those config vars go ahead and redeploy your app.
+After you've added those environment variables, Render.com will automatically redeploy your app.
 
 ## Creating the Database
 
-Once you've deployed your app, navigate to its Heroku URL. If all has gone according to plan, you will see a different screen. If you see a screen that says `Internal Server Error`. That means that the app has at least launched! Now we're getting an error within our flask application. 
+Once you've deployed your app, navigate to its Render.com URL. If all has gone according to plan, you will see a different screen. If you see a screen that says `Internal Server Error`. That means that the app has at least launched! Now we're getting an error within our flask application. 
 
 ![Internal Server Error](/images/internal-server-error.png)
 
 We'll always get this error the very first time we deploy our app because our database hasn't been created yet. Go ahead and navigate to the `/reset` route on your app and that should generate the sqlite3 database and your app should be working after that. (It will also work for any other users who come to it).
 
-And that's it! You're app should now be up and running on Heroku!
+And that's it! You're app should now be up and running on Render.com!

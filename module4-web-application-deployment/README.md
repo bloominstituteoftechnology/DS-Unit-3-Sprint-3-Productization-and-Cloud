@@ -12,10 +12,10 @@ they are technical or not, can click and enjoy!
 
 ## Before Lecture
 
-Sign up for a free [Heroku](https://www.heroku.com/) account - you shouldn't
+Sign up for a free [Render.com](https://render.com/) account - you shouldn't
 need to provide credit card information. Then read their [getting started on
-Heroku with
-Python](https://devcenter.heroku.com/articles/getting-started-with-python)
+Render.com with
+Python](https://render.com/docs/deploy-python) 
 guide, and optionally follow along (the example app is Django, but the process
 will be similar with Flask).
 
@@ -32,28 +32,28 @@ See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productiz
 
 ## Resources and Stretch Goals
 
-- If you really run into issues with Heroku, you can check out
+- If you really run into issues with Render.com, you can check out
   [ngrok](https://ngrok.com/) as a way to set up a tunnel that lets you run the
   server locally but serve it to the world - but it isn't really a replacement
   for cloud deployment, as it's only up when you're running it on your computer
-- `heroku run` is super powerful - you can use it to run code on your hosted
-  application, including `heroku run /bin/bash` to start a shell
+- `render run` is super powerful - you can use it to run code on your hosted
+  application, including shell commands to access your application
 - Push the app! See if you can break it, and if you do, if you can fix it
-- Try to see how the app scales - free Heroku service will have some limitations
+- Try to see how the app scales - free Render.com service will have some limitations
 - Incorporate [Redis](https://redislabs.com/) as a cache to mitigate performance
   issues
-- An alternative to Heroku for hosting Flask is
+- An alternative to Render.com for hosting Flask is
   [PythonAnywhere](https://www.pythonanywhere.com/)
   - In some ways it is simpler, and it can even persist a SQLite database file
   - But, it doesn't provide PostgreSQL (you can use
     [ElephantSQL](https://www.elephantsql.com/) instead) and is less widely used
-  - Overall: stick with Heroku first, but check out PythonAnywhere if you'd like
+  - Overall: stick with Render.com first, but check out PythonAnywhere if you'd like
 - Another alternative (in the other direction) is [AWS](https://aws.amazon.com/)
-  - Heroku is nice for prototyping and fairly standard applications (it
+  - Render.com is nice for prototyping and fairly standard applications (it
     abstracts away a lot of the details, so as long as you fit their use case it
     "just works")
   - But larger more complicated services are often deployed via more powerful
     services like AWS, Google Cloud, and Microsoft Azure
-  - Again: Heroku first, and then explore alternatives
+  - Again: Render.com first, and then explore alternatives
 - Add some basic permissions or possibly even an account system, so not everyone
   can just add users, pull Tweets, or reset data
