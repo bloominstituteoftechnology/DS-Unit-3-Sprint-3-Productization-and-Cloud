@@ -33,6 +33,8 @@ See [guided-project.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Produ
 
 See [assignment.md](https://github.com/LambdaSchool/DS-Unit-3-Sprint-3-Productization-and-Cloud/blob/master/module1-web-application-development-with-flask/assignment.md)
 
+https://not-twitter-flask.herokuapp.com/
+
 ## Resources and Stretch Goals
 
 - [Jinja2](http://jinja.pocoo.org/) is the dominant template engine, which you
